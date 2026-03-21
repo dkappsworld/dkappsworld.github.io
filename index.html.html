@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DK Apps World — Best Android Apps</title>
+  <meta name="description" content="Download the best Android productivity and business apps by DK Apps World. Free apps on Google Play Store."/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #07090f;
+      --bg2: #0c0f1a;
+      --bg3: #111520;
+      --accent: #00e5ff;
+      --accent2: #7c3aed;
+      --accent3: #06ffa5;
+      --warn: #ff6b6b;
+      --gold: #fbbf24;
+      --text: #eef2ff;
+      --muted: #7a84a0;
+      --border: rgba(255,255,255,0.07);
+      --card: rgba(255,255,255,0.03);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+
+    /* NOISE */
+    body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:0.4;}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(24px);background:rgba(7,9,15,0.85);border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem;color:var(--text);letter-spacing:-0.5px;}
+    .nav-logo span{color:var(--accent);}
+    .nav-right{display:flex;align-items:center;gap:1.5rem;}
+    .nav-right a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s;}
+    .nav-right a:hover{color:var(--text);}
+    .nav-badge{background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.2);color:var(--accent);padding:0.35rem 0.9rem;border-radius:100px;font-size:0.75rem;font-weight:700;}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 4rem;position:relative;}
+    .hero-blob{position:absolute;top:10%;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(0,229,255,0.06) 0%,transparent 65%);pointer-events:none;}
+    .hero-blob2{position:absolute;top:40%;left:20%;width:300px;height:300px;background:radial-gradient(circle,rgba(124,58,237,0.07) 0%,transparent 70%);pointer-events:none;}
+    .hero-blob3{position:absolute;top:30%;right:15%;width:250px;height:250px;background:radial-gradient(circle,rgba(6,255,165,0.05) 0%,transparent 70%);pointer-events:none;}
+
+    .pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(0,229,255,0.07);border:1px solid rgba(0,229,255,0.15);color:var(--accent);padding:0.4rem 1.1rem;border-radius:100px;font-size:0.75rem;font-weight:700;letter-spacing:1px;margin-bottom:1.8rem;animation:fadeUp 0.5s ease both;}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s infinite;}
+    @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+
+    h1{font-family:'Syne',sans-serif;font-size:clamp(3rem,8vw,6rem);font-weight:800;line-height:1.0;letter-spacing:-3px;margin-bottom:1.5rem;animation:fadeUp 0.6s ease 0.1s both;}
+    h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .hero-desc{max-width:520px;color:var(--muted);font-size:1.05rem;line-height:1.75;margin-bottom:2.5rem;animation:fadeUp 0.6s ease 0.2s both;}
+
+    .search-bar{display:flex;align-items:center;gap:0.8rem;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:16px;padding:0.8rem 1.2rem;width:100%;max-width:480px;margin-bottom:2rem;animation:fadeUp 0.6s ease 0.3s both;transition:border-color 0.2s;}
+    .search-bar:focus-within{border-color:rgba(0,229,255,0.3);}
+    .search-bar input{background:none;border:none;outline:none;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.95rem;width:100%;}
+    .search-bar input::placeholder{color:var(--muted);}
+    .search-icon{color:var(--muted);font-size:1.1rem;}
+
+    .hero-stats{display:flex;gap:3rem;animation:fadeUp 0.6s ease 0.4s both;flex-wrap:wrap;justify-content:center;}
+    .stat{text-align:center;}
+    .stat-n{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--accent);}
+    .stat-l{font-size:0.75rem;color:var(--muted);margin-top:0.2rem;}
+
+    /* CATEGORIES */
+    .cats{display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;padding:2rem 2rem 0;max-width:900px;margin:0 auto;}
+    .cat-btn{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:0.45rem 1.1rem;border-radius:100px;font-size:0.8rem;font-weight:600;cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+    .cat-btn:hover,.cat-btn.active{background:rgba(0,229,255,0.1);border-color:rgba(0,229,255,0.3);color:var(--accent);}
+
+    /* APPS GRID */
+    .apps-section{padding:3rem 2rem 6rem;max-width:1200px;margin:0 auto;}
+    .apps-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;}
+    .apps-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;}
+    .apps-count{color:var(--muted);font-size:0.85rem;}
+
+    .apps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;}
+
+    .app-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;cursor:pointer;position:relative;}
+    .app-card:hover{transform:translateY(-6px);border-color:rgba(0,229,255,0.2);box-shadow:0 20px 60px rgba(0,0,0,0.4),0 0 0 1px rgba(0,229,255,0.05);}
+    .app-card.hidden{display:none;}
+
+    .card-top{padding:1.5rem 1.5rem 1rem;display:flex;align-items:flex-start;gap:1rem;}
+    .app-icon{width:60px;height:60px;border-radius:16px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.8rem;position:relative;overflow:hidden;}
+    .app-icon img{width:100%;height:100%;object-fit:cover;border-radius:16px;}
+    .app-icon-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;}
+
+    .app-meta{flex:1;}
+    .app-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:0.3rem;line-height:1.2;}
+    .app-cat{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:0.5px;padding:0.15rem 0.6rem;border-radius:100px;margin-bottom:0.4rem;}
+    .app-rating{display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;color:var(--gold);}
+    .app-rating span{color:var(--muted);}
+
+    .app-desc{padding:0 1.5rem 1rem;color:var(--muted);font-size:0.83rem;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+
+    .app-tags{padding:0 1.5rem 1rem;display:flex;gap:0.4rem;flex-wrap:wrap;}
+    .tag{font-size:0.68rem;padding:0.2rem 0.6rem;border-radius:6px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted);}
+
+    .card-bottom{padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+    .app-downloads{font-size:0.75rem;color:var(--muted);display:flex;align-items:center;gap:0.3rem;}
+    .download-btn{display:inline-flex;align-items:center;gap:0.4rem;background:var(--accent);color:#000;padding:0.45rem 1rem;border-radius:10px;font-size:0.78rem;font-weight:700;text-decoration:none;transition:opacity 0.2s,transform 0.2s;}
+    .download-btn:hover{opacity:0.85;transform:scale(1.03);}
+
+    /* COLOR THEMES FOR CATEGORIES */
+    .cat-productivity .app-cat{background:rgba(0,229,255,0.1);color:var(--accent);}
+    .cat-finance .app-cat{background:rgba(6,255,165,0.1);color:var(--accent3);}
+    .cat-tools .app-cat{background:rgba(124,58,237,0.1);color:#a78bfa;}
+    .cat-education .app-cat{background:rgba(251,191,36,0.1);color:var(--gold);}
+    .cat-health .app-cat{background:rgba(255,107,107,0.1);color:var(--warn);}
+    .cat-social .app-cat{background:rgba(236,72,153,0.1);color:#f472b6;}
+
+    /* MODAL */
+    .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:200;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity 0.3s;backdrop-filter:blur(8px);}
+    .modal-overlay.open{opacity:1;pointer-events:all;}
+    .modal{background:var(--bg2);border:1px solid rgba(0,229,255,0.15);border-radius:24px;max-width:600px;width:100%;max-height:90vh;overflow-y:auto;transform:translateY(20px) scale(0.97);transition:transform 0.3s;}
+    .modal-overlay.open .modal{transform:translateY(0) scale(1);}
+    .modal-header{padding:2rem 2rem 1rem;display:flex;align-items:flex-start;gap:1.2rem;}
+    .modal-icon{width:72px;height:72px;border-radius:18px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2.2rem;}
+    .modal-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:0.3rem;}
+    .modal-cat{font-size:0.78rem;font-weight:700;margin-bottom:0.5rem;}
+    .modal-rating{display:flex;align-items:center;gap:0.3rem;font-size:0.85rem;color:var(--gold);}
+    .modal-body{padding:0 2rem 2rem;}
+    .modal-desc{color:var(--muted);font-size:0.9rem;line-height:1.75;margin-bottom:1.5rem;}
+    .modal-features{margin-bottom:1.5rem;}
+    .modal-features h4{font-family:'Syne',sans-serif;font-size:0.85rem;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.8rem;}
+    .feature-list{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;}
+    .feature-item{display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;color:var(--muted);}
+    .feature-item::before{content:'✓';color:var(--accent3);font-weight:700;flex-shrink:0;}
+    .modal-footer{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
+    .modal-download{flex:1;display:flex;align-items:center;justify-content:center;gap:0.6rem;background:var(--accent);color:#000;padding:0.9rem;border-radius:14px;font-weight:700;font-size:0.95rem;text-decoration:none;transition:opacity 0.2s;}
+    .modal-download:hover{opacity:0.85;}
+    .modal-close{position:absolute;top:1.2rem;right:1.2rem;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.1rem;transition:background 0.2s;}
+    .modal-close:hover{background:rgba(255,255,255,0.1);}
+
+    /* NO RESULTS */
+    .no-results{text-align:center;padding:4rem 2rem;display:none;}
+    .no-results.show{display:block;}
+    .no-results-icon{font-size:3rem;margin-bottom:1rem;}
+    .no-results h3{font-family:'Syne',sans-serif;font-size:1.2rem;margin-bottom:0.5rem;}
+    .no-results p{color:var(--muted);font-size:0.9rem;}
+
+    /* FOOTER */
+    footer{border-top:1px solid var(--border);padding:2.5rem 2rem;text-align:center;}
+    .footer-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;margin-bottom:0.5rem;}
+    .footer-logo span{color:var(--accent);}
+    footer p{color:var(--muted);font-size:0.8rem;margin-top:0.3rem;}
+    footer a{color:var(--accent);text-decoration:none;}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+    /* SCROLL REVEAL */
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity 0.5s ease,transform 0.5s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
+
+    @media(max-width:768px){
+      h1{letter-spacing:-1.5px;}
+      .hero-stats{gap:1.5rem;}
+      .apps-grid{grid-template-columns:1fr;}
+      .feature-list{grid-template-columns:1fr;}
+      .modal-footer{flex-direction:column;}
+      .modal-download{width:100%;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">DK<span>Apps</span>World</div>
+  <div class="nav-right">
+    <a href="#apps">All Apps</a>
+    <a href="#contact">Contact</a>
+    <span class="nav-badge">🇮🇳 Made in India</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-blob3"></div>
+  <div class="pill"><div class="dot"></div> 10+ APPS ON GOOGLE PLAY</div>
+  <h1>Powerful Apps<br/>for <em>Every Need</em></h1>
+  <p class="hero-desc">Business, productivity, tools aur zyada — sabhi apps free hain Google Play par. Apni life aasaan banao.</p>
+  <div class="search-bar">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="App dhundo... (e.g. Calculator, Notes)"/>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-n" id="totalApps">10+</div><div class="stat-l">Total Apps</div></div>
+    <div class="stat"><div class="stat-n">Free</div><div class="stat-l">All Apps</div></div>
+    <div class="stat"><div class="stat-n">4.5★</div><div class="stat-l">Avg Rating</div></div>
+    <div class="stat"><div class="stat-n">50K+</div><div class="stat-l">Downloads</div></div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<div class="cats" id="categories">
+  <button class="cat-btn active" onclick="filterCat('all',this)">🌐 All Apps</button>
+  <button class="cat-btn" onclick="filterCat('productivity',this)">⚡ Productivity</button>
+  <button class="cat-btn" onclick="filterCat('finance',this)">💰 Finance</button>
+  <button class="cat-btn" onclick="filterCat('tools',this)">🛠️ Tools</button>
+  <button class="cat-btn" onclick="filterCat('education',this)">📚 Education</button>
+  <button class="cat-btn" onclick="filterCat('health',this)">❤️ Health</button>
+  <button class="cat-btn" onclick="filterCat('social',this)">👥 Social</button>
+</div>
+
+<!-- APPS GRID -->
+<section class="apps-section" id="apps">
+  <div class="apps-header">
+    <div class="apps-title">🚀 All Apps</div>
+    <div class="apps-count" id="appsCount">Showing all apps</div>
+  </div>
+  <div class="apps-grid" id="appsGrid">
+
+    <!-- ══════════════════════════════════════════════ -->
+    <!-- YAHAN SE APNI APPS ADD/EDIT KARO             -->
+    <!-- ══════════════════════════════════════════════ -->
+
+    <!-- APP 1 -->
+    <div class="app-card cat-productivity reveal" data-cat="productivity" data-name="Smart Task Manager" onclick="openModal('app1')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#00e5ff22,#7c3aed22)"><div class="app-icon-placeholder">📋</div></div>
+        <div class="app-meta">
+          <div class="app-cat">PRODUCTIVITY</div>
+          <div class="app-name">Smart Task Manager</div>
+          <div class="app-rating">★★★★★ <span>(4.8 · 2.1K reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">Apne daily tasks, projects aur deadlines ko smart tarike se manage karein. Teams ke liye perfect.</div>
+      <div class="app-tags"><span class="tag">Tasks</span><span class="tag">Reminders</span><span class="tag">Team</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 10K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_1" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 2 -->
+    <div class="app-card cat-finance reveal" data-cat="finance" data-name="Budget Tracker Pro" onclick="openModal('app2')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#06ffa522,#00e5ff22)"><div class="app-icon-placeholder">💰</div></div>
+        <div class="app-meta">
+          <div class="app-cat">FINANCE</div>
+          <div class="app-name">Budget Tracker Pro</div>
+          <div class="app-rating">★★★★★ <span>(4.7 · 1.5K reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">Apne kharche track karein, savings plan karein aur financial goals achieve karein easily.</div>
+      <div class="app-tags"><span class="tag">Budget</span><span class="tag">Savings</span><span class="tag">Reports</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 8K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_2" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 3 -->
+    <div class="app-card cat-tools reveal" data-cat="tools" data-name="PDF Tools Kit" onclick="openModal('app3')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#7c3aed22,#ff6b6b22)"><div class="app-icon-placeholder">📄</div></div>
+        <div class="app-meta">
+          <div class="app-cat">TOOLS</div>
+          <div class="app-name">PDF Tools Kit</div>
+          <div class="app-rating">★★★★☆ <span>(4.5 · 980 reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">PDF merge, split, compress aur convert karein apne phone se hi. Office ka kaam ghar baithe karein.</div>
+      <div class="app-tags"><span class="tag">PDF</span><span class="tag">Convert</span><span class="tag">Compress</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 5K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_3" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 4 -->
+    <div class="app-card cat-education reveal" data-cat="education" data-name="QuizMaster India" onclick="openModal('app4')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#fbbf2422,#06ffa522)"><div class="app-icon-placeholder">🎓</div></div>
+        <div class="app-meta">
+          <div class="app-cat">EDUCATION</div>
+          <div class="app-name">QuizMaster India</div>
+          <div class="app-rating">★★★★★ <span>(4.9 · 3.2K reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">GK, Current Affairs, Math aur Science ke quizzes se apni knowledge badhao. Competitive exams ke liye perfect.</div>
+      <div class="app-tags"><span class="tag">GK</span><span class="tag">Quiz</span><span class="tag">Exam Prep</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 15K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_4" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 5 -->
+    <div class="app-card cat-health reveal" data-cat="health" data-name="Daily Fitness Tracker" onclick="openModal('app5')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#ff6b6b22,#fbbf2422)"><div class="app-icon-placeholder">💪</div></div>
+        <div class="app-meta">
+          <div class="app-cat">HEALTH</div>
+          <div class="app-name">Daily Fitness Tracker</div>
+          <div class="app-rating">★★★★☆ <span>(4.4 · 760 reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">Steps count karein, calories track karein aur daily workout routine follow karein. Healthy life ki taraf pehla qadam.</div>
+      <div class="app-tags"><span class="tag">Steps</span><span class="tag">Calories</span><span class="tag">Workout</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 4K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_5" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 6 -->
+    <div class="app-card cat-productivity reveal" data-cat="productivity" data-name="Notes & Diary" onclick="openModal('app6')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#00e5ff22,#06ffa522)"><div class="app-icon-placeholder">📝</div></div>
+        <div class="app-meta">
+          <div class="app-cat">PRODUCTIVITY</div>
+          <div class="app-name">Notes & Diary</div>
+          <div class="app-rating">★★★★★ <span>(4.6 · 1.8K reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">Personal notes, diary entries aur ideas ko organize karein. Password protected private diary bhi available.</div>
+      <div class="app-tags"><span class="tag">Notes</span><span class="tag">Diary</span><span class="tag">Private</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 7K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_6" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 7 -->
+    <div class="app-card cat-tools reveal" data-cat="tools" data-name="QR Scanner & Generator" onclick="openModal('app7')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#7c3aed22,#00e5ff22)"><div class="app-icon-placeholder">📷</div></div>
+        <div class="app-meta">
+          <div class="app-cat">TOOLS</div>
+          <div class="app-name">QR Scanner & Generator</div>
+          <div class="app-rating">★★★★☆ <span>(4.3 · 650 reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">QR codes aur barcodes instantly scan karein ya apna khud ka QR code banao. Fast aur accurate.</div>
+      <div class="app-tags"><span class="tag">QR Code</span><span class="tag">Barcode</span><span class="tag">Scanner</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 6K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_7" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 8 -->
+    <div class="app-card cat-finance reveal" data-cat="finance" data-name="GST Calculator India" onclick="openModal('app8')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#06ffa522,#fbbf2422)"><div class="app-icon-placeholder">🧮</div></div>
+        <div class="app-meta">
+          <div class="app-cat">FINANCE</div>
+          <div class="app-name">GST Calculator India</div>
+          <div class="app-rating">★★★★★ <span>(4.8 · 2.5K reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">GST calculation, invoice generation aur tax filing ke liye perfect tool. Indian businesses ke liye specially designed.</div>
+      <div class="app-tags"><span class="tag">GST</span><span class="tag">Invoice</span><span class="tag">Tax</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 12K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_8" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 9 -->
+    <div class="app-card cat-social reveal" data-cat="social" data-name="Status Saver & Downloader" onclick="openModal('app9')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#f472b622,#7c3aed22)"><div class="app-icon-placeholder">💾</div></div>
+        <div class="app-meta">
+          <div class="app-cat">SOCIAL</div>
+          <div class="app-name">Status Saver & Downloader</div>
+          <div class="app-rating">★★★★★ <span>(4.7 · 4.1K reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">WhatsApp, Instagram aur Facebook status photos aur videos save karein apne phone mein. Fast & simple.</div>
+      <div class="app-tags"><span class="tag">WhatsApp</span><span class="tag">Download</span><span class="tag">Status</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 20K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_9" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 10 -->
+    <div class="app-card cat-education reveal" data-cat="education" data-name="Hindi English Dictionary" onclick="openModal('app10')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#fbbf2422,#ff6b6b22)"><div class="app-icon-placeholder">📖</div></div>
+        <div class="app-meta">
+          <div class="app-cat">EDUCATION</div>
+          <div class="app-name">Hindi English Dictionary</div>
+          <div class="app-rating">★★★★☆ <span>(4.5 · 1.2K reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">50,000+ words ka offline Hindi-English dictionary. Pronunciation, examples aur synonyms ke saath. No internet needed.</div>
+      <div class="app-tags"><span class="tag">Hindi</span><span class="tag">English</span><span class="tag">Offline</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 9K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_10" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 11 -->
+    <div class="app-card cat-tools reveal" data-cat="tools" data-name="Unit Converter Pro" onclick="openModal('app11')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#00e5ff22,#7c3aed22)"><div class="app-icon-placeholder">⚖️</div></div>
+        <div class="app-meta">
+          <div class="app-cat">TOOLS</div>
+          <div class="app-name">Unit Converter Pro</div>
+          <div class="app-rating">★★★★★ <span>(4.6 · 890 reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">Length, weight, temperature, currency aur 100+ units convert karein instantly. Students aur professionals ke liye.</div>
+      <div class="app-tags"><span class="tag">Converter</span><span class="tag">Units</span><span class="tag">Currency</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 3K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_11" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+    <!-- APP 12 -->
+    <div class="app-card cat-productivity reveal" data-cat="productivity" data-name="Attendance Manager" onclick="openModal('app12')">
+      <div class="card-top">
+        <div class="app-icon" style="background:linear-gradient(135deg,#06ffa522,#7c3aed22)"><div class="app-icon-placeholder">✅</div></div>
+        <div class="app-meta">
+          <div class="app-cat">PRODUCTIVITY</div>
+          <div class="app-name">Attendance Manager</div>
+          <div class="app-rating">★★★★★ <span>(4.9 · 2.8K reviews)</span></div>
+        </div>
+      </div>
+      <div class="app-desc">Teachers aur managers ke liye best attendance app. Students/employees ki attendance track karein reports ke saath.</div>
+      <div class="app-tags"><span class="tag">Attendance</span><span class="tag">Reports</span><span class="tag">Teachers</span></div>
+      <div class="card-bottom">
+        <div class="app-downloads">📥 18K+ downloads</div>
+        <a href="YOUR_PLAY_STORE_LINK_12" class="download-btn" target="_blank" onclick="event.stopPropagation()">▶ Download</a>
+      </div>
+    </div>
+
+  </div><!-- /apps-grid -->
+  <div class="no-results" id="noResults">
+    <div class="no-results-icon">🔍</div>
+    <h3>Koi app nahi mila</h3>
+    <p>Dusra keyword try karein</p>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal" style="position:relative">
+    <button class="modal-close" onclick="closeModalBtn()">✕</button>
+    <div class="modal-header">
+      <div class="modal-icon" id="mIcon"></div>
+      <div>
+        <div class="modal-cat" id="mCat"></div>
+        <div class="modal-title" id="mTitle"></div>
+        <div class="modal-rating" id="mRating"></div>
+      </div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-desc" id="mDesc"></div>
+      <div class="modal-features">
+        <h4>✦ Key Features</h4>
+        <div class="feature-list" id="mFeatures"></div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="modal-download" id="mDownload" target="_blank">▶ Download on Google Play — FREE</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-logo">DK<span>Apps</span>World</div>
+  <p>🇮🇳 Made with ❤️ in India &nbsp;·&nbsp; All apps are free on Google Play</p>
+  <p style="margin-top:0.5rem"><a href="mailto:your@email.com">your@email.com</a> &nbsp;·&nbsp; <a href="#">Privacy Policy</a></p>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════
+// APP DATA — APNI APPS KI DETAILS YAHAN LIKHO
+// ═══════════════════════════════════════════
+const appData = {
+  app1: {
+    icon:'📋', bg:'linear-gradient(135deg,#00e5ff33,#7c3aed33)',
+    cat:'PRODUCTIVITY', catClass:'cat-productivity',
+    title:'Smart Task Manager', rating:'★★★★★ 4.8 (2,100 reviews)',
+    desc:'Smart Task Manager aapke daily tasks, projects aur deadlines ko ek jagah manage karne ka sabse aasaan tarika hai. Team ke saath collaborate karein, deadlines set karein aur progress track karein.',
+    features:['Task creation & assignment','Due date reminders','Team collaboration','Progress tracking','Cloud sync','Offline mode'],
+    link:'YOUR_PLAY_STORE_LINK_1'
+  },
+  app2: {
+    icon:'💰', bg:'linear-gradient(135deg,#06ffa533,#00e5ff33)',
+    cat:'FINANCE', catClass:'cat-finance',
+    title:'Budget Tracker Pro', rating:'★★★★★ 4.7 (1,500 reviews)',
+    desc:'Apne monthly income aur expenses ko track karein. Smart charts se dekhein paise kahan ja rahe hain aur savings goals set karein apne future ke liye.',
+    features:['Income & expense tracking','Smart charts & reports','Savings goals','Bill reminders','Multiple accounts','Export to Excel'],
+    link:'YOUR_PLAY_STORE_LINK_2'
+  },
+  app3: {
+    icon:'📄', bg:'linear-gradient(135deg,#7c3aed33,#ff6b6b33)',
+    cat:'TOOLS', catClass:'cat-tools',
+    title:'PDF Tools Kit', rating:'★★★★☆ 4.5 (980 reviews)',
+    desc:'PDF files ke saath kuch bhi karein — merge, split, compress, convert — sab apne phone se hi. Office ka kaam ab mobile par bhi easy.',
+    features:['Merge multiple PDFs','Split PDF pages','Compress file size','PDF to Word/JPG','Add watermark','Password protect'],
+    link:'YOUR_PLAY_STORE_LINK_3'
+  },
+  app4: {
+    icon:'🎓', bg:'linear-gradient(135deg,#fbbf2433,#06ffa533)',
+    cat:'EDUCATION', catClass:'cat-education',
+    title:'QuizMaster India', rating:'★★★★★ 4.9 (3,200 reviews)',
+    desc:'GK, Current Affairs, Math, Science, History aur zyada subjects par daily quizzes. Competitive exams jaise SSC, Railway, UPSC ki preparation ke liye best app.',
+    features:['10,000+ questions','Daily new quizzes','Leaderboard','Detailed solutions','Mock tests','Offline mode'],
+    link:'YOUR_PLAY_STORE_LINK_4'
+  },
+  app5: {
+    icon:'💪', bg:'linear-gradient(135deg,#ff6b6b33,#fbbf2433)',
+    cat:'HEALTH', catClass:'cat-health',
+    title:'Daily Fitness Tracker', rating:'★★★★☆ 4.4 (760 reviews)',
+    desc:'Apni health ko seriously lo. Steps count, calories burn, water intake aur workout track karein ek app mein. Healthy lifestyle ke liye daily goals set karein.',
+    features:['Step counter','Calorie tracker','Water reminder','Workout log','BMI calculator','Weekly reports'],
+    link:'YOUR_PLAY_STORE_LINK_5'
+  },
+  app6: {
+    icon:'📝', bg:'linear-gradient(135deg,#00e5ff33,#06ffa533)',
+    cat:'PRODUCTIVITY', catClass:'cat-productivity',
+    title:'Notes & Diary', rating:'★★★★★ 4.6 (1,800 reviews)',
+    desc:'Apne thoughts, ideas, to-do lists aur diary entries ko safely store karein. Password protection ke saath apni private diary banao.',
+    features:['Rich text editor','Password lock','Cloud backup','Folder organize','Dark mode','Search notes'],
+    link:'YOUR_PLAY_STORE_LINK_6'
+  },
+  app7: {
+    icon:'📷', bg:'linear-gradient(135deg,#7c3aed33,#00e5ff33)',
+    cat:'TOOLS', catClass:'cat-tools',
+    title:'QR Scanner & Generator', rating:'★★★★☆ 4.3 (650 reviews)',
+    desc:'Kisi bhi QR code ya barcode ko instantly scan karein. Apna custom QR code banao website, contact, WiFi ya kisi bhi cheez ke liye.',
+    features:['QR & barcode scan','Custom QR generator','Scan history','WiFi QR code','vCard QR','Flashlight support'],
+    link:'YOUR_PLAY_STORE_LINK_7'
+  },
+  app8: {
+    icon:'🧮', bg:'linear-gradient(135deg,#06ffa533,#fbbf2433)',
+    cat:'FINANCE', catClass:'cat-finance',
+    title:'GST Calculator India', rating:'★★★★★ 4.8 (2,500 reviews)',
+    desc:'Indian businesses ke liye best GST tool. GST calculate karein, invoices banao aur tax records maintain karein. CA aur shopkeepers dono ke liye useful.',
+    features:['GST calculation (5/12/18/28%)','Invoice generator','Tax history','Bill splitting','PDF export','Offline support'],
+    link:'YOUR_PLAY_STORE_LINK_8'
+  },
+  app9: {
+    icon:'💾', bg:'linear-gradient(135deg,#f472b633,#7c3aed33)',
+    cat:'SOCIAL', catClass:'cat-social',
+    title:'Status Saver & Downloader', rating:'★★★★★ 4.7 (4,100 reviews)',
+    desc:'Apne doston ke WhatsApp, Instagram aur Facebook status save karein ek tap mein. Photos aur videos dono save hote hain gallery mein.',
+    features:['WhatsApp status save','Instagram download','Facebook videos','Gallery auto-organize','No watermark','Share instantly'],
+    link:'YOUR_PLAY_STORE_LINK_9'
+  },
+  app10: {
+    icon:'📖', bg:'linear-gradient(135deg,#fbbf2433,#ff6b6b33)',
+    cat:'EDUCATION', catClass:'cat-education',
+    title:'Hindi English Dictionary', rating:'★★★★☆ 4.5 (1,200 reviews)',
+    desc:'50,000+ words ka comprehensive Hindi-English dictionary. Pronunciation guide, example sentences aur synonyms ke saath. Fully offline — internet ki zaroorat nahi.',
+    features:['50,000+ words','Offline working','Pronunciation guide','Example sentences','Word of the day','Favorites list'],
+    link:'YOUR_PLAY_STORE_LINK_10'
+  },
+  app11: {
+    icon:'⚖️', bg:'linear-gradient(135deg,#00e5ff33,#7c3aed33)',
+    cat:'TOOLS', catClass:'cat-tools',
+    title:'Unit Converter Pro', rating:'★★★★★ 4.6 (890 reviews)',
+    desc:'100+ unit conversions ek app mein — length, weight, temperature, volume, currency, speed aur zyada. Students, engineers aur professionals ke liye must-have.',
+    features:['100+ unit types','Live currency rates','Scientific calculator','Conversion history','No ads','Completely offline'],
+    link:'YOUR_PLAY_STORE_LINK_11'
+  },
+  app12: {
+    icon:'✅', bg:'linear-gradient(135deg,#06ffa533,#7c3aed33)',
+    cat:'PRODUCTIVITY', catClass:'cat-productivity',
+    title:'Attendance Manager', rating:'★★★★★ 4.9 (2,800 reviews)',
+    desc:'Teachers, coaches aur managers ke liye best attendance tracking app. Students ya employees ki daily attendance mark karein aur monthly/yearly reports generate karein.',
+    features:['Multiple class/batch','One-tap marking','Monthly reports','PDF export','Student profiles','Holiday management'],
+    link:'YOUR_PLAY_STORE_LINK_12'
+  }
+};
+
+// MODAL
+function openModal(id){
+  const d = appData[id];
+  if(!d) return;
+  document.getElementById('mIcon').style.background = d.bg;
+  document.getElementById('mIcon').textContent = d.icon;
+  document.getElementById('mCat').textContent = d.cat;
+  document.getElementById('mCat').className = 'modal-cat app-cat';
+  document.getElementById('mTitle').textContent = d.title;
+  document.getElementById('mRating').innerHTML = `<span style="color:var(--gold)">${d.rating.split(' ')[0]}</span>&nbsp;<span style="color:var(--muted);font-size:0.8rem">${d.rating.slice(d.rating.indexOf(' ')+1)}</span>`;
+  document.getElementById('mDesc').textContent = d.desc;
+  document.getElementById('mFeatures').innerHTML = d.features.map(f=>`<div class="feature-item">${f}</div>`).join('');
+  document.getElementById('mDownload').href = d.link;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(e){ if(e.target===document.getElementById('modalOverlay')) closeModalBtn(); }
+function closeModalBtn(){ document.getElementById('modalOverlay').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModalBtn(); });
+
+// FILTER
+function filterCat(cat, btn){
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const cards = document.querySelectorAll('.app-card');
+  let count=0;
+  cards.forEach(c=>{
+    const show = cat==='all' || c.dataset.cat===cat;
+    c.classList.toggle('hidden', !show);
+    if(show) count++;
+  });
+  document.getElementById('appsCount').textContent = cat==='all'?`Showing all ${count} apps`:`Showing ${count} apps`;
+}
+
+// SEARCH
+document.getElementById('searchInput').addEventListener('input', function(){
+  const q = this.value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.app-card');
+  let count=0;
+  document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.cat-btn').classList.add('active');
+  cards.forEach(c=>{
+    const name = c.dataset.name.toLowerCase();
+    const show = !q || name.includes(q);
+    c.classList.toggle('hidden',!show);
+    if(show) count++;
+  });
+  document.getElementById('noResults').classList.toggle('show', count===0);
+  document.getElementById('appsCount').textContent = q?`"${q}" ke liye ${count} results`:`Showing all ${count} apps`;
+});
+
+// SCROLL REVEAL
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// TOTAL APPS COUNT
+document.getElementById('totalApps').textContent = document.querySelectorAll('.app-card').length + '+';
+</script>
+</body>
+</html>
