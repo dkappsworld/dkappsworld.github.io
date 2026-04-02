@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DK Apps World — Apps for Everyone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #070711;
+    --bg2: #0e0e1c;
+    --bg3: #14142a;
+    --accent: #7c6fff;
+    --accent2: #38d9a9;
+    --accent3: #f78fb3;
+    --text: #f0f0ff;
+    --muted: #7a7a9a;
+    --border: rgba(255,255,255,0.07);
+    --card: rgba(255,255,255,0.04);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 5%;
+    background: rgba(7,7,17,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .nav-logo span {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .logo-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.7; }
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+  }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover { color: var(--text); }
+  .nav-cta {
+    background: var(--accent) !important;
+    color: #fff !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.85rem !important;
+  }
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 5% 80px;
+    position: relative;
+  }
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124,111,255,0.15) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(124,111,255,0.12);
+    border: 1px solid rgba(124,111,255,0.3);
+    border-radius: 30px;
+    padding: 6px 18px;
+    font-size: 0.8rem;
+    color: #a89fff;
+    font-weight: 500;
+    margin-bottom: 28px;
+    letter-spacing: 0.5px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent2);
+    animation: pulse 1.5s infinite;
+  }
+  .hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  .hero h1 .grad {
+    background: linear-gradient(135deg, #a89fff 0%, var(--accent2) 50%, var(--accent3) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Sora', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION ── */
+  section { padding: 100px 5%; position: relative; z-index: 1; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Sora', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  .section-sub { color: var(--muted); max-width: 560px; font-size: 1rem; margin-bottom: 60px; }
+
+  /* ── APP CARDS ── */
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+  }
+  .app-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  .app-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(124,111,255,0.3);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+  }
+  .app-card-top {
+    padding: 28px 28px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .app-icon {
+    width: 72px; height: 72px;
+    border-radius: 18px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+  }
+  .app-icon-placeholder {
+    width: 72px; height: 72px;
+    border-radius: 18px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: 'Sora', sans-serif;
+  }
+  .app-meta { flex: 1; }
+  .app-name {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .app-category {
+    font-size: 0.78rem;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .app-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .stars { color: #fbbf24; font-size: 0.75rem; letter-spacing: 1px; }
+  .app-desc {
+    padding: 0 28px 20px;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .app-features {
+    padding: 0 28px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .feat-pill {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .app-card-footer {
+    padding: 16px 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .badge-free {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(56,217,169,0.1);
+    border: 1px solid rgba(56,217,169,0.2);
+    color: var(--accent2);
+    font-weight: 500;
+  }
+  .badge-ads {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: rgba(247,143,179,0.1);
+    border: 1px solid rgba(247,143,179,0.2);
+    color: var(--accent3);
+    font-weight: 500;
+  }
+  .play-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    padding: 9px 18px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .play-btn:hover { opacity: 0.85; transform: scale(1.03); }
+  .play-btn svg { width: 14px; height: 14px; fill: #fff; }
+  .coming-soon-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 9px 18px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: default;
+  }
+
+  /* ── ABOUT ── */
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about-text .section-sub { max-width: 100%; margin-bottom: 32px; }
+  .value-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+  .value-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .value-icon {
+    width: 40px; height: 40px;
+    border-radius: 12px;
+    background: rgba(124,111,255,0.12);
+    border: 1px solid rgba(124,111,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .value-item h4 { font-family: 'Sora', sans-serif; font-size: 0.95rem; font-weight: 600; margin-bottom: 3px; }
+  .value-item p { font-size: 0.85rem; color: var(--muted); }
+  .about-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .stat-card:first-child { grid-column: span 2; }
+  .stat-card .num {
+    font-family: 'Sora', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+  }
+  .stat-card .lbl { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+  /* ── CONTACT ── */
+  .contact-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .contact-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 36px;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s, transform 0.2s;
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: var(--card);
+  }
+  .contact-link:hover { opacity: 0.8; transform: translateY(-2px); }
+  .contact-link.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  footer p { font-size: 0.82rem; color: var(--muted); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; }
+  .footer-links a:hover { color: var(--text); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 0 5%;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    .hero h1 { letter-spacing: -1px; }
+    .apps-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="logo-dot"></div>
+    DK<span>Apps</span>World
+  </a>
+  <ul>
+    <li><a href="#apps">Apps</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://play.google.com/store/apps/developer?id=NEHA+KUMARI2" target="_blank" class="nav-cta">Play Store ↗</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-badge">Made in India &nbsp;🇮🇳&nbsp; Useful for the World</div>
+  <h1>Apps That <span class="grad">Actually Help</span><br>Real People</h1>
+  <p>Simple, powerful, privacy-first Android apps — built for everyday needs. No fluff. No data collection. Just tools that work.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">2+</div>
+      <div class="stat-label">Apps Published</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5.0★</div>
+      <div class="stat-label">Average Rating</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Free to Download</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Data Collected</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- APPS -->
+<section id="apps">
+  <span class="section-label">Our Apps</span>
+  <h2 class="section-title reveal">Everything You Need,<br>Right on Your Phone</h2>
+  <p class="section-sub reveal">Every app we build is offline-first, lightweight, and designed for real workflows — not vanity metrics.</p>
+
+  <div class="apps-grid">
+
+    <!-- EsyReport -->
+    <div class="app-card reveal">
+      <div class="app-card-top">
+        <div class="app-icon-placeholder" style="background: linear-gradient(135deg,#1e1b4b,#312e81);">📄</div>
+        <div class="app-meta">
+          <div class="app-name">EsyReport</div>
+          <span class="app-category" style="background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.25);">Productivity</span>
+          <div class="app-rating">
+            <span class="stars">★★★★★</span>
+            <span>5.0 &nbsp;·&nbsp; 7 reviews</span>
+          </div>
+        </div>
+      </div>
+      <div class="app-desc">
+        Create professional PDF reports from photos and notes — in just a few taps. Ideal for field engineers, inspectors, office teams, and anyone who documents work on the go.
+      </div>
+      <div class="app-features">
+        <span class="feat-pill">📸 Photo to PDF</span>
+        <span class="feat-pill">📝 Add Notes</span>
+        <span class="feat-pill">📤 Instant Share</span>
+        <span class="feat-pill">🔐 Private</span>
+        <span class="feat-pill">⚡ Offline</span>
+      </div>
+      <div class="app-card-footer">
+        <div style="display:flex;gap:8px;">
+          <span class="badge-free">Free</span>
+          <span class="badge-ads">Contains Ads</span>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.esyreport" target="_blank" class="play-btn">
+          <svg viewBox="0 0 24 24"><path d="M3 20.5v-17c0-.83 1-.92 1.4-.5l14 8.5-14 8.5c-.4.42-1.4.33-1.4-.5z"/></svg>
+          Play Store
+        </a>
+      </div>
+    </div>
+
+    <!-- SalaryDhan -->
+    <div class="app-card reveal">
+      <div class="app-card-top">
+        <div class="app-icon-placeholder" style="background: linear-gradient(135deg,#1a0a3a,#3b1d8a);">💰</div>
+        <div class="app-meta">
+          <div class="app-name">SalaryDhan</div>
+          <span class="app-category" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.25);">Finance</span>
+          <div class="app-rating">
+            <span class="stars">★★★★★</span>
+            <span>New &nbsp;·&nbsp; Coming Soon</span>
+          </div>
+        </div>
+      </div>
+      <div class="app-desc">
+        Track your salary, plan budgets, and manage every expense — 100% offline and private. Biometric lock, payday reminders, reports, and CSV export built-in.
+      </div>
+      <div class="app-features">
+        <span class="feat-pill">💵 Salary Tracker</span>
+        <span class="feat-pill">📊 Budget Planner</span>
+        <span class="feat-pill">🔒 Biometric Lock</span>
+        <span class="feat-pill">🔔 Payday Alert</span>
+        <span class="feat-pill">🌐 7 Languages</span>
+      </div>
+      <div class="app-card-footer">
+        <div style="display:flex;gap:8px;">
+          <span class="badge-free">Free</span>
+        </div>
+        <span class="coming-soon-btn">🚀 Coming Soon</span>
+      </div>
+    </div>
+
+    <!-- Placeholder Card 3 -->
+    <div class="app-card reveal" style="border-style:dashed;opacity:0.5;">
+      <div class="app-card-top">
+        <div class="app-icon-placeholder" style="background:rgba(255,255,255,0.05);border:2px dashed var(--border);">+</div>
+        <div class="app-meta">
+          <div class="app-name" style="color:var(--muted);">Next App</div>
+          <span class="app-category" style="background:rgba(255,255,255,0.05);color:var(--muted);border:1px solid var(--border);">In Development</span>
+        </div>
+      </div>
+      <div class="app-desc">Something useful is being built. Stay tuned — we release apps that solve real problems for real people.</div>
+      <div class="app-card-footer">
+        <span style="font-size:0.8rem;color:var(--muted);">Coming 2025</span>
+        <span class="coming-soon-btn">🔔 Notify Me</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-text">
+      <span class="section-label">About DK Apps World</span>
+      <h2 class="section-title reveal">Built with Care,<br>Shipped with Purpose</h2>
+      <p class="section-sub reveal">We're independent app developers from India, focused on building tools that are simple to use, respect your privacy, and actually solve problems.</p>
+      <ul class="value-list">
+        <li class="value-item reveal">
+          <div class="value-icon">🔒</div>
+          <div>
+            <h4>Privacy First</h4>
+            <p>Zero data collection. Everything runs on your device. Your data belongs to you.</p>
+          </div>
+        </li>
+        <li class="value-item reveal">
+          <div class="value-icon">⚡</div>
+          <div>
+            <h4>Offline by Default</h4>
+            <p>All our apps work without internet. No accounts, no servers, no dependency on connectivity.</p>
+          </div>
+        </li>
+        <li class="value-item reveal">
+          <div class="value-icon">🎯</div>
+          <div>
+            <h4>Simple & Focused</h4>
+            <p>Each app does one thing really well. No bloat, no unnecessary features, no clutter.</p>
+          </div>
+        </li>
+        <li class="value-item reveal">
+          <div class="value-icon">🇮🇳</div>
+          <div>
+            <h4>Made in India</h4>
+            <p>Built by Indian developers, designed for a global audience, available in 7+ languages.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="about-visual reveal">
+      <div class="stat-card">
+        <span class="num">10,000+</span>
+        <div class="lbl">Users Helped</div>
+      </div>
+      <div class="stat-card">
+        <span class="num">2+</span>
+        <div class="lbl">Apps Live</div>
+      </div>
+      <div class="stat-card">
+        <span class="num">7</span>
+        <div class="lbl">Languages</div>
+      </div>
+      <div class="stat-card">
+        <span class="num">5★</span>
+        <div class="lbl">Rating</div>
+      </div>
+      <div class="stat-card" style="grid-column:span 2;">
+        <span class="num">0 KB</span>
+        <div class="lbl">Data Sent to Servers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <span class="section-label" style="display:block;text-align:center;">Get in Touch</span>
+    <h2 class="section-title reveal" style="text-align:center;">Questions? Ideas?<br>We'd Love to Hear.</h2>
+    <p class="section-sub reveal" style="text-align:center;margin:0 auto 0;">Whether you have feedback, a bug report, or just want to say hi — reach out. We read every message.</p>
+    <div class="contact-links reveal">
+      <a href="mailto:nehadkkumari2@gmail.com" class="contact-link primary">
+        ✉️ Email Us
+      </a>
+      <a href="https://play.google.com/store/apps/developer?id=NEHA+KUMARI2" target="_blank" class="contact-link">
+        ▶ Play Store Profile
+      </a>
+      <a href="https://docs.google.com/document/d/1rEKzKW7j3QldW2BWQ2VHnTaNNKBdgOFGXr4qLb5KVFE/edit" target="_blank" class="contact-link">
+        🔒 Privacy Policy
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 DK Apps World · Made with ❤️ in India</p>
+  <div class="footer-links">
+    <a href="https://docs.google.com/document/d/1rEKzKW7j3QldW2BWQ2VHnTaNNKBdgOFGXr4qLb5KVFE/edit" target="_blank">Privacy Policy</a>
+    <a href="mailto:nehadkkumari2@gmail.com">Support</a>
+    <a href="https://play.google.com/store/apps/developer?id=NEHA+KUMARI2" target="_blank">Play Store</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Stagger cards
+  document.querySelectorAll('.app-card').forEach((card, i) => {
+    card.style.transitionDelay = (i * 0.1) + 's';
+  });
+</script>
+</body>
+</html>
