@@ -4,55 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - EsyReport</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f8f9fa; }
-        .card { background: white; padding: 40px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h1 { color: #3F51B5; font-size: 32px; margin-bottom: 8px; }
-        .last-updated { color: #666; font-size: 14px; margin-bottom: 40px; }
-        h2 { color: #5C6BC0; font-size: 20px; margin-top: 32px; border-bottom: 2px solid #f0f0f0; padding-bottom: 8px; }
-        p { margin-bottom: 16px; color: #444; }
-        .contact-box { background: #E8EAF6; padding: 20px; border-radius: 12px; margin-top: 40px; border-left: 4px solid #3F51B5; }
-        .footer { text-align: center; margin-top: 40px; font-size: 12px; color: #999; }
+        :root {
+            --primary: #3F51B5;
+            --primary-light: #E8EAF6;
+            --primary-dark: #303F9F;
+            --text-main: #2c3e50;
+            --text-muted: #546e7a;
+            --bg-color: #f4f7f9;
+            --card-bg: #ffffff;
+            --accent: #5C6BC0;
+        }
+        
+        * { box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.7; 
+            color: var(--text-main); 
+            max-width: 860px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background-color: var(--bg-color); 
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .card { 
+            background: var(--card-bg); 
+            padding: 48px; 
+            border-radius: 24px; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06); 
+            border: 1px solid rgba(0,0,0,0.04); 
+        }
+
+        h1 { 
+            color: var(--primary); 
+            font-size: 38px; 
+            margin: 0 0 12px 0; 
+            font-weight: 800; 
+            letter-spacing: -0.5px;
+            text-align: center;
+        }
+
+        .last-updated { 
+            color: var(--text-muted); 
+            font-size: 14px; 
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 20px;
+        }
+
+        h2 { 
+            color: var(--primary-dark); 
+            font-size: 22px; 
+            margin-top: 48px; 
+            margin-bottom: 16px; 
+            font-weight: 700; 
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        h2::before {
+            content: "";
+            display: block;
+            width: 24px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        p { 
+            margin-bottom: 20px; 
+            color: var(--text-muted); 
+            font-size: 16px; 
+        }
+        
+        ul {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box { 
+            background: var(--primary-light); 
+            padding: 24px 32px; 
+            border-radius: 16px; 
+            margin: 32px 0; 
+            border-left: 6px solid var(--primary); 
+        }
+
+        .highlight-box strong { 
+            display: block; 
+            margin-bottom: 8px; 
+            color: var(--primary-dark); 
+            font-size: 18px;
+        }
+
+        .highlight-box a { 
+            color: var(--primary); 
+            text-decoration: none; 
+            font-weight: 600; 
+        }
+
+        .highlight-box a:hover { 
+            text-decoration: underline; 
+        }
+
+        .footer { 
+            text-align: center; 
+            margin-top: 60px; 
+            font-size: 14px; 
+            color: #95a5a6; 
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 20px 12px; }
+            .card { padding: 32px 20px; }
+            h1 { font-size: 30px; }
+            h2 { font-size: 20px; }
+        }
     </style>
 </head>
 <body>
     <div class="card">
         <h1>Privacy Policy</h1>
-        <div class="last-updated">Last Updated: April 2026</div>
+        <span class="last-updated">Effective Date: April 2026</span>
+
+        <p>Thank you for choosing to be part of our community at <strong>EsyReport</strong>. We are committed to protecting your personal information and your right to privacy. This Privacy Policy is strictly aligned with the Google Play Store (2026) Developer Policy regarding Data Safety, User Data, and Permissions.</p>
 
         <section>
-            <h2>1. Data Privacy & Local-First Storage</h2>
-            <p>EsyReport is a localized, privacy-first productivity tool. All documents, photos, and profile information are stored <strong>strictly on your physical device</strong>. We do not transmit, sync, or store your personal media or reports on our servers.</p>
+            <h2>1. Local-First Architecture & Data Privacy</h2>
+            <p>EsyReport operates as a "Local-First" application. This means we do not host, store, or transmit your core application data on external cloud servers.</p>
+            <ul>
+                <li><strong>No Server Uploads:</strong> All generated PDF documents, scanned images, photos, user profile metadata (like Office Name or Employee Name), and textual notes are saved directly to your local device storage.</li>
+                <li><strong>No Background Syncing:</strong> EsyReport does not passively synchronize your data to our servers in the background.</li>
+            </ul>
         </section>
 
         <section>
-            <h2>2. Biometric Sensors</h2>
-            <p>We do not use or collect any biometric data. EsyReport does not access your fingerprint, facial recognition (FaceID), or other biometric sensors for any purpose.</p>
+            <h2>2. Core Permissions & Usage</h2>
+            <p>To provide you with document scanning and reporting capabilities, the app requires specific device permissions. These are strictly used for primary app functionality:</p>
+            <ul>
+                <li><strong>Camera Permission:</strong> Required exceptionally to take live photographs and use the ML-Kit Document Scanner feature for edge-detection. The camera is never accessed in the background.</li>
+                <li><strong>Storage / Media Permissions:</strong> Required to physically read your selected gallery photos (for importing) and write the generated PDF report to your device's cache/storage for sharing.</li>
+            </ul>
+            <p>These permissions comply with Google Play's Prominent Disclosure requirements. You maintain the right to revoke these at any time via your Android Settings.</p>
         </section>
 
         <section>
-            <h2>3. Third-Party Advertising</h2>
-            <p>To keep this tool free, we use Google AdMob. AdMob may collect certain non-personal identifiers (like Device ID) to provide personalized ads and analytics. You can manage these permissions in your device's Google Privacy settings.</p>
+            <h2>3. Third-Party Advertising & Analytics</h2>
+            <p>To keep EsyReport free for our users, we monetize the app through Google AdMob. While your personal documents remain strictly local, the Google AdMob SDK may independently collect non-personally identifiable information.</p>
+            <ul>
+                <li><strong>Device Identifiers:</strong> AdMob may collect your Advertising ID (AAID) and basic device metrics to present personalized ads and combat fraud.</li>
+                <li><strong>Opt-Out:</strong> You can opt out of personalized advertising by visiting your Android device's Google Settings -> Ads -> "Opt out of Ads Personalization" or "Delete Advertising ID".</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>4. Biometric Data Policy</h2>
+            <p>We take biometric privacy seriously. <strong>EsyReport does not request, access, collect, or store any biometric data.</strong> The app operates independently of fingerprint scanners, facial recognition (FaceID), or iris scanners.</p>
         </section>
 
         <section>
-            <h2>4. Permissions Usage</h2>
-            <p>We request Camera and Storage access solely to capture documents and save generated reports. These permissions are used exclusively for core app functionality and are never accessed in the background or for other purposes.</p>
+            <h2>5. Data Retention and Deletion Rights</h2>
+            <p>In accordance with global data protection standards and Google Play Store Data Deletion guidelines, you have total control over the data generated within EsyReport:</p>
+            <ul>
+                <li><strong>Automatic Session Wipes:</strong> Upon successfully clicking "Share" to export your PDF, your temporary session photos and media are instantly wiped from the app memory to maintain security and clear space.</li>
+                <li><strong>Manual Deletion:</strong> You can explicitly clear all stored profile values and saved configurations by using the "Clear all data" or "Delete Account" buttons found in the Settings tab. Because we do not store this data remotely, performing this action will permanently and irrecoverably delete it from your device.</li>
+            </ul>
         </section>
 
         <section>
-            <h2>5. Data Deletion Rights</h2>
-            <p>You have total control over your information. You can use the "Clear all data" or "Delete Account" tools in the Settings menu to permanently wipe all locally stored information. Once deleted, this data is unrecoverable.</p>
+            <h2>6. Children's Privacy</h2>
+            <p>EsyReport is a professional productivity tool. We do not knowingly collect personally identifiable information from children under 13 years of age. If we discover that a child under 13 has provided us with personal information (e.g. via support email), we immediately delete this from our servers.</p>
         </section>
 
-        <div class="contact-box">
-            <strong>6. Contact Information</strong><br>
-            For privacy inquiries or technical support, please contact us at:<br>
+        <section>
+            <h2>7. Security</h2>
+            <p>We value your trust in providing us your Personal Information, thus we strive to use commercially acceptable means of protecting it. However, remember that no method of transmission over the internet, or method of electronic storage is 100% secure. Fortunately, because EsyReport does not transmit your personal documents over the internet, your documents are entirely as secure as your Android device's built-in software encryption.</p>
+        </section>
+
+        <section>
+            <h2>8. Changes to This Privacy Policy</h2>
+            <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted.</p>
+        </section>
+
+        <div class="highlight-box">
+            <strong>9. Contact Us</strong>
+            <p style="margin-bottom: 8px;">If you have any questions, security concerns, or suggestions regarding our Privacy Policy, please do not hesitate to contact our support team:</p>
             <a href="mailto:Nehadkkumari2@gmail.com">Nehadkkumari2@gmail.com</a>
         </div>
     </div>
+    
     <div class="footer">
-        &copy; 2026 EsyReport. All Rights Reserved.
+        &copy; 2026 EsyReport. Designed for Privacy & Professional Field Documentation.
     </div>
 </body>
 </html>
