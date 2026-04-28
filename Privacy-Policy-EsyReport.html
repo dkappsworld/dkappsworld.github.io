@@ -4,215 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - EsyReport</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #3F51B5;
-            --primary-light: #E8EAF6;
-            --primary-dark: #303F9F;
-            --text-main: #2c3e50;
-            --text-muted: #546e7a;
-            --bg-color: #f4f7f9;
-            --card-bg: #ffffff;
-            --accent: #5C6BC0;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-glow: rgba(99, 102, 241, 0.2);
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --accent: #818cf8;
+            --border: #334155;
         }
-        
-        * { box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            line-height: 1.7; 
-            color: var(--text-main); 
-            max-width: 860px; 
-            margin: 0 auto; 
-            padding: 40px 20px; 
-            background-color: var(--bg-color); 
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
         }
-        
-        .header {
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 32px;
+            padding: 60px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
             text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
             margin-bottom: 40px;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .card { 
-            background: var(--card-bg); 
-            padding: 48px; 
-            border-radius: 24px; 
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06); 
-            border: 1px solid rgba(0,0,0,0.04); 
+        select {
+            background: #0f172a;
+            color: white;
+            border: 1px solid var(--border);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            background-size: 16px;
+            padding-right: 48px;
         }
 
-        h1 { 
-            color: var(--primary); 
-            font-size: 38px; 
-            margin: 0 0 12px 0; 
-            font-weight: 800; 
-            letter-spacing: -0.5px;
-            text-align: center;
+        select:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
-        .last-updated { 
-            color: var(--text-muted); 
-            font-size: 14px; 
-            font-weight: 500;
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-            text-align: center;
+            letter-spacing: 2px;
             margin-bottom: 40px;
-            border-bottom: 2px solid var(--primary-light);
-            padding-bottom: 20px;
+            display: block;
         }
 
-        h2 { 
-            color: var(--primary-dark); 
-            font-size: 22px; 
-            margin-top: 48px; 
-            margin-bottom: 16px; 
-            font-weight: 700; 
+        section {
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 32px;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--accent);
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 12px;
         }
-        
-        h2::before {
-            content: "";
-            display: block;
-            width: 24px;
-            height: 4px;
-            background: var(--accent);
-            border-radius: 4px;
-        }
 
-        p { 
-            margin-bottom: 20px; 
-            color: var(--text-muted); 
-            font-size: 16px; 
-        }
-        
-        ul {
+        p {
             color: var(--text-muted);
-            margin-bottom: 24px;
-            padding-left: 24px;
-        }
-        
-        li {
-            margin-bottom: 10px;
+            font-size: 17px;
+            line-height: 1.8;
+            white-space: pre-wrap;
         }
 
-        .highlight-box { 
-            background: var(--primary-light); 
-            padding: 24px 32px; 
-            border-radius: 16px; 
-            margin: 32px 0; 
-            border-left: 6px solid var(--primary); 
+        .footer-text {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 14px;
+            opacity: 0.7;
         }
 
-        .highlight-box strong { 
-            display: block; 
-            margin-bottom: 8px; 
-            color: var(--primary-dark); 
-            font-size: 18px;
-        }
-
-        .highlight-box a { 
-            color: var(--primary); 
-            text-decoration: none; 
-            font-weight: 600; 
-        }
-
-        .highlight-box a:hover { 
-            text-decoration: underline; 
-        }
-
-        .footer { 
-            text-align: center; 
-            margin-top: 60px; 
-            font-size: 14px; 
-            color: #95a5a6; 
-        }
-
-        @media (max-width: 600px) {
-            body { padding: 20px 12px; }
-            .card { padding: 32px 20px; }
-            h1 { font-size: 30px; }
-            h2 { font-size: 20px; }
+        @media (max-width: 640px) {
+            .glass-card { padding: 32px 24px; border-radius: 0; }
+            body { padding: 0; }
+            .logo { font-size: 36px; }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Privacy Policy</h1>
-        <span class="last-updated">Effective Date: April 2026</span>
+    <div class="container">
+        <div class="glass-card">
+            <div class="content-wrapper">
+                <header>
+                    <div class="logo">EsyReport</div>
+                    <div class="lang-switcher">
+                        <select id="langSelect" onchange="switchLang(this.value)">
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी (Hindi)</option>
+                            <option value="bn">বাংলা (Bengali)</option>
+                            <option value="ta">தமிழ் (Tamil)</option>
+                            <option value="te">తెలుగు (Telugu)</option>
+                            <option value="mr">मराठी (Marathi)</option>
+                            <option value="gu">ગુજરાતી (Gujarati)</option>
+                            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                            <option value="ar">العربية (Arabic)</option>
+                            <option value="es">Español (Spanish)</option>
+                            <option value="pt">Português (Portuguese)</option>
+                            <option value="fr">Français (French)</option>
+                            <option value="de">Deutsch (German)</option>
+                        </select>
+                    </div>
+                    <h1 id="pp_title">Privacy Policy</h1>
+                    <span id="pp_last_updated" class="last-updated">Updated: April 25, 2026</span>
+                </header>
 
-        <p>Thank you for choosing to be part of our community at <strong>EsyReport</strong>. We are committed to protecting your personal information and your right to privacy. This Privacy Policy is strictly aligned with the Google Play Store (2026) Developer Policy regarding Data Safety, User Data, and Permissions.</p>
+                <main id="policyContent">
+                    <!-- Dynamic Content -->
+                </main>
 
-        <section>
-            <h2>1. Local-First Architecture & Data Privacy</h2>
-            <p>EsyReport operates as a "Local-First" application. This means we do not host, store, or transmit your core application data on external cloud servers.</p>
-            <ul>
-                <li><strong>No Server Uploads:</strong> All generated PDF documents, scanned images, photos, user profile metadata (like Office Name or Employee Name), and textual notes are saved directly to your local device storage.</li>
-                <li><strong>No Background Syncing:</strong> EsyReport does not passively synchronize your data to our servers in the background.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>2. Core Permissions & Usage</h2>
-            <p>To provide you with document scanning and reporting capabilities, the app requires specific device permissions. These are strictly used for primary app functionality:</p>
-            <ul>
-                <li><strong>Camera Permission:</strong> Required exceptionally to take live photographs and use the ML-Kit Document Scanner feature for edge-detection. The camera is never accessed in the background.</li>
-                <li><strong>Storage / Media Permissions:</strong> Required to physically read your selected gallery photos (for importing) and write the generated PDF report to your device's cache/storage for sharing.</li>
-            </ul>
-            <p>These permissions comply with Google Play's Prominent Disclosure requirements. You maintain the right to revoke these at any time via your Android Settings.</p>
-        </section>
-
-        <section>
-            <h2>3. Third-Party Advertising & Analytics</h2>
-            <p>To keep EsyReport free for our users, we monetize the app through Google AdMob. While your personal documents remain strictly local, the Google AdMob SDK may independently collect non-personally identifiable information.</p>
-            <ul>
-                <li><strong>Device Identifiers:</strong> AdMob may collect your Advertising ID (AAID) and basic device metrics to present personalized ads and combat fraud.</li>
-                <li><strong>Opt-Out:</strong> You can opt out of personalized advertising by visiting your Android device's Google Settings -> Ads -> "Opt out of Ads Personalization" or "Delete Advertising ID".</li>
-            </ul>
-        </section>
-        
-        <section>
-            <h2>4. Biometric Data Policy</h2>
-            <p>We take biometric privacy seriously. <strong>EsyReport does not request, access, collect, or store any biometric data.</strong> The app operates independently of fingerprint scanners, facial recognition (FaceID), or iris scanners.</p>
-        </section>
-
-        <section>
-            <h2>5. Data Retention and Deletion Rights</h2>
-            <p>In accordance with global data protection standards and Google Play Store Data Deletion guidelines, you have total control over the data generated within EsyReport:</p>
-            <ul>
-                <li><strong>Automatic Session Wipes:</strong> Upon successfully clicking "Share" to export your PDF, your temporary session photos and media are instantly wiped from the app memory to maintain security and clear space.</li>
-                <li><strong>Manual Deletion:</strong> You can explicitly clear all stored profile values and saved configurations by using the "Clear all data" or "Delete Account" buttons found in the Settings tab. Because we do not store this data remotely, performing this action will permanently and irrecoverably delete it from your device.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>6. Children's Privacy</h2>
-            <p>EsyReport is a professional productivity tool. We do not knowingly collect personally identifiable information from children under 13 years of age. If we discover that a child under 13 has provided us with personal information (e.g. via support email), we immediately delete this from our servers.</p>
-        </section>
-
-        <section>
-            <h2>7. Security</h2>
-            <p>We value your trust in providing us your Personal Information, thus we strive to use commercially acceptable means of protecting it. However, remember that no method of transmission over the internet, or method of electronic storage is 100% secure. Fortunately, because EsyReport does not transmit your personal documents over the internet, your documents are entirely as secure as your Android device's built-in software encryption.</p>
-        </section>
-
-        <section>
-            <h2>8. Changes to This Privacy Policy</h2>
-            <p>We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately after they are posted.</p>
-        </section>
-
-        <div class="highlight-box">
-            <strong>9. Contact Us</strong>
-            <p style="margin-bottom: 8px;">If you have any questions, security concerns, or suggestions regarding our Privacy Policy, please do not hesitate to contact our support team:</p>
-            <a href="mailto:Nehadkkumari2@gmail.com">Nehadkkumari2@gmail.com</a>
+                <footer class="footer-text" id="pp_footer">
+                    By using EsyReport, you acknowledge and agree to this localized privacy approach.
+                </footer>
+            </div>
         </div>
     </div>
-    
-    <div class="footer">
-        &copy; 2026 EsyReport. Designed for Privacy & Professional Field Documentation.
-    </div>
+
+    <script>
+        const translations = {"en": {"man_1_title": "1. Personalized Profile", "man_1_desc": "Go to Settings to enter your Office and Employee Name. These professional details are automatically branded at the top of every generated PDF report.", "man_2_title": "2. Smart Media Capture", "man_2_desc": "Capture high-quality images directly or import selectively from your gallery. Use the GPS toggle to stamp precise, professional coordinates on your reports.", "man_3_title": "3. Quick Documentation", "man_3_desc": "Instantly generate text-only professional PDF reports without images. Perfect for quick site notes and administrative records.", "man_4_title": "4. AI Scan & OCR Gallery", "man_4_desc": "Select the correct reporting language first for accurate results. Translate documents into text using AI. Import images from your gallery for extraction.", "man_5_title": "5. Dual Language Control", "man_5_desc": "You have independent control! You can set the App Menu to your native language while keeping the generated PDF Report Content in English or another language.", "man_6_title": "6. PDF Generation & Privacy", "man_6_desc": "Click 'SHARE' to create your PDF. Upon successful sharing, the app automatically clears your session media to keep your local storage clean and secure!", "man_7_title": "7. Digital Signature (Optional)", "man_7_desc": "Enable the signature toggle in the note editor to sign your report. Draw your signature directly on-screen using any finger or stylus. Not stored for identification.", "pp_title": "Privacy Policy", "pp_last_updated": "Updated: April 25, 2026", "pp_1_title": "1. Data Privacy & Local-First Storage", "pp_1_content": "EsyReport is a localized, privacy-first productivity tool. All documents, photos, signatures, and profile information (Office Name, etc.) are stored strictly on your physical device. We do not transmit, sync, or store your personal media or reports on our servers.", "pp_2_title": "2. Biometric & Signature Data", "pp_2_content": "We do not use or collect any biometric data. EsyReport does not access your fingerprint or face recognition (FaceID). Digital signatures drawn in the app are processed as transient image data for PDF generation only — they are never stored beyond the active session.", "pp_3_title": "3. Third-Party Advertising (AdMob)", "pp_3_content": "To keep this tool free, we use Google AdMob. AdMob may collect certain non-personal identifiers (like Advertising ID) to provide personalized ads and analytics. You can opt out via your device's Google Privacy settings under 'Ads'.", "pp_4_title": "4. Permissions Usage", "pp_4_content": "Camera: Used only when you actively open the camera to capture documents. Storage: Used only to save generated PDF reports. OCR text extraction is processed entirely on-device using ML Kit. No background access.", "pp_5_title": "5. GPS & Location Transparency", "pp_5_content": "Location access is strictly foreground-only and user-initiated. GPS coordinates are stamped on your report ONLY when you explicitly enable the GPS toggle on the Camera screen. No background tracking.", "pp_6_title": "6. Data Deletion Rights", "pp_6_content": "You have total control. Use 'Clear all data' or 'Delete Account' in Settings to permanently wipe all locally stored info. Once deleted, this data is unrecoverable. There is no server-side data to delete.", "pp_7_title": "7. Contact Information", "pp_7_content": "For privacy inquiries or technical support, please reach out to us at: Nehadkkumari2@gmail.com", "pp_footer": "By using EsyReport, you acknowledge and agree to this localized privacy approach."}, "hi": {"man_1_title": "1. व्यक्तिगत प्रोफ़ाइल", "man_1_desc": "सेटिंग्स में अपना कार्यालय और कर्मचारी का नाम दर्ज करें। ये विवरण स्वचालित रूप से आपके द्वारा निर्मित प्रत्येक पीडीएफ रिपोर्ट के शीर्ष पर ब्रांडेड हो जाएंगे।", "man_2_title": "2. स्मार्ट मीडिया कैप्चर", "man_2_desc": "सीधे उच्च-गुणवत्ता वाली तस्वीरें लें या अपनी गैलरी से आयात करें। अपनी रिपोर्ट पर सटीक GPS निर्देशांक जोड़ने के लिए कैमरा स्क्रीन पर GPS टॉगल का उपयोग करें।", "man_3_title": "3. त्वरित दस्तावेज़ीकरण", "man_3_desc": "बिना फोटो के तुरंत केवल-टेक्स्ट वाली पेशेवर पीडीएफ रिपोर्ट बनाएं। त्वरित साइट नोट्स और प्रशासनिक रिकॉर्ड के लिए उपयुक्त।", "man_4_title": "4. एआई स्कैन और ओसीआर गैलरी", "man_4_desc": "सटीक परिणामों के लिए पहले सही रिपोर्टिंग भाषा चुनें। एआई का उपयोग करके दस्तावेजों को टेक्स्ट में बदलें। डेटा निष्कर्षण के लिए अपनी गैलरी से चित्र आयात करें।", "man_5_title": "5. दोहरी भाषा नियंत्रण", "man_5_desc": "आपके पास स्वतंत्र नियंत्रण है! आप पीडीएफ रिपोर्ट सामग्री को अंग्रेजी में रखते हुए ऐप मेनू को अपनी मूल भाषा में सेट कर सकते हैं।", "man_6_title": "6. पीडीएफ निर्माण और गोपनीयता", "man_6_desc": "'शेयर' पर क्लिक करें। सफल साझाकरण पर, ऐप आपके स्थानीय स्टोरेज को सुरक्षित रखने के लिए आपके सत्र मीडिया को स्वचालित रूप से साफ़ कर देता है।", "man_7_title": "7. डिजिटल हस्ताक्षर (वैकल्पिक)", "man_7_desc": "रिपोर्ट पर हस्ताक्षर करने के लिए नोट एडिटर में सिग्नेचर टॉगल सक्षम करें। सीधे स्क्रीन पर हस्ताक्षर करें। ये पहचान के लिए संग्रहीत नहीं किए जाते।", "pp_title": "गोपनीयता नीति", "pp_last_updated": "अद्यतन: 25 अप्रैल, 2026", "pp_1_title": "1. डेटा गोपनीयता और लोकल-फर्स्ट स्टोरेज", "pp_1_content": "EsyReport एक स्थानीय, गोपनीयता-प्रथम टूल है। सभी दस्तावेज़, फोटो, हस्ताक्षर और प्रोफ़ाइल जानकारी आपके भौतिक डिवाइस पर संग्रहीत होते हैं। हम आपका डेटा अपने सर्वर पर स्टोर नहीं करते हैं।", "pp_2_title": "2. बायोमेट्रिक और हस्ताक्षर डेटा", "pp_2_content": "हम किसी भी बायोमेट्रिक डेटा का संग्रह नहीं करते हैं। EsyReport आपके फिंगरप्रिंट या FaceID तक नहीं पहुंचता है। डिजिटल हस्ताक्षर केवल पीडीएफ बनाने के लिए उपयोग किए जाते हैं और सहेजे नहीं जाते।", "pp_3_title": "3. तृतीय-पक्ष विज्ञापन (AdMob)", "pp_3_content": "ऐप को मुफ़्त रखने के लिए, हम Google AdMob का उपयोग करते हैं। AdMob विज्ञापनों के लिए डिवाइस आईडी जैसे गैर-व्यक्तिगत डेटा एकत्र कर सकता है। आप इसे Google सेटिंग्स में प्रबंधित कर सकते हैं।", "pp_4_title": "4. अनुमतियों का उपयोग", "pp_4_content": "कैमरा: केवल दस्तावेज़ कैप्चर करने के लिए। स्टोरेज: पीडीएफ रिपोर्ट सहेजने के लिए। ओसीआर प्रोसेसिंग पूरी तरह से डिवाइस पर होती है। बैकग्राउंड एक्सेस नहीं है।", "pp_5_title": "5. GPS और स्थान पारदर्शिता", "pp_5_content": "स्थान एक्सेस केवल उपयोगकर्ता के अनुरोध पर होता है। GPS निर्देशांक केवल तभी स्टैम्प किए जाते हैं जब आप कैमरा स्क्रीन पर GPS टॉगल सक्षम करते हैं।", "pp_6_title": "6. डेटा हटाने का अधिकार", "pp_6_content": "आपका पूर्ण नियंत्रण है। स्थानीय रूप से सहेजे गए डेटा को स्थायी रूप से मिटाने के लिए 'सभी डेटा साफ़ करें' या 'खाता हटाएं' का उपयोग करें। एक बार हटाए जाने पर इसे वापस नहीं लाया जा सकता।", "pp_7_title": "7. संपर्क जानकारी", "pp_7_content": "गोपनीयता संबंधी पूछताछ के लिए संपर्क करें: Nehadkkumari2@gmail.com", "pp_footer": "EsyReport का उपयोग करके, आप इस स्थानीय गोपनीयता दृष्टिकोण से सहमत होते हैं।"}, "bn": {"man_1_title": "১. ব্যক্তিগত প্রোফাইল", "man_1_desc": "সেটিংসে গিয়ে আপনার অফিস এবং কর্মচারীর নাম লিখুন। এই বিবরণগুলি আপনার প্রতিটি পিডিএফ রিপোর্টের শীর্ষে স্বয়ংক্রিয়ভাবে যুক্ত হবে।", "man_2_title": "২. স্মার্ট মিডিয়া ক্যাপচার", "man_2_desc": "সরাসরি উচ্চ-মানের ছবি তুলুন বা গ্যালারি থেকে আনুন। আপনার রিপোর্টে সঠিক জিপিএস স্থানাঙ্ক যুক্ত করতে ক্যামেরা স্ক্রিনে জিপিএস টগল ব্যবহার করুন।", "man_3_title": "৩. দ্রুত ডকুমেন্টেশন", "man_3_desc": "ছবি ছাড়াই তাৎক্ষণিকভাবে কেবল-টেক্সট পেশাদার পিডিএফ রিপোর্ট তৈরি করুন। কুইক সাইট নোট এবং প্রশাসনিক রেকর্ডের জন্য উপযুক্ত।", "man_4_title": "৪. এআই স্ক্যান এবং ওসিআর গ্যালারি", "man_4_desc": "সঠিক ফলাফলের জন্য প্রথমে সঠিক ভাষা নির্বাচন করুন। এআই ব্যবহার করে নথিকে টেক্সটে রূপান্তর করুন। এক্সট্রাকশনের জন্য আপনার গ্যালারি থেকে ছবি আমদানি করুন।", "man_5_title": "৫. দ্বৈত ভাষা নিয়ন্ত্রণ", "man_5_desc": "আপনার স্বাধীন নিয়ন্ত্রণ আছে! পিডিএফ রিপোর্টের বিষয়বস্তু ইংরেজিতে রেখে আপনি অ্যাপ মেনুটিকে আপনার স্থানীয় ভাষায় সেট করতে পারেন।", "man_6_title": "৬. পিডিএফ তৈরি এবং গোপনীয়তা", "man_6_desc": "'শেয়ার' ক্লিক করুন। সফলভাবে শেয়ার করার পর, অ্যাপটি আপনার স্টোরেজ পরিষ্কার রাখতে সেশন মিডিয়া স্বয়ংক্রিয়ভাবে মুছে ফেলবে।", "man_7_title": "৭. ডিজিটাল স্বাক্ষর (ঐচ্ছিক)", "man_7_desc": "স্বাক্ষর করতে নোট এডিটরে সিগনেচার টগল সক্রিয় করুন। সরাসরি স্ক্রিনে স্বাক্ষর করুন। এটি শনাক্তকরণের জন্য সংরক্ষণ করা হয় না।", "pp_title": "গোপনীয়তা নীতি", "pp_last_updated": "আপডেট: ২৫ এপ্রিল, ২০২৬", "pp_1_title": "১. ডাটা গোপনীয়তা এবং লোকাল-ফার্স্ট স্টোরেজ", "pp_1_content": "EsyReport একটি স্থানীয় এবং গোপনীয়তা-প্রথম টুল। সমস্ত নথি, ফটো, স্বাক্ষর এবং প্রোফাইল তথ্য আপনার ডিভাইসেই সংরক্ষিত হয়। আমরা আমাদের সার্ভারে আপনার ডাটা সংরক্ষণ করি না।", "pp_2_title": "২. বায়োমেট্রিক এবং সিগনেচার ডাটা", "pp_2_content": "আমরা কোনো বায়োমেট্রিক ডাটা সংগ্রহ করি না। EsyReport আপনার ফিঙ্গারপ্রিন্ট বা FaceID ব্যবহার করে না। ডিজিটাল স্বাক্ষর শুধুমাত্র পিডিএফ তৈরির জন্য ব্যবহৃত হয় এবং সেশন শেষে মুছে ফেলা হয়।", "pp_3_title": "৩. তৃতীয় পক্ষের বিজ্ঞাপন (AdMob)", "pp_3_content": "অ্যাপটি বিনামূল্যে রাখার জন্য আমরা Google AdMob ব্যবহার করি। AdMob বিজ্ঞাপনের জন্য কিছু অ-ব্যক্তিগত আইডি সংগ্রহ করতে পারে। আপনি এটি Google সেটিংসে নিয়ন্ত্রণ করতে পারেন।", "pp_4_title": "৪. পারমিশন ব্যবহার", "pp_4_content": "ক্যামেরা: শুধুমাত্র ডকুমেন্ট ক্যাপচারের জন্য। স্টোরেজ: পিডিএফ রিপোর্ট সেভ করার জন্য। ওসিআর প্রসেসিং সম্পূর্ণ ডিভাইসে হয়। ব্যাকগ্রাউন্ড অ্যাক্সেস নেই।", "pp_5_title": "৫. GPS এবং অবস্থান স্বচ্ছতা", "pp_5_content": "অবস্থান অ্যাক্সেস শুধুমাত্র ব্যবহারকারীর অনুরোধে হয়। জিপিএস স্থানাঙ্ক তখনই রিপোর্টে যুক্ত হয় যখন আপনি ক্যামেরা স্ক্রিনে জিপিএস টগল সক্রিয় করেন।", "pp_6_title": "৬. ডাটা মুছে ফেলার অধিকার", "pp_6_content": "আপনার তথ্যের উপর আপনার পূর্ণ নিয়ন্ত্রণ আছে। স্থানীয় ডাটা স্থায়ীভাবে মুছে ফেলতে সেটিংসে 'সমস্ত ডাটা মুছুন' বা 'অ্যাকাউন্ট মুছুন' ব্যবহার করুন।", "pp_7_title": "৭. যোগাযোগের তথ্য", "pp_7_content": "গোপনীয়তা সংক্রান্ত প্রশ্নের জন্য যোগাযোগ করুন: Nehadkkumari2@gmail.com", "pp_footer": "EsyReport ব্যবহার করে, আপনি এই স্থানীয় গোপনীয়তা পদ্ধতিতে সম্মতি দিচ্ছেন।"}, "ta": {"man_1_title": "1. தனிப்பயனாக்கப்பட்ட சுயவிவரம்", "man_1_desc": "அமைப்புகளுக்குச் சென்று உங்கள் அலுவலகம் மற்றும் பணியாளர் பெயரை உள்ளிடவும். இந்த விவரங்கள் ஒவ்வொரு PDF அறிக்கையின் மேலேயும் தானாகவே அச்சிடப்படும்.", "man_2_title": "2. ஸ்மார்ட் மீடியா பிடிப்பு", "man_2_desc": "உயர்தரப் படங்களை நேரடியாக எடுக்கவும் அல்லது கேலரியில் இருந்து இறக்குமதி செய்யவும். அறிக்கையில் துல்லியமான GPS ஒருங்கிணைப்புகளைச் சேர்க்க GPS நிலைமாற்றியைப் பயன்படுத்தவும்.", "man_3_title": "3. விரைவான ஆவணப்படுத்தல்", "man_3_desc": "படங்கள் இல்லாமல் உடனடியாக உரை-மட்டுமே கொண்ட தொழில்முறை PDF அறிக்கைகளை உருவாக்கவும். தளக் குறிப்புகள் மற்றும் நிர்வாகப் பதிவுகளுக்கு ஏற்றது.", "man_4_title": "4. AI ஸ்கேன் மற்றும் OCR கேலரி", "man_4_desc": "துல்லியமான முடிவுகளுக்கு முதலில் சரியான அறிக்கையிடல் மொழியைத் தேர்ந்தெடுக்கவும். AI ஐப் பயன்படுத்தி ஆவணங்களை உரையாக மாற்றவும். கேலரியில் இருந்து படங்களை இறக்குமதி செய்யவும்.", "man_5_title": "5. இரட்டை மொழி கட்டுப்பாடு", "man_5_desc": "உங்களுக்கு முழு கட்டுப்பாடு உள்ளது! PDF அறிக்கையை ஆங்கிலத்தில் வைத்திருக்கும்போதே, ஆப்ஸ் மெனுவை உங்கள் தாய்மொழியில் அமைக்கலாம்.", "man_6_title": "6. PDF உருவாக்கம் மற்றும் தனியுரிமை", "man_6_desc": "'பகிர்' என்பதைக் கிளிக் செய்யவும். பகிர்ந்த பிறகு, சேமிப்பகத்தைச் சுத்தமாக வைத்திருக்க அமர்வு மீடியாவை ஆப்ஸ் தானாகவே அழித்துவிடும்.", "man_7_title": "7. டிஜிட்டல் கையொப்பம் (விருப்பத்தேர்வு)", "man_7_desc": "கையொப்பமிட குறிப்பு எடிட்டரில் கையொப்ப நிலைமாற்றியை இயக்கவும். திரையிலேயே கையொப்பமிடலாம். இது அடையாளத்திற்காகச் சேமிக்கப்படுவதில்லை.", "pp_title": "தனியுரிமைக் கொள்கை", "pp_last_updated": "புதுப்பிக்கப்பட்டது: 25 ஏப்ரல் 2026", "pp_1_title": "1. தரவு தனியுரிமை மற்றும் உள்ளூர் சேமிப்பகம்", "pp_1_content": "EsyReport ஒரு உள்ளூர், தனியுரிமைக்கு முன்னுரிமை அளிக்கும் கருவியாகும். அனைத்து ஆவணங்களும் தகவல்களும் உங்கள் சாதனத்திலேயே சேமிக்கப்படும். நாங்கள் உங்கள் தரவை எங்கள் சர்வர்களில் சேமிப்பதில்லை.", "pp_2_title": "2. பயோமெட்ரிக் மற்றும் கையொப்ப தரவு", "pp_2_content": "நாங்கள் எந்த பயோமெட்ரிக் தரவையும் சேகரிப்பதில்லை. EsyReport உங்கள் கைரேகை அல்லது முக அங்கீகாரத்தைப் பயன்படுத்துவதில்லை. கையொப்பங்கள் PDF உருவாக்கத்திற்கு மட்டுமே பயன்படுத்தப்படுகின்றன.", "pp_3_title": "3. மூன்றாம் தரப்பு விளம்பரம் (AdMob)", "pp_3_content": "இலவசமாக வழங்க Google AdMob-ஐப் பயன்படுத்துகிறோம். இது விளம்பரங்களுக்காக சாதன ஐடி போன்ற தகவல்களைச் சேகரிக்கலாம். இதை Google அமைப்புகளில் மாற்றலாம்.", "pp_4_title": "4. அனுமதிகளின் பயன்பாடு", "pp_4_content": "கேமரா: ஆவணங்களைப் பிடிக்க. சேமிப்பகம்: PDF-களைச் சேமிக்க. OCR செயலாக்கம் சாதனத்திலேயே நடக்கும். பின்புல அணுகல் இல்லை.", "pp_5_title": "5. GPS மற்றும் இருப்பிட வெளிப்படைத்தன்மை", "pp_5_content": "இருப்பிட அணுகல் பயனர் கோரிக்கையின் பேரில் மட்டுமே நடக்கும். கேமரா திரையில் GPS நிலைமாற்றியை இயக்கினால் மட்டுமே GPS முத்திரை இடப்படும்.", "pp_6_title": "6. தரவு நீக்கும் உரிமைகள்", "pp_6_content": "உங்கள் தரவின் மீது உங்களுக்கு முழு கட்டுப்பாடு உள்ளது. அனைத்தையும் அழிக்க அமைப்புகளில் 'அனைத்து தரவையும் அழி' அல்லது 'கணக்கை நீக்கு' என்பதைப் பயன்படுத்தவும்.", "pp_7_title": "7. தொடர்பு தகவல்", "pp_7_content": "தனியுரிமை தொடர்பான கேள்விகளுக்கு: Nehadkkumari2@gmail.com", "pp_footer": "EsyReport-ஐப் பயன்படுத்துவதன் மூலம், இந்த உள்ளூர் தனியுரிமை அணுகுமுறையை ஏற்கிறீர்கள்."}, "te": {"man_1_title": "1. వ్యక్తిగతీకరించిన ప్రొఫైల్", "man_1_desc": "మీ కార్యాలయం మరియు ఉద్యోగి పేరును నమోదు చేయడానికి సెట్టింగ్‌లకు వెళ్లండి. ఈ వివరాలు ప్రతి PDF నివేదిక పైన స్వయంచాలకంగా వస్తాయి.", "man_2_title": "2. స్మార్ట్ మీడియా క్యాప్చర్", "man_2_desc": "నేరుగా ఫోటోలు తీయండి లేదా గ్యాలరీ నుండి దిగుమతి చేసుకోండి. మీ నివేదికలపై ఖచ్చితమైన GPS కోఆర్డినేట్‌లను చేర్చడానికి GPS టోగుల్‌ని ఉపయోగించండి.", "man_3_title": "3. త్వరిత డాక్యుమెంటేషన్", "man_3_desc": "చిత్రాలు లేకుండా తక్షణమే టెక్స్ట్-మాత్రమే ఉన్న ప్రొఫెషనల్ PDF నివేదికలను సృష్టించండి. సైట్ నోట్స్ కోసం ఉత్తమం.", "man_4_title": "4. AI స్కాన్ & OCR గ్యాలరీ", "man_4_desc": "ముందుగా సరైన భాషను ఎంచుకోండి. AI ఉపయోగించి పత్రాలను టెక్స్ట్ గా మార్చండి. సంగ్రహణ కోసం మీ గ్యాలరీ నుండి చిత్రాలను దిగుమతి చేయండి.", "man_5_title": "5. ద్వంద్వ భాషా నియంత్రణ", "man_5_desc": "నివేదికను ఆంగ్లంలో ఉంచుతూనే, యాప్ మెనూని మీ మాతృభాషలో సెట్ చేసుకోవచ్చు. మీకు పూర్తి నియంత్రణ ఉంటుంది.", "man_6_title": "6. PDF జనరేషన్ & గోప్యత", "man_6_desc": "'SHARE' పై క్లిక్ చేయండి. విజయవంతంగా షేర్ చేసిన తర్వాత, స్టోరేజ్ క్లీన్ గా ఉండటానికి యాప్ సెషన్ మీడియాను ఆటోమేటిక్ గా తొలగిస్తుంది.", "man_7_title": "7. డిజిటల్ సంతకం (ఐచ్ఛికం)", "man_7_desc": "సంతకం చేయడానికి నోట్ ఎడిటర్‌లో సంతకం టోగుల్‌ని ప్రారంభించండి. స్క్రీన్‌పై సంతకం చేయండి. ఇది గుర్తింపు కోసం నిల్వ చేయబడదు.", "pp_title": "గోప్యతా విధానం", "pp_last_updated": "నవీకరించబడింది: ఏప్రిల్ 25, 2026", "pp_1_title": "1. డేటా గోప్యత & లోకల్-ఫస్ట్ స్టోరేజ్", "pp_1_content": "EsyReport స్థానిక, గోప్యతకు ప్రాధాన్యతనిచ్చే సాధనం. అన్ని పత్రాలు మరియు సమాచారం మీ పరికరంలోనే నిల్వ చేయబడతాయి. మేము మా సర్వర్‌లలో డేటాను నిల్వ చేయము.", "pp_2_title": "2. బయోమెట్రిక్ & సంతకం డేటా", "pp_2_content": "మేము ఏ బయోమెట్రిక్ డేటాను సేకరించము. EsyReport మీ వేలిముద్ర లేదా FaceID ని యాక్సెస్ చేయదు. సంతకాలు కేవలం PDF జనరేషన్ కోసం మాత్రమే ఉపయోగించబడతాయి.", "pp_3_title": "3. థర్డ్-పార్టీ ప్రకటనలు (AdMob)", "pp_3_content": "యాప్ ఉచితంగా అందించడానికి మేము Google AdMob ని ఉపయోగిస్తాము. ఇది అడ్వర్టైజింగ్ ఐడి వంటి సమాచారాన్ని సేకరించవచ్చు. మీరు దీన్ని గూగుల్ సెట్టింగ్స్‌లో మార్చుకోవచ్చు.", "pp_4_title": "4. అనుమతుల వినియోగం", "pp_4_content": "కెమెరా: పత్రాలను క్యాప్చర్ చేయడానికి. స్టోరేజ్: PDF నివేదికలను సేవ్ చేయడానికి. OCR ప్రాసెసింగ్ పరికరంలోనే జరుగుతుంది. బ్యాక్‌గ్రౌండ్ యాక్సెస్ లేదు.", "pp_5_title": "5. GPS & స్థాన పారదర్శకత", "pp_5_content": "స్థాన యాక్సెస్ వినియోగదారు అభ్యర్థనపై మాత్రమే ఉంటుంది. కెమెరా స్క్రీన్‌పై GPS టోగుల్‌ని ఎనేబుల్ చేసినప్పుడు మాత్రమే GPS స్టాంప్ చేయబడుతుంది.", "pp_6_title": "6. డేటా తొలగింపు హక్కులు", "pp_6_content": "మీ డేటాపై మీకు పూర్తి నియంత్రణ ఉంటుంది. మొత్తం డేటాను తొలగించడానికి సెట్టింగ్‌లలో 'Clear all data' లేదా 'Delete Account' ని ఉపయోగించండి.", "pp_7_title": "7. సంప్రదింపు సమాచారం", "pp_7_content": "గోప్యతకు సంబంధించిన ప్రశ్నల కోసం సంప్రదించండి: Nehadkkumari2@gmail.com", "pp_footer": "EsyReport ని ఉపయోగించడం ద్వారా, మీరు ఈ స్థానిక గోప్యతా విధానాన్ని అంగీకరిస్తున్నారు."}, "mr": {"man_1_title": "1. वैयक्तिक प्रोफाइल", "man_1_desc": "तुमचे कार्यालय आणि कर्मचाऱ्याचे नाव प्रविष्ट करण्यासाठी सेटिंग्जमध्ये जा. हे तपशील आपोआप प्रत्येक पीडीएफ अहवालाच्या शीर्षस्थानी छापले जातील.", "man_2_title": "2. स्मार्ट मीडिया कॅप्चर", "man_2_desc": "थेट फोटो काढा किंवा गॅलरीतून आयात करा. अहवालावर अचूक GPS निर्देशांक जोडण्यासाठी कॅमेरा स्क्रीनवरील GPS टॉगल वापरा.", "man_3_title": "3. जलद दस्तऐवजीकरण", "man_3_desc": "फोटोशिवाय त्वरित केवळ-मजकूर व्यावसायिक पीडीएफ अहवाल तयार करा. साइट नोट्स आणि प्रशासकीय रेकॉर्डसाठी योग्य.", "man_4_title": "4. AI स्कॅन आणि OCR गॅलरी", "man_4_desc": "अचूक निकालांसाठी आधी योग्य भाषा निवडा. AI वापरून कागदपत्रांचे मजकूरात रूपांतर करा. गॅलरीतून चित्रे आयात करा.", "man_5_title": "5. दुहेरी भाषा नियंत्रण", "man_5_desc": "तुमच्याकडे स्वतंत्र नियंत्रण आहे! पीडीएफ अहवाल इंग्रजीमध्ये ठेवून तुम्ही अ‍ॅप मेनू तुमच्या मूळ भाषेत सेट करू शकता.", "man_6_title": "6. पीडीएफ निर्मिती आणि गोपनीयता", "man_6_desc": "'SHARE' वर क्लिक करा. यशस्वी शेअरिंगनंतर, स्टोरेज सुरक्षित ठेवण्यासाठी अ‍ॅप सेंशन मीडिया आपोआप साफ करतो.", "man_7_title": "7. डिजिटल स्वाक्षरी (पर्यायी)", "man_7_desc": "स्वाक्षरी करण्यासाठी नोट एडिटरमध्ये सिग्नेचर टॉगल सक्षम करा. थेट स्क्रीनवर स्वाक्षरी करा. हे ओळखण्यासाठी जतन केले जात नाही.", "pp_title": "गोपनीयता धोरण", "pp_last_updated": "अद्यतनित: 25 एप्रिल, 2026", "pp_1_title": "1. डेटा गोपनीयता आणि लोकल-फर्स्ट स्टोरेज", "pp_1_content": "EsyReport हे स्थानिक, गोपनीयता-प्रथम साधन आहे. सर्व कागदपत्रे आणि माहिती तुमच्या डिव्हाइसवरच स्टोअर केली जाते. आम्ही तुमचा डेटा आमच्या सर्व्हरवर स्टोअर करत नाही.", "pp_2_title": "2. बायोमेट्रिक आणि स्वाक्षरी डेटा", "pp_2_content": "आम्ही कोणताही बायोमेट्रिक डेटा गोळा करत नाही. EsyReport तुमच्या फिंगरप्रिंट किंवा FaceID चा वापर करत नाही. स्वाक्षऱ्या केवळ पीडीएफ तयार करण्यासाठी वापरल्या जातात.", "pp_3_title": "3. तृतीय-पक्ष जाहिरात (AdMob)", "pp_3_content": "अ‍ॅप विनामूल्य ठेवण्यासाठी आम्ही Google AdMob वापरतो. हे जाहिरातींसाठी डिव्हाइस आयडी गोळा करू शकते. तुम्ही हे Google सेटिंग्जमध्ये बदलू शकता.", "pp_4_title": "4. परवानग्यांचा वापर", "pp_4_content": "कॅमेरा: कागदपत्रे कॅप्चर करण्यासाठी. स्टोरेज: पीडीएफ अहवाल जतन करण्यासाठी. OCR प्रक्रिया डिव्हाइसवरच होते. बॅकग्राउंड अ‍ॅक्सेस नाही.", "pp_5_title": "5. GPS आणि स्थान पारदर्शकता", "pp_5_content": "स्थान अ‍ॅक्सेस केवळ वापरकर्त्याच्या विनंतीनुसार असतो. कॅमेरा स्क्रीनवर GPS टॉगल सक्षम केल्यावरच GPS स्टॅम्प केला जातो.", "pp_6_title": "6. डेटा हटविण्याचे अधिकार", "pp_6_content": "तुमच्या डेटावर तुमचे पूर्ण नियंत्रण आहे. सर्व डेटा पुसण्यासाठी सेटिंग्जमध्ये 'Clear all data' किंवा 'Delete Account' वापरा.", "pp_7_title": "7. संपर्क माहिती", "pp_7_content": "गोपनीयतेच्या चौकशीसाठी संपर्क करा: Nehadkkumari2@gmail.com", "pp_footer": "EsyReport वापरून, तुम्ही या स्थानिक गोपनीयता दृष्टिकोनाशी सहमत आहात."}, "gu": {"man_1_title": "1. વ્યક્તિગત પ્રોફાઇલ", "man_1_desc": "સેટિંગ્સમાં તમારી ઓફિસ અને કર્મચારીનું નામ દાખલ કરો. આ વિગતો દરેક PDF રિપોર્ટની ટોચ પર આપમેળે દેખાશે.", "man_2_title": "2. સ્માર્ટ મીડિયા કેપ્ચર", "man_2_desc": "સીધા ફોટા લો અથવા ગેલેરીમાંથી આયાત કરો. રિપોર્ટ પર ચોક્કસ GPS લોકેશન ઉમેરવા માટે કેમેરા સ્ક્રીન પર GPS ટૉગલનો ઉપયોગ કરો.", "man_3_title": "3. ઝડપી દસ્તાવેજીકરણ", "man_3_desc": "ફોટા વિના તરત જ પ્રોફેશનલ ટેક્સ્ટ-ઓનલી PDF રિપોર્ટ બનાવો. સાઇટ નોટ્સ અને રેકોર્ડ્સ માટે શ્રેષ્ઠ.", "man_4_title": "4. AI સ્કેન અને OCR ગેલેરી", "man_4_desc": "ચોક્કસ પરિણામો માટે પહેલા યોગ્ય ભાષા પસંદ કરો. AI નો ઉપયોગ કરીને દસ્તાવેજોને ટેક્સ્ટમાં ફેરવો. ગેલેરીમાંથી ચિત્રો લો.", "man_5_title": "5. દ્વિભાષા નિયંત્રણ", "man_5_desc": "રિપોર્ટ અંગ્રેજીમાં રાખીને તમે એપને તમારી માતૃભાષામાં સેટ કરી શકો છો. તમારી પાસે સ્વતંત્ર નિયંત્રણ છે.", "man_6_title": "6. PDF જનરેશન અને પ્રાઇવસી", "man_6_desc": "'SHARE' પર ક્લિક કરો. સફળ શેરિંગ પછી, એપ સ્ટોરેજ સુરક્ષિત રાખવા માટે સેશન મીડિયાને આપમેળે સાફ કરે છે.", "man_7_title": "7. ડિજિટલ હસ્તાક્ષર (વૈકલ્પિક)", "man_7_desc": "હસ્તાક્ષર કરવા માટે નોટ એડિટરમાં સિગ્નેચર ટૉગલ ચાલુ કરો. સ્ક્રીન પર સીધા હસ્તાક્ષર કરો. આ ઓળખ માટે સંગ્રહિત થતું નથી.", "pp_title": "ગોપનીયતા નીતિ", "pp_last_updated": "અપડેટ: 25 એપ્રિલ, 2026", "pp_1_title": "1. ડેટા ગોપનીયતા અને લોકલ-ફર્સ્ટ સ્ટોરેજ", "pp_1_content": "EsyReport સ્થાનિક, પ્રાઇવસી-ફર્સ્ટ ટૂલ છે. તમામ દસ્તાવેજો અને માહિતી તમારા ઉપકરણ પર જ સંગ્રહિત થાય છે. અમે ડેટા સર્વર પર સ્ટોર કરતા નથી.", "pp_2_title": "2. બાયોમેટ્રિક અને હસ્તાક્ષર ડેટા", "pp_2_content": "અમે કોઈ બાયોમેટ્રિક ડેટા એકત્રિત કરતા નથી. EsyReport ફિંગરપ્રિન્ટ કે FaceID વાપરતું નથી. હસ્તાક્ષર ફક્ત PDF બનાવવા માટે જ વપરાય છે.", "pp_3_title": "3. તૃતીય-પક્ષ જાહેરાત (AdMob)", "pp_3_content": "એપ મફત રાખવા માટે અમે Google AdMob વાપરીએ છીએ. તે જાહેરાતો માટે ડિવાઇસ આઈડી એકત્રિત કરી શકે છે. તમે ગૂગલ સેટિંગ્સમાં આ બદલી શકો છો.", "pp_4_title": "4. પરવાનગીઓનો ઉપયોગ", "pp_4_content": "કેમેરા: દસ્તાવેજો લેવા માટે. સ્ટોરેજ: PDF સેવ કરવા માટે. OCR પ્રોસેસિંગ ઉપકરણ પર જ થાય છે. બેકગ્રાઉન્ડ એક્સેસ નથી.", "pp_5_title": "5. GPS અને સ્થાન પારદર્શિતા", "pp_5_content": "સ્થાન એક્સેસ ફક્ત વપરાશકર્તાની વિનંતી પર છે. કેમેરા સ્ક્રીન પર GPS ટૉગલ ચાલુ હોય ત્યારે જ GPS સ્ટેમ્પ થાય છે.", "pp_6_title": "6. ડેટા કાઢી નાખવાનો અધિકાર", "pp_6_content": "તમારા ડેટા પર તમારું નિયંત્રણ છે. બધો ડેટા ભૂંસવા માટે સેટિંગ્સમાં 'Clear all data' અથવા 'Delete Account' વાપરો.", "pp_7_title": "7. સંપર્ક માહિતી", "pp_7_content": "પ્રાઇવસી સંબંધિત પ્રશ્નો માટે સંપર્ક કરો: Nehadkkumari2@gmail.com", "pp_footer": "EsyReport વાપરીને, તમે આ સ્થાનિક ગોપનીયતા અભિગમ સાથે સંમત થાઓ છો."}, "kn": {"man_1_title": "1. ವೈಯಕ್ತಿಕಗೊಳಿಸಿದ ಪ್ರೊಫೈಲ್", "man_1_desc": "ನಿಮ್ಮ ಕಚೇರಿ ಮತ್ತು ಉದ್ಯೋಗಿ ಹೆಸರನ್ನು ನಮೂದಿಸಲು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಿ. ಈ ವಿವರಗಳು ಪ್ರತಿ PDF ವರದಿಯ ಮೇಲ್ಭಾಗದಲ್ಲಿ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಬರುತ್ತವೆ.", "man_2_title": "2. ಸ್ಮಾರ್ಟ್ ಮೀಡಿಯಾ ಕ್ಯಾಪ್ಚರ್", "man_2_desc": "ನೇರವಾಗಿ ಫೋಟೋಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ ಅಥವಾ ಗ್ಯಾಲರಿಯಿಂದ ಆಮದು ಮಾಡಿ. ವರದಿಗಳಲ್ಲಿ ನಿಖರವಾದ GPS ನಿರ್ದೇಶಾಂಕಗಳನ್ನು ಸೇರಿಸಲು GPS ಟಾಗಲ್ ಬಳಸಿ.", "man_3_title": "3. ತ್ವರಿತ ದಸ್ತಾವೇಜನ್ನು", "man_3_desc": "ಚಿತ್ರಗಳಿಲ್ಲದೆ ತಕ್ಷಣವೇ ವೃತ್ತಿಪರ ಪಠ್ಯ-ಮಾತ್ರ PDF ವರದಿಗಳನ್ನು ರಚಿಸಿ. ಸೈಟ್ ನೋಟ್ಸ್ ಮತ್ತು ದಾಖಲೆಗಳಿಗಾಗಿ ಉತ್ತಮವಾಗಿದೆ.", "man_4_title": "4. AI ಸ್ಕ್ಯಾನ್ ಮತ್ತು OCR ಗ್ಯಾಲರಿ", "man_4_desc": "ನಿಖರವಾದ ಫಲಿತಾಂಶಗಳಿಗಾಗಿ ಮೊದಲು ಸರಿಯಾದ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ. AI ಬಳಸಿ ದಾಖಲೆಗಳನ್ನು ಪಠ್ಯಕ್ಕೆ ಪರಿವರ್ತಿಸಿ. ಗ್ಯಾಲರಿಯಿಂದ ಚಿತ್ರಗಳನ್ನು ಆಮದು ಮಾಡಿ.", "man_5_title": "5. ದ್ವಿಭಾಷಾ ನಿಯಂತ್ರಣ", "man_5_desc": "ವರದಿಯನ್ನು ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ಇರಿಸಿಕೊಂಡು ಆ್ಯಪ್ ಮೆನುವನ್ನು ನಿಮ್ಮ ಮಾತೃಭಾಷೆಯಲ್ಲಿ ಹೊಂದಿಸಬಹುದು. ನೀವು ಸ್ವತಂತ್ರ ನಿಯಂತ್ರಣವನ್ನು ಹೊಂದಿದ್ದೀರಿ.", "man_6_title": "6. PDF ರಚನೆ ಮತ್ತು ಗೌಪ್ಯತೆ", "man_6_desc": "'SHARE' ಕ್ಲಿಕ್ ಮಾಡಿ. ಹಂಚಿಕೆಯ ನಂತರ ಸ್ಟೋರೇಜ್ ಸುರಕ್ಷಿತವಾಗಿರಿಸಲು ಆ್ಯಪ್ ಸೆಶನ್ ಡೇಟಾವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅಳಿಸುತ್ತದೆ.", "man_7_title": "7. ಡಿಜಿಟಲ್ ಸಹಿ (ಐಚ್ಛಿಕ)", "man_7_desc": "ಸಹಿ ಮಾಡಲು ನೋಟ್ ಎಡಿಟರ್‌ನಲ್ಲಿ ಸಿಗ್ನೇಚರ್ ಟಾಗಲ್ ಆನ್ ಮಾಡಿ. ಸ್ಕ್ರೀನ್ ಮೇಲೆ ಸಹಿ ಮಾಡಿ. ಇದನ್ನು ಗುರುತಿಸುವಿಕೆಗಾಗಿ ಸಂಗ್ರಹಿಸಲಾಗುವುದಿಲ್ಲ.", "pp_title": "ಗೌಪ್ಯತಾ ನೀತಿ", "pp_last_updated": "ನವೀಕರಿಸಲಾಗಿದೆ: ಏಪ್ರಿಲ್ 25, 2026", "pp_1_title": "1. ಡೇಟಾ ಗೌಪ್ಯತೆ ಮತ್ತು ಲೋಕಲ್-ಫಸ್ಟ್ ಸಂಗ್ರಹಣೆ", "pp_1_content": "EsyReport ಸ್ಥಳೀಯ, ಗೌಪ್ಯತೆಗೆ ಆದ್ಯತೆ ನೀಡುವ ಸಾಧನವಾಗಿದೆ. ಎಲ್ಲಾ ದಾಖಲೆಗಳು ಮತ್ತು ಮಾಹಿತಿ ನಿಮ್ಮ ಸಾಧನದಲ್ಲೇ ಸಂಗ್ರಹವಾಗುತ್ತವೆ. ನಾವು ಸರ್ವರ್‌ನಲ್ಲಿ ಡೇಟಾ ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ.", "pp_2_title": "2. ಬಯೋಮೆಟ್ರಿಕ್ ಮತ್ತು ಸಹಿ ಡೇಟಾ", "pp_2_content": "ನಾವು ಯಾವುದೇ ಬಯೋಮೆಟ್ರಿಕ್ ಡೇಟಾವನ್ನು ಸಂಗ್ರಹಿಸುವುದಿಲ್ಲ. EsyReport ನಿಮ್ಮ ಫಿಂಗರ್‌ಪ್ರಿಂಟ್ ಅಥವಾ FaceID ಪ್ರವೇಶಿಸುವುದಿಲ್ಲ. ಸಹಿಗಳು ಕೇವಲ PDF ರಚನೆಗಾಗಿ ಮಾತ್ರ.", "pp_3_title": "3. ತೃತೀಯ ಪಕ್ಷದ ಜಾಹೀರಾತು (AdMob)", "pp_3_content": "ಆ್ಯಪ್ ಉಚಿತವಾಗಿಡಲು ನಾವು Google AdMob ಬಳಸುತ್ತೇವೆ. ಇದು ಜಾಹೀರಾತುಗಳಿಗಾಗಿ ಸಾಧನದ ಐಡಿ ಸಂಗ್ರಹಿಸಬಹುದು. ನೀವು ಇದನ್ನು ಗೂಗಲ್ ಸೆಟ್ಟಿಂಗ್ಸ್‌ನಲ್ಲಿ ಬದಲಾಯಿಸಬಹುದು.", "pp_4_title": "4. ಅನುಮತಿಗಳ ಬಳಕೆ", "pp_4_content": "ಕ್ಯಾಮೆರಾ: ದಾಖಲೆಗಳನ್ನು ಸೆರೆಹಿಡಿಯಲು. ಸ್ಟೋರೇಜ್: PDF ಉಳಿಸಲು. OCR ಪ್ರಕ್ರಿಯೆಯು ಸಾಧನದಲ್ಲೇ ನಡೆಯುತ್ತದೆ. ಬ್ಯಾಕ್‌ಗ್ರೌಂಡ್ ಪ್ರವೇಶವಿಲ್ಲ.", "pp_5_title": "5. GPS ಮತ್ತು ಸ್ಥಳ ಪಾರದರ್ಶಕತೆ", "pp_5_content": "ಸ್ಥಳದ ಪ್ರವೇಶವು ಬಳಕೆದಾರರ ವಿನಂತಿಯ ಮೇರೆಗೆ ಮಾತ್ರ. ಕ್ಯಾಮೆರಾ ಸ್ಕ್ರೀನ್ ಮೇಲೆ GPS ಟಾಗಲ್ ಆನ್ ಮಾಡಿದಾಗ ಮಾತ್ರ GPS ಸ್ಟ್ಯಾಂಪ್ ಆಗುತ್ತದೆ.", "pp_6_title": "6. ಡೇಟಾ ಅಳಿಸುವ ಹಕ್ಕುಗಳು", "pp_6_content": "ನಿಮ್ಮ ಡೇಟಾದ ಮೇಲೆ ನಿಮಗೆ ಪೂರ್ಣ ನಿಯಂತ್ರಣವಿದೆ. ಎಲ್ಲವನ್ನೂ ಅಳಿಸಲು ಸೆಟ್ಟಿಂಗ್ಸ್‌ನಲ್ಲಿ 'Clear all data' ಅಥವಾ 'Delete Account' ಬಳಸಿ.", "pp_7_title": "7. ಸಂಪರ್ಕ ಮಾಹಿತಿ", "pp_7_content": "ಗೌಪ್ಯತೆ ವಿಚಾರಣೆಗಾಗಿ ಸಂಪರ್ಕಿಸಿ: Nehadkkumari2@gmail.com", "pp_footer": "EsyReport ಬಳಸುವ ಮೂಲಕ, ನೀವು ಈ ಸ್ಥಳೀಯ ಗೌಪ್ಯತಾ ನೀತಿಯನ್ನು ಒಪ್ಪುತ್ತೀರಿ."}, "ar": {"man_1_title": "1. ملف تعريف شخصي", "man_1_desc": "انتقل إلى الإعدادات لإدخال اسم المكتب والموظف. سيتم عرض هذه التفاصيل الاحترافية تلقائيًا في الجزء العلوي من كل تقرير PDF يتم إنشاؤه.", "man_2_title": "2. التقاط وسائط ذكي", "man_2_desc": "التقط صورًا عالية الجودة مباشرة أو استوردها بشكل انتقائي من معرض الصور الخاص بك. استخدم مفتاح GPS لختم إحداثيات دقيقة واحترافية على تقاريرك.", "man_3_title": "3. توثيق سريع", "man_3_desc": "قم بإنشاء تقارير PDF احترافية نصية فقط على الفور بدون صور. مثالي للملاحظات الميدانية السريعة والسجلات الإدارية.", "man_4_title": "4. مسح ذكي ومعرض OCR", "man_4_desc": "حدد لغة التقرير الصحيحة أولاً للحصول على نتائج دقيقة. قم بتحويل المستندات إلى نصوص باستخدام الذكاء الاصطناعي. استورد الصور من المعرض لاستخراج النصوص.", "man_5_title": "5. تحكم مزدوج في اللغة", "man_5_desc": "لديك تحكم مستقل! يمكنك ضبط قائمة التطبيق على لغتك الأم مع إبقاء محتوى تقرير PDF باللغة الإنجليزية أو لغة أخرى.", "man_6_title": "6. إنشاء PDF والخصوصية", "man_6_desc": "انقر فوق 'مشاركة'. بعد المشاركة بنجاح، يمسح التطبيق تلقائيًا وسائط الجلسة للحفاظ على نظافة وأمان مساحة التخزين المحلية الخاصة بك!", "man_7_title": "7. التوقيع الرقمي (اختياري)", "man_7_desc": "قم بتفعيل مفتاح التوقيع في محرر الملاحظات لتوقيع تقريرك. ارسم توقيعك مباشرة على الشاشة. لا يتم تخزينه لأغراض تحديد الهوية.", "pp_title": "سياسة الخصوصية", "pp_last_updated": "تحديث: 25 أبريل 2026", "pp_1_title": "1. خصوصية البيانات والتخزين المحلي أولاً", "pp_1_content": "EsyReport هو أداة إنتاجية محلية تركز على الخصوصية. يتم تخزين جميع المستندات والصور والتوقيعات ومعلومات الملف الشخصي بشكل صارم على جهازك الفعلي. نحن لا نقوم بتخزين بياناتك على خوادمنا.", "pp_2_title": "2. البيانات الحيوية والتوقيع", "pp_2_content": "نحن لا نجمع أي بيانات حيوية. لا يصل التطبيق إلى بصمة إصبعك أو التعرف على الوجه. تستخدم التوقيعات فقط لإنشاء ملف PDF ولا يتم تخزينها.", "pp_3_title": "3. إعلانات الطرف الثالث (AdMob)", "pp_3_content": "لإبقاء الأداة مجانية، نستخدم Google AdMob. قد يجمع معرفات غير شخصية للإعلانات. يمكنك إدارة ذلك في إعدادات Google بجهازك.", "pp_4_title": "4. استخدام الأذونات", "pp_4_content": "الكاميرا: لالتقاط المستندات. التخزين: لحفظ التقارير. معالجة النصوص تتم بالكامل على الجهاز. لا يوجد وصول في الخلفية.", "pp_5_title": "5. نظام تحديد المواقع وشفافية الموقع", "pp_5_content": "الوصول للموقع بناءً على طلب المستخدم فقط. يتم ختم الإحداثيات فقط عند تفعيل مفتاح GPS في شاشة الكاميرا.", "pp_6_title": "6. حقوق حذف البيانات", "pp_6_content": "لديك سيطرة كاملة. استخدم 'مسح كافة البيانات' أو 'حذف الحساب' لمسح جميع المعلومات المخزنة محلياً بشكل دائم. لا يمكن استعادتها بعد الحذف.", "pp_7_title": "7. معلومات الاتصال", "pp_7_content": "للاستفسارات المتعلقة بالخصوصية: Nehadkkumari2@gmail.com", "pp_footer": "باستخدام EsyReport، فإنك توافق على نهج الخصوصية المحلي هذا."}, "es": {"man_1_title": "1. Perfil Personalizado", "man_1_desc": "Vaya a Ajustes para ingresar su Oficina y Nombre de Empleado. Estos detalles aparecerán automáticamente en la parte superior de cada informe PDF generado.", "man_2_title": "2. Captura de Medios Inteligente", "man_2_desc": "Capture imágenes de alta calidad o impórtelas desde su galería. Use el interruptor de GPS para marcar coordenadas precisas y profesionales en sus informes.", "man_3_title": "3. Documentación Rápida", "man_3_desc": "Genere instantáneamente informes PDF profesionales solo de texto sin imágenes. Ideal para notas de campo rápidas y registros administrativos.", "man_4_title": "4. Escaneo IA y Galería OCR", "man_4_desc": "Seleccione primero el idioma correcto para obtener resultados precisos. Traduzca documentos a texto usando IA. Importe imágenes de su galería para la extracción.", "man_5_title": "5. Control de Idioma Dual", "man_5_desc": "¡Tiene control independiente! Puede configurar el menú de la aplicación en su idioma nativo mientras mantiene el contenido del informe PDF en inglés.", "man_6_title": "6. Generación de PDF y Privacidad", "man_6_desc": "Haga clic en 'COMPARTIR'. Tras compartir con éxito, la aplicación borra automáticamente los archivos de la sesión para mantener su almacenamiento limpio.", "man_7_title": "7. Firma Digital (Opcional)", "man_7_desc": "Active el interruptor de firma en el editor de notas para firmar. Dibuje su firma directamente en pantalla. No se almacena para identificación.", "pp_title": "Política de Privacidad", "pp_last_updated": "Actualizado: 25 de abril de 2026", "pp_1_title": "1. Privacidad de Datos y Almacenamiento Local", "pp_1_content": "EsyReport es una herramienta de productividad local que prioriza la privacidad. Todos los documentos e información se almacenan estrictamente en su dispositivo físico. No almacenamos sus datos en nuestros servidores.", "pp_2_title": "2. Datos Biométricos y Firma", "pp_2_content": "No recopilamos datos biométricos. EsyReport no accede a su huella digital ni reconocimiento facial. Las firmas se procesan solo para el PDF y no se guardan.", "pp_3_title": "3. Publicidad de Terceros (AdMob)", "pp_3_content": "Usamos Google AdMob para mantener la herramienta gratuita. Puede recopilar IDs no personales para anuncios. Puede gestionarlo en los ajustes de Google.", "pp_4_title": "4. Uso de Permisos", "pp_4_content": "Cámara: Para capturar documentos. Almacenamiento: Para guardar informes. El procesamiento OCR es local. No hay acceso en segundo plano.", "pp_5_title": "5. GPS y Transparencia de Ubicación", "pp_5_content": "El acceso a la ubicación es a petición del usuario. Las coordenadas solo se sellan si activa el interruptor de GPS en la pantalla de la cámara.", "pp_6_title": "6. Derechos de Eliminación de Datos", "pp_6_content": "Usted tiene el control total. Use 'Borrar todos los datos' o 'Eliminar cuenta' para borrar permanentemente la información local. No se puede recuperar.", "pp_7_title": "7. Información de Contacto", "pp_7_content": "Para consultas de privacidad: Nehadkkumari2@gmail.com", "pp_footer": "Al usar EsyReport, usted acepta este enfoque de privacidad local."}, "pt": {"man_1_title": "1. Perfil Personalizado", "man_1_desc": "Aceda às Configurações para inserir o nome do Escritório e do Funcionário. Estes detalhes aparecerão automaticamente no topo de cada relatório PDF.", "man_2_title": "2. Captura de Mídia Inteligente", "man_2_desc": "Capture imagens de alta qualidade ou importe da sua galeria. Use o botão GPS para estampar coordenadas precisas e profissionais nos seus relatórios.", "man_3_title": "3. Documentação Rápida", "man_3_desc": "Gere instantaneamente relatórios PDF profissionais apenas de texto. Ideal para notas de campo rápidas e registos administrativos.", "man_4_title": "4. Digitalização IA e Galeria OCR", "man_4_desc": "Selecione primeiro o idioma correto para resultados precisos. Converta documentos em texto usando IA. Importe imagens da sua galeria para extração.", "man_5_title": "5. Controlo Duplo de Idioma", "man_5_desc": "Tem controlo independente! Pode definir o menu da app para o seu idioma nativo enquanto mantém o conteúdo do relatório PDF em inglês.", "man_6_title": "6. Geração de PDF e Privacidade", "man_6_desc": "Clique em 'COMPARTILHAR'. Após a partilha bem-sucedida, a app limpa automaticamente os ficheiros da sessão para manter o seu armazenamento limpo.", "man_7_title": "7. Assinatura Digital (Opcional)", "man_7_desc": "Ative o botão de assinatura no editor de notas para assinar. Desenhe a sua assinatura diretamente no ecrã. Não é guardada para identificação.", "pp_title": "Política de Privacidade", "pp_last_updated": "Atualizado: 25 de abril de 2026", "pp_1_title": "1. Privacidade de Dados e Armazenamento Local", "pp_1_content": "O EsyReport é uma ferramenta de produtividade local que prioriza a privacidade. Todos os documentos e informações são armazenados estritamente no seu dispositivo físico. Não guardamos os seus dados nos nossos servidores.", "pp_2_title": "2. Dados Biométricos e Assinatura", "pp_2_content": "Não recolhemos dados biométricos. O EsyReport não acede à sua impressão digital ou reconhecimento facial. As assinaturas são processadas apenas para o PDF.", "pp_3_title": "3. Publicidade de Terceiros (AdMob)", "pp_3_content": "Usamos o Google AdMob para manter a ferramenta gratuita. Pode recolher IDs não pessoais para anúncios. Pode gerir isto nas definições da Google.", "pp_4_title": "4. Uso de Permissões", "pp_4_content": "Câmara: Para capturar documentos. Armazenamento: Para guardar relatórios. O processamento OCR é local. Sem acesso em segundo plano.", "pp_5_title": "5. GPS e Transparência de Localização", "pp_5_content": "O acesso à localização é feito a pedido do utilizador. As coordenadas só são estampadas se ativar o botão GPS no ecrã da câmara.", "pp_6_title": "6. Direitos de Eliminação de Dados", "pp_6_content": "Tem controlo total. Use 'Apagar todos os dados' ou 'Eliminar conta' para apagar permanentemente a informação local. Não pode ser recuperada.", "pp_7_title": "7. Informações de Contacto", "pp_7_content": "Para questões de privacidade: Nehadkkumari2@gmail.com", "pp_footer": "Ao usar o EsyReport, aceita esta abordagem de privacidade local."}, "fr": {"man_1_title": "1. Profil Personnalisé", "man_1_desc": "Allez dans les Paramètres pour saisir le nom de votre Bureau et de l'Employé. Ces détails apparaîtront automatiquement en haut de chaque rapport PDF.", "man_2_title": "2. Capture Média Intelligente", "man_2_desc": "Capturez des images de haute qualité ou importez-les depuis votre galerie. Utilisez le bouton GPS pour marquer des coordonnées précises sur vos rapports.", "man_3_title": "3. Documentation Rapide", "man_3_desc": "Générez instantanément des rapports PDF professionnels uniquement textuels. Idéal pour les notes de terrain rapides et les dossiers administratifs.", "man_4_title": "4. Scan IA et Galerie OCR", "man_4_desc": "Sélectionnez d'abord la bonne langue pour des résultats précis. Traduisez des documents en texte via l'IA. Importez des images pour l'extraction.", "man_5_title": "5. Contrôle Bilingue", "man_5_desc": "Vous avez le contrôle ! Vous pouvez régler le menu de l'app sur votre langue maternelle tout en gardant le rapport PDF en anglais.", "man_6_title": "6. Création de PDF et Confidentialité", "man_6_desc": "Cliquez sur 'PARTAGER'. Après un partage réussi, l'app efface automatiquement les médias de la session pour garder votre stockage propre.", "man_7_title": "7. Signature Numérique (Optionnel)", "man_7_desc": "Activez le bouton de signature dans l'éditeur de notes pour signer. Dessinez votre signature sur l'écran. Elle n'est pas stockée pour identification.", "pp_title": "Politique de Confidentialité", "pp_last_updated": "Mis à jour : 25 avril 2026", "pp_1_title": "1. Confidentialité des Données et Stockage Local", "pp_1_content": "EsyReport est un outil de productivité local privilégiant la confidentialité. Tous les documents sont stockés strictement sur votre appareil. Nous ne stockons pas vos données sur nos serveurs.", "pp_2_title": "2. Données Biométriques et Signature", "pp_2_content": "Nous ne collectons aucune donnée biométrique. EsyReport n'accède pas à votre empreinte digitale ou FaceID. Les signatures sont traitées uniquement pour le PDF.", "pp_3_title": "3. Publicité Tierce (AdMob)", "pp_3_content": "Nous utilisons Google AdMob pour garder l'outil gratuit. Il peut collecter des IDs non personnels pour les pubs. Gérez cela dans les réglages Google.", "pp_4_title": "4. Utilisation des Autorisations", "pp_4_content": "Appareil photo : Pour capturer les docs. Stockage : Pour enregistrer les rapports. Le traitement OCR est local. Pas d'accès en arrière-plan.", "pp_5_title": "5. GPS et Transparence de Localisation", "pp_5_content": "L'accès à la localisation se fait à la demande de l'utilisateur. Les coordonnées ne sont marquées que si vous activez le bouton GPS sur la caméra.", "pp_6_title": "6. Droits de Suppression des Données", "pp_6_content": "Vous avez le contrôle total. Utilisez 'Effacer toutes les données' pour supprimer définitivement les infos locales. C'est irrécupérable.", "pp_7_title": "7. Coordonnées", "pp_7_content": "Pour toute question sur la confidentialité : Nehadkkumari2@gmail.com", "pp_footer": "En utilisant EsyReport, vous acceptez cette approche locale de la confidentialité."}, "de": {"man_1_title": "1. Personalisiertes Profil", "man_1_desc": "Gehen Sie zu den Einstellungen, um Ihren Büro- und Mitarbeiternamen einzugeben. Diese Details werden automatisch oben auf jedem PDF angezeigt.", "man_2_title": "2. Intelligente Medienerfassung", "man_2_desc": "Nehmen Sie hochwertige Bilder auf oder importieren Sie diese aus Ihrer Galerie. Nutzen Sie den GPS-Schalter für präzise Koordinaten auf Ihren Berichten.", "man_3_title": "3. Schnelldokumentation", "man_3_desc": "Erstellen Sie sofort professionelle Nur-Text-PDF-Berichte ohne Bilder. Ideal für schnelle Notizen und administrative Aufzeichnungen.", "man_4_title": "4. KI-Scan & OCR-Galerie", "man_4_desc": "Wählen Sie zuerst die richtige Sprache für genaue Ergebnisse. Übersetzen Sie Dokumente per KI in Text. Importieren Sie Bilder zur Extraktion.", "man_5_title": "5. Duale Sprachsteuerung", "man_5_desc": "Sie haben die Kontrolle! Sie können das App-Menü auf Ihre Muttersprache einstellen, während der PDF-Bericht auf Englisch bleibt.", "man_6_title": "6. PDF-Erstellung und Datenschutz", "man_6_desc": "Klicken Sie auf 'TEILEN'. Nach dem Teilen löscht die App automatisch die Sitzungsmedien, um Ihren Speicherplatz sauber zu halten.", "man_7_title": "7. Digitale Unterschrift (Optional)", "man_7_desc": "Aktivieren Sie den Signatur-Schalter im Editor zum Unterschreiben. Zeichnen Sie direkt auf dem Bildschirm. Wird nicht zur Identifizierung gespeichert.", "pp_title": "Datenschutzrichtlinie", "pp_last_updated": "Aktualisiert: 25. April 2026", "pp_1_title": "1. Datenschutz & lokaler Speicher", "pp_1_content": "EsyReport ist ein lokales, datenschutzorientiertes Tool. Alle Dokumente und Informationen werden ausschließlich auf Ihrem Gerät gespeichert. Wir speichern keine Daten auf unseren Servern.", "pp_2_title": "2. Biometrische & Signaturdaten", "pp_2_content": "Wir sammeln keine biometrischen Daten. EsyReport greift nicht auf Fingerabdruck oder FaceID zu. Unterschriften werden nur für das PDF verarbeitet.", "pp_3_title": "3. Werbung durch Dritte (AdMob)", "pp_3_content": "Wir nutzen Google AdMob, um das Tool kostenlos zu halten. Es kann nicht-persönliche IDs für Werbung sammeln. Dies können Sie in den Google-Einstellungen verwalten.", "pp_4_title": "4. Berechtigungsnutzung", "pp_4_content": "Kamera: Zum Erfassen von Dokumenten. Speicher: Zum Speichern von Berichten. Die OCR-Verarbeitung erfolgt lokal. Kein Hintergrundzugriff.", "pp_5_title": "5. GPS & Standorttransparenz", "pp_5_content": "Standortzugriff erfolgt nur auf Benutzeranfrage. Koordinaten werden nur gestempelt, wenn Sie den GPS-Schalter in der Kamera aktivieren.", "pp_6_title": "6. Rechte auf Datenlöschung", "pp_6_content": "Sie haben die volle Kontrolle. Nutzen Sie 'Alle Daten löschen', um lokale Informationen dauerhaft zu entfernen. Dies kann nicht rückgängig gemacht werden.", "pp_7_title": "7. Kontaktinformationen", "pp_7_content": "Bei Fragen zum Datenschutz: Nehadkkumari2@gmail.com", "pp_footer": "Durch die Nutzung von EsyReport stimmen Sie diesem lokalen Datenschutzansatz zu."}};
+
+        function switchLang(lang) {
+            const data = translations[lang];
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            
+            document.getElementById('pp_title').innerText = data.pp_title;
+            document.getElementById('pp_last_updated').innerText = data.pp_last_updated;
+            document.getElementById('pp_footer').innerText = data.pp_footer;
+
+            let html = '';
+            for (let i = 1; i <= 7; i++) {
+                html += `
+                    <section>
+                        <h2>${data['pp_' + i + '_title']}</h2>
+                        <p>${data['pp_' + i + '_content']}</p>
+                    </section>
+                `;
+            }
+            document.getElementById('policyContent').innerHTML = html;
+        }
+
+        // Initialize with English
+        switchLang('en');
+    </script>
 </body>
 </html>
