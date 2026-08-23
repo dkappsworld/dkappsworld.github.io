@@ -1,5 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Esy Vault: Private Data Safe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #07090E;
+            --surface-card: rgba(18, 24, 38, 0.75);
+            --surface-hover: rgba(26, 34, 52, 0.85);
+            --primary: #3B82F6;
+            --primary-glow: rgba(59, 130, 246, 0.35);
+            --accent: #60A5FA;
+            --text-main: #F8FAFC;
+            --text-sub: #94A3B8;
+            --text-muted: #64748B;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-highlight: rgba(59, 130, 246, 0.3);
+            --success: #10B981;
+            --success-glow: rgba(16, 185, 129, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 0;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 15% 70%, rgba(99, 102, 241, 0.08) 0%, transparent 40%);
+            background-attachment: fixed;
+        }
+
+        .top-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #3B82F6, #06B6D4, #6366F1, #3B82F6);
+            background-size: 300% 100%;
+            animation: gradientMove 6s ease infinite;
+            z-index: 100;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px 80px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-box {
+            width: 76px;
+            height: 76px;
+            background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+            border: 1px solid var(--border-highlight);
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            box-shadow: 0 12px 30px -8px var(--primary-glow);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            padding: 6px 18px;
+            border-radius: 9999px;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+
+        .title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            background: linear-gradient(180deg, #FFFFFF 0%, #CBD5E1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: var(--text-sub);
+            font-size: 1.05rem;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .pillar-card {
+            background: var(--surface-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 22px 18px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-highlight);
+            background: var(--surface-hover);
+        }
+
+        .pillar-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .pillar-card h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .pillar-card p {
+            font-size: 0.82rem;
+            color: var(--text-sub);
+            line-height: 1.4;
+        }
+
+        .section {
+            background: var(--surface-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 24px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .section-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .section h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .section p {
+            color: var(--text-sub);
+            font-size: 0.98rem;
+            margin-bottom: 14px;
+            line-height: 1.7;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 16px 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .check-badge {
+            width: 22px;
+            height: 22px;
+            border-radius: 6px;
+            background: var(--success-glow);
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-text strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .feature-text {
+            color: var(--text-sub);
+            font-size: 0.94rem;
+            line-height: 1.5;
+        }
+
+        .tech-pill {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            background: rgba(59, 130, 246, 0.12);
+            color: #93C5FD;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin: 0 2px;
+        }
+
+        .dev-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(6, 182, 212, 0.04) 100%);
+            border: 1px solid var(--border-highlight);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .dev-info h5 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .dev-info p, .dev-info a {
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .dev-info a {
+            color: var(--accent);
+        }
+
+        .dev-info a:hover {
+            color: #93C5FD;
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        .footer-tag {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+            .dev-card {
+                grid-template-columns: 1fr;
+            }
+            .title {
+                font-size: 2.1rem;
+            }
+            .section {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-glow"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-box">🛡️</div>
+            <br>
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Official Security & Privacy Disclosure
+            </div>
+            <h1 class="title">Esy Vault: Private Data Safe</h1>
+            <p class="subtitle">Effective Date: August 23, 2026 · Release v1.0.0</p>
+        </header>
+
+        <!-- 3 Pillars of Security -->
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <span class="pillar-icon">🚫</span>
+                <h4>100% Offline</h4>
+                <p>Zero internet access permission. Data never leaves your device.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-icon">🔐</span>
+                <h4>Hardware AES-256</h4>
+                <p>Military-grade AES-GCM via AndroidKeyStore security chip.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-icon">👁️</span>
+                <h4>Zero Tracking</h4>
+                <p>No ads, no analytics, no logs, and no external servers.</p>
+            </div>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">📜</div>
+                <h2>1. Executive Summary & Philosophy</h2>
+            </div>
+            <p><strong>Esy Vault</strong> was built with a single founding principle: <em>Your personal data is solely yours.</em> We operate under a strict <strong>Zero-Knowledge Architecture</strong>.</p>
+            <p>Unlike conventional cloud apps, Esy Vault does not maintain user databases, servers, or cloud sync backends. Everything you store—passwords, notes, photos, documents, and videos—remains encrypted exclusively on your physical device hardware.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🛡️</div>
+                <h2>2. Zero Data Collection & No Internet Usage</h2>
+            </div>
+            <p>We do <strong>NOT</strong> collect, store, sell, or analyze your private information:</p>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="check-badge">✓</div>
+                    <div class="feature-text"><strong>No Account Required:</strong> You can use all vault features without registering an email, username, or phone number.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="check-badge">✓</div>
+                    <div class="feature-text"><strong>No Remote Telemetry:</strong> No analytics SDKs (such as Firebase, Mixpanel, or Google Analytics) are included.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="check-badge">✓</div>
+                    <div class="feature-text"><strong>No Internet Permission:</strong> The app does not request Android's <span class="tech-pill">android.permission.INTERNET</span>, ensuring hardware-level offline security.</div>
+                </div>
             </div>
         </section>
+
+        <!-- Section 3 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🔑</div>
+                <h2>3. Cryptography & Encryption Standards</h2>
+            </div>
+            <p>All sensitive information is safeguarded with state-of-the-art cryptographic standards:</p>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="check-badge">✓</div>
+                    <div class="feature-text"><strong>AES-256 GCM Encryption:</strong> Sensitive notes, credentials, and media files are encrypted with 256-bit AES authenticated with GCM tags using keys stored in the hardware-backed <span class="tech-pill">AndroidKeyStore</span>.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="check-badge">✓</div>
+                    <div class="feature-text"><strong>Salted SHA-256 PIN Hashing:</strong> Your Master PIN and Decoy PIN are never stored in plaintext. We only store one-way cryptographic hashes locally on your device.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="check-badge">✓</div>
+                    <div class="feature-text"><strong>PBKDF2 Password-Derived Backups:</strong> Exported backups are encapsulated in an encrypted archive using PBKDF2 with <span class="tech-pill">100,000 Iterations</span>.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">📱</div>
+                <h2>4. Permissions & Transparent Usage</h2>
+            </div>
+            <p>The app requests the following device permissions only for user-initiated vault actions:</p>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="check-badge">✓</div>
+                    <div class="feature-text"><strong>BIOMETRIC / FINGERPRINT:</strong> Used on-device via Android's native <span class="tech-pill">BiometricPrompt</span> for rapid and secure biometric unlocking.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="check-badge">✓</div>
+                    <div class="feature-text"><strong>CAMERA:</strong> Used only when taking photos/videos directly into the vault, or silently capturing front-camera photos upon 3 consecutive incorrect PIN entries (Intruder Selfie).</div>
+                </div>
+                <div class="feature-item">
+                    <div class="check-badge">✓</div>
+                    <div class="feature-text"><strong>READ & WRITE STORAGE:</strong> Used exclusively when importing files into the vault or exporting encrypted backup archives.</div>
+                </div>
+                <div class="feature-item">
+                    <div class="check-badge">✓</div>
+                    <div class="feature-text"><strong>RECORD AUDIO:</strong> Used only when creating encrypted voice notes directly within the vault.</div>
+                </div>
+            </div>
+        </section>
+
         <!-- Section 5 -->
         <section class="section">
             <div class="section-header">
@@ -9,6 +475,7 @@
             <p>You maintain 100% control over the lifecycle of your data:</p>
             <p>You may export backups, recover items from the Recycle Bin, or perform a permanent <strong>"Delete All Data"</strong> wipe from Settings. A factory reset cryptographically shreds all files, keys, and relational database records permanently.</p>
         </section>
+
         <!-- Section 6 -->
         <section class="section">
             <div class="section-header">
@@ -36,10 +503,12 @@
                 </div>
             </div>
         </section>
+
         <!-- Footer -->
         <footer class="footer">
-            <p>&copy; 2026 <span class="footer-tag">Esy Vault: Private Data Safe</span>. Developed by <strong>Deepak</strong>. All rights reserved.</p>
+            <p>&copy; 2026 <span class="footer-tag">Esy Vault: Private Data Safe</span>. Developed by <strong>DkJi</strong>. All rights reserved.</p>
         </footer>
     </div>
 </body>
 </html>
+
