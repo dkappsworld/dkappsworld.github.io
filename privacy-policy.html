@@ -3,63 +3,646 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - SalaryDhan</title>
+    <title>Privacy Policy · SalaryDhan</title>
+    <meta name="description" content="Privacy Policy for SalaryDhan — local-first salary budgeting app with optional Google AdMob banner ads.">
     <style>
+        :root {
+            --bg: #0b1220;
+            --bg-soft: #111827;
+            --surface: #f8fafc;
+            --card: #ffffff;
+            --ink: #0f172a;
+            --muted: #64748b;
+            --line: #e2e8f0;
+            --primary: #7c3aed;
+            --primary-soft: #ede9fe;
+            --ok: #059669;
+            --warn: #b45309;
+            --danger: #be123c;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
+            font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+            background:
+                radial-gradient(1200px 500px at 10% -10%, rgba(124, 58, 237, 0.18), transparent 55%),
+                radial-gradient(900px 400px at 100% 0%, rgba(14, 165, 233, 0.12), transparent 50%),
+                var(--surface);
+            color: var(--ink);
+            line-height: 1.7;
+        }
+
+        .hero {
+            background: linear-gradient(160deg, #0f172a 0%, #1e1b4b 55%, #312e81 100%);
+            color: #fff;
+            padding: 56px 20px 48px;
+            text-align: center;
+        }
+
+        .hero .brand {
+            font-size: 0.85rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #c4b5fd;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            letter-spacing: -0.03em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            max-width: 640px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f9fafb;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 1.05rem;
         }
-        h1, h2, h3 { color: #1e293b; }
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+        .lang-bar {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            padding: 12px 16px;
+            background: rgba(248, 250, 252, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
         }
-        .date { color: #64748b; font-size: 0.9em; margin-bottom: 30px; }
-        p, ul { margin-bottom: 20px; }
-        li { margin-bottom: 8px; }
-        footer { margin-top: 40px; font-size: 0.8em; color: #94a3b8; text-align: center; }
+
+        .lang-bar button {
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--muted);
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+        }
+
+        .lang-bar button.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        .wrap {
+            max-width: 880px;
+            margin: 28px auto 64px;
+            padding: 0 16px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: clamp(24px, 4vw, 48px);
+            box-shadow: 0 18px 50px rgba(15, 23, 42, 0.06);
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary-soft);
+            color: #5b21b6;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .chip.neutral {
+            background: #f1f5f9;
+            color: #334155;
+        }
+
+        h2 {
+            font-size: 1.35rem;
+            margin: 36px 0 12px;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            border-bottom: 1px solid var(--line);
+            padding-bottom: 10px;
+        }
+
+        h2:first-of-type { margin-top: 8px; }
+
+        h3 {
+            font-size: 1.05rem;
+            margin: 20px 0 8px;
+            color: #1e293b;
+        }
+
+        p, li { color: #475569; font-size: 1rem; margin-bottom: 12px; }
+
+        ul, ol { padding-left: 1.2rem; margin-bottom: 16px; }
+
+        a { color: var(--primary); font-weight: 600; }
+
+        .callout {
+            border-radius: 16px;
+            padding: 16px 18px;
+            margin: 18px 0 22px;
+            border: 1px solid var(--line);
+            background: #f8fafc;
+        }
+
+        .callout.ok {
+            background: #ecfdf5;
+            border-color: #a7f3d0;
+        }
+
+        .callout.warn {
+            background: #fffbeb;
+            border-color: #fde68a;
+        }
+
+        .callout strong { color: var(--ink); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 8px;
+            overflow: hidden;
+            border-radius: 14px;
+            border: 1px solid var(--line);
+            font-size: 0.92rem;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px 14px;
+            border-top: 1px solid var(--line);
+            vertical-align: top;
+        }
+
+        th {
+            background: #f1f5f9;
+            color: #0f172a;
+            font-weight: 700;
+            border-top: none;
+        }
+
+        .yes { color: var(--warn); font-weight: 700; }
+        .no { color: var(--ok); font-weight: 700; }
+
+        .delete-box {
+            margin-top: 28px;
+            padding: 22px;
+            border-radius: 18px;
+            background: #fff1f2;
+            border: 1px solid #fecdd3;
+        }
+
+        .delete-box h3 { color: var(--danger); margin-top: 0; }
+
+        footer {
+            text-align: center;
+            padding: 40px 16px 56px;
+            color: rgba(255, 255, 255, 0.65);
+            background: var(--bg);
+        }
+
+        footer .logo {
+            display: block;
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .hidden { display: none !important; }
+
+        @media (max-width: 640px) {
+            table { display: block; overflow-x: auto; }
+            th, td { white-space: nowrap; }
+            th:last-child, td:last-child { white-space: normal; min-width: 160px; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <div class="date"><strong>Effective Date:</strong> March 29, 2026</div>
+<header class="hero">
+    <div class="brand">SalaryDhan</div>
+    <h1 id="hero-title">Privacy Policy</h1>
+    <p id="hero-sub">How SalaryDhan handles your data on your device, and what Google AdMob may collect for ads.</p>
+</header>
 
-        <p>Welcome to <strong>SalaryDhan</strong>. Your privacy is critically important to us. This Privacy Policy outlines how your personal information is collected, used, and safeguarded when you use our mobile application.</p>
+<nav class="lang-bar" id="lang-bar" aria-label="Language"></nav>
 
-        <h2>1. Data Collection and Local Storage</h2>
-        <p><strong>We do not collect, transmit, or store your personal or financial data on external servers.</strong></p>
-        <p>SalaryDhan operates entirely offline. All data you input—including your gross salary, deductions, spending categories, profile photo, and job title—is saved exclusively on your device using encrypted Android Local Storage and SharedPreferences. Only you have access to this information.</p>
+<main class="wrap">
+    <article class="card" id="policy-en">
+        <div class="meta">
+            <span class="chip">Effective: 26 September 2026</span>
+            <span class="chip neutral">App version 1.1.6+</span>
+            <span class="chip neutral">Package: com.salarydhan.app</span>
+        </div>
 
-        <h2>2. Use of Device Permissions</h2>
+        <p>
+            This Privacy Policy explains how the <strong>SalaryDhan</strong> Android app
+            (“<strong>App</strong>”, “<strong>we</strong>”, “<strong>us</strong>”) handles information.
+            SalaryDhan is a <strong>local-first</strong> salary budgeting tool: your financial entries stay on your phone.
+            The App may show a <strong>Google AdMob banner ad</strong>, which uses Google’s advertising technologies.
+        </p>
+
+        <div class="callout ok">
+            <strong>Short version:</strong>
+            Your salary, expenses, categories, and profile text/photo are stored on your device only.
+            We do not operate a SalaryDhan cloud account for your budget data.
+            Ads are served by Google AdMob and may use advertising identifiers and related device data under Google’s policies.
+        </div>
+
+        <h2>1. Who we are</h2>
+        <p>
+            SalaryDhan is published on Google Play as <strong>com.salarydhan.app</strong>.
+            The App helps you plan net salary, budget categories, track paid/unpaid items, view reports,
+            export/import backups, optionally lock the app with device biometrics, and set payday reminders.
+        </p>
+
+        <h2>2. Data we store on your device (not uploaded by SalaryDhan)</h2>
+        <p>The following is saved locally (for example in WebView local storage / app preferences) and is <strong>not uploaded to a SalaryDhan server</strong>:</p>
         <ul>
-            <li><strong>Biometric Authentication:</strong> If enabled, the app uses your device's native fingerprint or face scanner to lock your financial records. We do not have access to, nor do we store, your biometric data. It is securely managed by the Android Operating System.</li>
-            <li><strong>Notifications:</strong> The app requires permission to send local notifications to remind you of your Payday/Salary Credit Day. These alerts are scheduled locally and do not interact with the cloud.</li>
-            <li><strong>Storage Access:</strong> When exporting backups or downloading CSV reports, the app saves files directly to your device's local Downloads folder.</li>
+            <li><strong>Financial records</strong> — gross/net salary, deductions, budget categories, expense items, paid/unpaid status, month history.</li>
+            <li><strong>Profile details you enter</strong> — display name, job title, company, salary credit day, optional profile photo.</li>
+            <li><strong>Preferences</strong> — language, currency, light/dark mode, dashboard lock state, onboarding/tour status.</li>
+            <li><strong>App lock preference</strong> — whether biometric/device-credential lock is enabled (a boolean flag only).</li>
+            <li><strong>Manual backups</strong> — JSON/CSV files you export; they are written to your chosen storage (for example Downloads) only when you export.</li>
+        </ul>
+        <p>
+            Android backup of app data is disabled (<code>allowBackup=false</code>) to reduce the chance that financial data is copied to cloud device backup.
+        </p>
+
+        <h2>3. Advertising (Google AdMob)</h2>
+        <div class="callout warn">
+            <strong>Important:</strong>
+            SalaryDhan shows a <strong>banner advertisement</strong> using the
+            <strong>Google Mobile Ads SDK (AdMob)</strong>.
+            Your <em>financial budget records</em> are not sold to advertisers.
+            AdMob may still collect and process certain <em>device and usage data</em> to show and measure ads.
+        </div>
+        <p>According to Google’s AdMob data disclosure for the Mobile Ads SDK, the SDK may automatically collect and share data such as:</p>
+        <ul>
+            <li><strong>IP address</strong> (may be used to estimate approximate location)</li>
+            <li><strong>App interactions</strong> related to ads and app usage (for example launches / taps relevant to ads)</li>
+            <li><strong>Diagnostics</strong> (SDK/app performance signals)</li>
+            <li><strong>Device / advertising identifiers</strong> — including Android Advertising ID and, where applicable, App Set ID or other account-related identifiers</li>
+        </ul>
+        <p>
+            Purposes typically include advertising, analytics, and fraud prevention.
+            Data transmitted by Google’s SDK is encrypted in transit (TLS).
+            Learn more in Google’s documentation:
+            <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure" rel="noopener noreferrer" target="_blank">Play data disclosure for Google Mobile Ads</a>
+            and Google’s
+            <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Privacy Policy</a>.
+        </p>
+        <p>
+            You can reset or delete your Advertising ID in Android settings
+            (<em>Settings → Google → Ads</em> / privacy controls, depending on your device).
+            Users in the EEA, UK, and Switzerland may see additional consent choices where required by Google’s EU User Consent Policy and applicable law.
+        </p>
+
+        <h2>4. Permissions the App may use</h2>
+        <ul>
+            <li><strong>Internet / network state</strong> — required to load AdMob ads.</li>
+            <li><strong>Notifications</strong> — optional payday reminders (requested at runtime on Android 13+).</li>
+            <li><strong>Biometric / fingerprint</strong> — optional app unlock; biometric templates stay in the Android system secure hardware and are not read or stored by SalaryDhan.</li>
+            <li><strong>Vibrate</strong> — light haptic feedback for some actions.</li>
+            <li><strong>File access via system pickers / MediaStore</strong> — only when you import a backup, choose a photo, or export a file; SalaryDhan does not need broad photo-library permission for normal use.</li>
         </ul>
 
-        <h2>3. Third-Party Services (Google AdMob)</h2>
-        <p>To keep SalaryDhan free, we use <strong>Google AdMob</strong> as an advertising provider. AdMob may collect certain non-personally identifiable information, such as your Advertising ID, device type, and app usage data to serve relevant advertisements.</p>
-        <p>For more information on how Google uses this data, please refer to <a href="https://policies.google.com/technologies/ads" target="_blank">Google's Privacy & Terms</a>.</p>
+        <h2>5. Biometrics</h2>
+        <p>
+            If you enable Biometric App Lock, SalaryDhan asks Android to authenticate you (fingerprint, face, or device credential).
+            We never receive your biometric image or template — only a success/failure result from the system.
+        </p>
 
-        <h2>4. Data Deletion</h2>
-        <p>Because your data is exclusively on your device, you have full control over it. You can permanently erase all financial records, profile information, and preferences at any time by using the <strong>"Clear All Data"</strong> button in the Settings menu or by uninstalling the application.</p>
+        <h2>6. Notifications</h2>
+        <p>
+            If you set a salary credit day and grant notification permission, the App schedules a local reminder (via Android WorkManager).
+            Reminder content may include your display name stored on the device.
+            These reminders are local scheduling; they are not marketing push messages from a SalaryDhan server.
+        </p>
 
-        <h2>5. Changes to This Privacy Policy</h2>
-        <p>We may update this Privacy Policy periodically. Any changes will be published on this page with an updated "Effective Date." We strongly encourage you to review this policy whenever updates are released.</p>
+        <h2>7. Children’s privacy</h2>
+        <p>
+            SalaryDhan is intended for adults managing personal income and budgets.
+            It is not directed to children under 13 (or the minimum age required in your country).
+            We do not knowingly collect children’s personal information for SalaryDhan accounts (the App has no SalaryDhan user accounts).
+        </p>
 
-        <h2>6. Contact Us</h2>
-        <p>If you have any questions or concerns regarding this Privacy Policy, please reach out to our support team at <a href="mailto:nehadkkumari2@gmail.com">nehadkkumari2@gmail.com</a>.</p>
-    </div>
-    <footer>
-        &copy; 2026 SalaryDhan. All rights reserved.
-    </footer>
+        <h2>8. Data safety summary (aligned with Play Console)</h2>
+        <p>Use this table as a guide when reviewing the Play Store Data safety section. Always keep Console answers consistent with this policy.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data type</th>
+                    <th>Collected by SalaryDhan servers?</th>
+                    <th>Collected / shared via AdMob?</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Financial info (salary, expenses)</td>
+                    <td class="no">No</td>
+                    <td class="no">No</td>
+                    <td>Stored only on device</td>
+                </tr>
+                <tr>
+                    <td>Name / profile fields you type</td>
+                    <td class="no">No</td>
+                    <td class="no">No</td>
+                    <td>On-device only; may appear in local payday notification</td>
+                </tr>
+                <tr>
+                    <td>Photos (optional avatar)</td>
+                    <td class="no">No</td>
+                    <td class="no">No</td>
+                    <td>Stored locally if you add one</td>
+                </tr>
+                <tr>
+                    <td>Advertising ID / device identifiers</td>
+                    <td class="no">No</td>
+                    <td class="yes">Yes</td>
+                    <td>Via Google Mobile Ads SDK</td>
+                </tr>
+                <tr>
+                    <td>Approx. location (from IP)</td>
+                    <td class="no">No</td>
+                    <td class="yes">Yes</td>
+                    <td>Via AdMob / Google ads infra</td>
+                </tr>
+                <tr>
+                    <td>App interactions / diagnostics</td>
+                    <td class="no">No</td>
+                    <td class="yes">Yes</td>
+                    <td>Ads analytics, performance, fraud prevention</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>9. Data retention</h2>
+        <p>
+            Local app data remains until you clear it, uninstall the App, or wipe the device.
+            Exported backup files remain wherever you saved them until you delete those files yourself.
+            Ad-related data retained by Google is governed by Google’s policies.
+        </p>
+
+        <h2>10. Your choices &amp; deletion</h2>
+        <div class="delete-box">
+            <h3>Delete data on this device</h3>
+            <p>
+                Open SalaryDhan → <strong>Settings → Clear All Data</strong>.
+                This permanently deletes local financial records and preferences from the App.
+                There is <strong>no SalaryDhan cloud account</strong> to delete on our servers.
+            </p>
+            <p>
+                Uninstalling the App also removes on-device App data (except files you previously exported outside the App).
+            </p>
+        </div>
+        <ul>
+            <li>Turn off biometric lock in Settings.</li>
+            <li>Revoke notification permission in Android settings.</li>
+            <li>Reset Advertising ID / limit ad tracking in Android settings.</li>
+            <li>Use export/import only when you choose to move a backup file yourself.</li>
+        </ul>
+
+        <h2>11. Security</h2>
+        <p>
+            We design the App to keep sensitive budget data on-device, disable Android auto-backup for App data,
+            and offer optional biometric lock. No method of electronic storage is 100% secure.
+            Protect your device with a screen lock and treat exported backups as sensitive files.
+        </p>
+
+        <h2>12. Third-party services</h2>
+        <ul>
+            <li><strong>Google AdMob / Google Mobile Ads SDK</strong> — advertising</li>
+            <li><strong>Google Play services</strong> — as required by ads and device features</li>
+            <li><strong>Android system biometrics &amp; notifications</strong> — optional features you enable</li>
+        </ul>
+        <p>Those services are governed by their own terms and privacy policies.</p>
+
+        <h2>13. International users</h2>
+        <p>
+            The App may be available in multiple regions via Google Play.
+            If you use the App outside India, local privacy laws may also apply.
+            Ad serving and consent requirements may differ by region (especially EEA/UK/Switzerland).
+        </p>
+
+        <h2>14. Changes to this policy</h2>
+        <p>
+            We may update this Privacy Policy when the App’s features or legal requirements change.
+            The “Effective” date at the top will be revised. Continued use of the App after an update means you acknowledge the revised policy.
+        </p>
+
+        <h2>15. Contact</h2>
+        <p>
+            For privacy questions about SalaryDhan, contact the developer through the
+            <strong>Google Play Store listing</strong> for SalaryDhan (developer contact email shown on the store page)
+            or the support channel listed there.
+        </p>
+        <p style="margin-top: 24px; font-size: 0.92rem; color: var(--muted);">
+            English is the controlling language of this Privacy Policy. Other translations are provided for convenience.
+        </p>
+    </article>
+
+    <article class="card hidden" id="policy-hi">
+        <div class="meta">
+            <span class="chip">प्रभावी: 26 सितंबर 2026</span>
+            <span class="chip neutral">ऐप संस्करण 1.1.6+</span>
+            <span class="chip neutral">Package: com.salarydhan.app</span>
+        </div>
+
+        <p>
+            यह गोपनीयता नीति बताती है कि <strong>SalaryDhan</strong> Android ऐप आपकी जानकारी कैसे संभालता है।
+            SalaryDhan एक <strong>लोकल-फर्स्ट</strong> सैलरी बजट ऐप है — आपके वित्तीय रिकॉर्ड आपके फ़ोन पर रहते हैं।
+            ऐप में <strong>Google AdMob बैनर विज्ञापन</strong> दिख सकता है।
+        </p>
+
+        <div class="callout ok">
+            <strong>संक्षेप में:</strong>
+            वेतन, खर्च, कैटेगरी और प्रोफ़ाइल डेटा डिवाइस पर ही रहता है।
+            SalaryDhan आपका बजट डेटा किसी हमारे क्लाउड अकाउंट पर नहीं भेजता।
+            विज्ञापन Google AdMob द्वारा दिखाए जाते हैं और Advertising ID जैसी डिवाइस जानकारी उपयोग कर सकते हैं।
+        </div>
+
+        <h2>1. हम कौन हैं</h2>
+        <p>
+            SalaryDhan Google Play पर <strong>com.salarydhan.app</strong> के रूप में उपलब्ध है।
+            ऐप नेट सैलरी प्लानिंग, बजट कैटेगरी, पेड/अनपेड ट्रैकिंग, रिपोर्ट्स, बैकअप एक्सपोर्ट/इम्पोर्ट,
+            वैकल्पिक बायोमेट्रिक लॉक और पेडे रिमाइंडर जैसी सुविधाएँ देता है।
+        </p>
+
+        <h2>2. डिवाइस पर संग्रहीत डेटा (SalaryDhan सर्वर पर अपलोड नहीं)</h2>
+        <ul>
+            <li><strong>वित्तीय रिकॉर्ड</strong> — सैलरी, कटौती, बजट, खर्च, महीना इतिहास</li>
+            <li><strong>प्रोफ़ाइल</strong> — नाम, जॉब, कंपनी, सैलरी डे, वैकल्पिक फोटो</li>
+            <li><strong>प्राथमिकताएँ</strong> — भाषा, मुद्रा, थीम, लॉक स्टेट</li>
+            <li><strong>बायोमेट्रिक लॉक फ्लैग</strong> — केवल ऑन/ऑफ सेटिंग</li>
+            <li><strong>मैन्युअल बैकअप फाइलें</strong> — जब आप एक्सपोर्ट करते हैं</li>
+        </ul>
+        <p>Android auto-backup ऐप डेटा के लिए बंद है (<code>allowBackup=false</code>)।</p>
+
+        <h2>3. विज्ञापन (Google AdMob)</h2>
+        <div class="callout warn">
+            <strong>ज़रूरी:</strong>
+            SalaryDhan <strong>Google Mobile Ads SDK (AdMob)</strong> से बैनर ऐड दिखाता है।
+            आपके बजट रिकॉर्ड विज्ञापनदाताओं को नहीं बेचे जाते, लेकिन AdMob विज्ञापन दिखाने/मापने के लिए
+            Advertising ID, IP (अनुमानित स्थान), ऐप इंटरैक्शन और डायग्नोस्टिक्स जैसी जानकारी एकत्र/शेयर कर सकता है।
+        </div>
+        <p>
+            विवरण:
+            <a href="https://developers.google.com/admob/android/privacy/play-data-disclosure" target="_blank" rel="noopener noreferrer">AdMob Play data disclosure</a>,
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>।
+        </p>
+
+        <h2>4. अनुमतियाँ</h2>
+        <ul>
+            <li>इंटरनेट — विज्ञापन लोड करने के लिए</li>
+            <li>नोटिफिकेशन — वैकल्पिक पेडे रिमाइंडर</li>
+            <li>बायोमेट्रिक — वैकल्पिक ऐप अनलॉक (टेम्प्लेट Android सिस्टम में रहते हैं)</li>
+            <li>वाइब्रेट — हल्की हैप्टिक फीडबैक</li>
+            <li>फ़ाइल/फोटो पिकर — केवल जब आप बैकअप या फोटो चुनते/सेव करते हैं</li>
+        </ul>
+
+        <h2>5. डेटा सुरक्षा सारांश</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>प्रकार</th>
+                    <th>SalaryDhan सर्वर?</th>
+                    <th>AdMob के माध्यम से?</th>
+                    <th>नोट</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>वित्तीय जानकारी</td>
+                    <td class="no">नहीं</td>
+                    <td class="no">नहीं</td>
+                    <td>केवल डिवाइस</td>
+                </tr>
+                <tr>
+                    <td>नाम/प्रोफ़ाइल</td>
+                    <td class="no">नहीं</td>
+                    <td class="no">नहीं</td>
+                    <td>केवल डिवाइस</td>
+                </tr>
+                <tr>
+                    <td>Advertising ID / डिवाइस ID</td>
+                    <td class="no">नहीं</td>
+                    <td class="yes">हाँ</td>
+                    <td>Google Ads SDK</td>
+                </tr>
+                <tr>
+                    <td>अनुमानित स्थान (IP)</td>
+                    <td class="no">नहीं</td>
+                    <td class="yes">हाँ</td>
+                    <td>AdMob</td>
+                </tr>
+                <tr>
+                    <td>ऐप इंटरैक्शन / डायग्नोस्टिक्स</td>
+                    <td class="no">नहीं</td>
+                    <td class="yes">हाँ</td>
+                    <td>विज्ञापन / धोखाधड़ी रोकथाम</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>6. डेटा हटाना</h2>
+        <div class="delete-box">
+            <h3>इस डिवाइस से डेटा हटाएँ</h3>
+            <p>
+                SalaryDhan → <strong>Settings → Clear All Data</strong>।
+                इससे ऐप का लोकल डेटा स्थायी रूप से हट जाता है।
+                SalaryDhan का कोई क्लाउड अकाउंट नहीं है जिसे सर्वर पर अलग से डिलीट करना हो।
+            </p>
+        </div>
+
+        <h2>7. संपर्क</h2>
+        <p>
+            गोपनीयता संबंधी प्रश्न के लिए Google Play पर SalaryDhan लिस्टिंग में दिए गए डेवलपर संपर्क का उपयोग करें।
+        </p>
+        <p style="margin-top: 24px; font-size: 0.92rem; color: var(--muted);">
+            कानूनी रूप से अंग्रेज़ी संस्करण मान्य (controlling) है। हिंदी सुविधा के लिए है।
+        </p>
+    </article>
+</main>
+
+<footer>
+    <span class="logo">SalaryDhan</span>
+    <p>Local-first budgeting · Transparent ads disclosure · Play Store ready</p>
+    <p style="margin-top: 8px; font-size: 0.85rem;">© 2026 SalaryDhan · Privacy Policy</p>
+</footer>
+
+<script>
+(function () {
+    const langs = [
+        { id: 'en', label: 'English', el: 'policy-en' },
+        { id: 'hi', label: 'हिंदी', el: 'policy-hi' }
+    ];
+
+    const bar = document.getElementById('lang-bar');
+    const heroTitle = document.getElementById('hero-title');
+    const heroSub = document.getElementById('hero-sub');
+
+    const heroCopy = {
+        en: {
+            title: 'Privacy Policy',
+            sub: 'How SalaryDhan handles your data on your device, and what Google AdMob may collect for ads.'
+        },
+        hi: {
+            title: 'गोपनीयता नीति',
+            sub: 'SalaryDhan आपके डिवाइस पर डेटा कैसे रखता है, और विज्ञापनों के लिए AdMob क्या एकत्र कर सकता है।'
+        }
+    };
+
+    function show(id) {
+        langs.forEach(l => {
+            document.getElementById(l.el).classList.toggle('hidden', l.id !== id);
+        });
+        bar.querySelectorAll('button').forEach(b => {
+            b.classList.toggle('active', b.dataset.lang === id);
+        });
+        const copy = heroCopy[id] || heroCopy.en;
+        heroTitle.textContent = copy.title;
+        heroSub.textContent = copy.sub;
+        document.documentElement.lang = id;
+        try { localStorage.setItem('sd_privacy_lang', id); } catch (e) {}
+    }
+
+    langs.forEach(l => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = l.label;
+        btn.dataset.lang = l.id;
+        btn.addEventListener('click', () => show(l.id));
+        bar.appendChild(btn);
+    });
+
+    let start = 'en';
+    try {
+        const saved = localStorage.getItem('sd_privacy_lang');
+        if (saved === 'hi' || saved === 'en') start = saved;
+        else if ((navigator.language || '').toLowerCase().startsWith('hi')) start = 'hi';
+    } catch (e) {}
+    show(start);
+})();
+</script>
 </body>
 </html>
