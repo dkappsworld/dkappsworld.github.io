@@ -3,125 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - EsyReport</title>
+    <meta name="description" content="Privacy Policy for EsyReport — a local-first Android PDF report app.">
+    <title>Privacy Policy — EsyReport</title>
     <style>
+        :root {
+            --ink: #1a1c1e;
+            --muted: #5f6368;
+            --bg: #f0f3f7;
+            --card: #ffffff;
+            --accent: #1565c0;
+            --accent-soft: #e3f2fd;
+            --line: #e8eaed;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        h1 {
-            color: #1a73e8;
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-        }
-        .last-updated {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 15px;
-        }
-        h2 {
-            color: #202124;
-            font-size: 1.4rem;
-            margin-top: 30px;
-            border-left: 4px solid #1a73e8;
-            padding-left: 10px;
-        }
-        p, li {
-            font-size: 1.05rem;
-            color: #4a4a4a;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .highlight-box {
-            background-color: #e8f0fe;
-            border: 1px solid #d2e3fc;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        .highlight-box p {
             margin: 0;
-            color: #1967d2;
+            font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.65;
+            color: var(--ink);
+            background:
+                radial-gradient(ellipse 80% 50% at 10% -10%, #d6e8ff 0%, transparent 55%),
+                radial-gradient(ellipse 60% 40% at 100% 0%, #e8f5e9 0%, transparent 45%),
+                var(--bg);
+            padding: 32px 16px 48px;
+        }
+
+        .wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 16px;
+            border: 1px solid var(--line);
+            box-shadow: 0 8px 28px rgba(26, 28, 30, 0.06);
+            padding: 40px 36px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: -0.02em;
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .callout {
+            background: var(--accent-soft);
+            border: 1px solid #bbdefb;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin: 0 0 28px;
+            color: #0d47a1;
             font-weight: 500;
         }
-        .footer {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #777;
-            border-top: 1px solid #eaeaea;
-            padding-top: 20px;
+
+        h2 {
+            margin: 28px 0 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--ink);
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
         }
+
+        p { margin: 0 0 12px; color: #3c4043; }
+
+        ul {
+            margin: 0 0 12px;
+            padding-left: 1.25rem;
+            color: #3c4043;
+        }
+
+        li { margin-bottom: 8px; }
+
+        strong { color: var(--ink); }
+
         a {
-            color: #1a73e8;
+            color: var(--accent);
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
+
+        a:hover { text-decoration: underline; }
+
+        .footer {
+            margin-top: 36px;
+            padding-top: 18px;
+            border-top: 1px solid var(--line);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 560px) {
+            .wrap { padding: 28px 20px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <main class="wrap">
         <h1>Privacy Policy</h1>
-        <div class="last-updated">Last Updated: July 12, 2026</div>
+        <p class="meta">EsyReport · Last updated: September 30, 2026</p>
 
-        <div class="highlight-box">
-            <p><strong>Privacy-First Commitment:</strong> EsyReport is a localized, privacy-first productivity tool. All reports, PDFs, photos, digital signatures, and profile inputs are processed and stored strictly on your local device. We do not transmit or store your personal media or reports on our servers.</p>
+        <div class="callout">
+            EsyReport is a local-first productivity app. Your reports, photos, drafts, signatures, and PDFs stay on your device. We do not operate a server that stores or syncs your report content.
         </div>
 
-        <h2>1. Data Storage & Privacy</h2>
-        <p>EsyReport operates on a local-first architecture. Any details you enter (such as Office Name, Employee Name, or Report Notes), signatures you draw, or photos you capture are saved in the app's secure internal database and directory structure on your physical device. We do not maintain any cloud databases or external servers to back up or sync your reports.</p>
-
-        <h2>2. Location & GPS Data Transparency</h2>
-        <p>EsyReport requires location permissions to stamp precise GPS coordinates (Latitude, Longitude, Address, and Accuracy) directly onto your generated field reports.
-        <ul>
-            <li><strong>Foreground Access Only:</strong> Location is requested only while you are actively using the camera module. We do not collect or monitor your location in the background.</li>
-            <li><strong>Smart Fallback:</strong> If GPS signal is weak, you may opt to use your last known cached location.</li>
-            <li><strong>Zero Server Transmission:</strong> Stamped location data remains entirely inside your generated PDF/photo files on your device and is never sent to us or any third parties.</li>
-        </ul>
+        <h2>1. Data Privacy &amp; Local-First Storage</h2>
+        <p>
+            EsyReport is a privacy-first Android app for creating field and office PDF reports.
+            Documents, photos, signatures, drafts, and exported reports in your history library are stored
+            in the app’s private storage on your physical device.
+        </p>
+        <p>
+            We do not transmit or back up your reports to our own servers.
+            On-device OCR (Google ML Kit / Tesseract) and translation process text locally on your device.
+            Optional one-time downloads may fetch language model files only (not your documents)
+            from Google ML Kit or the public Tesseract tessdata repository.
         </p>
 
-        <h2>3. Offline OCR & Document Scanning</h2>
-        <p>All Document Scanning and OCR (optical character recognition) text extractions are processed locally on your device using on-device machine learning models (Google ML Kit and Tesseract). Your scanned documents and extracted text are never uploaded to any remote servers for OCR processing.</p>
+        <h2>2. Biometric &amp; Signature Data</h2>
+        <p>
+            We do not use or collect biometric data. EsyReport does not access your fingerprint or face recognition (Face ID).
+            Digital signatures you draw in the app are image data used for PDF generation and draft continuity on your device.
+            They are not used for identity verification and are not uploaded to us.
+        </p>
 
-        <h2>4. Digital Signature Processing</h2>
-        <p>Digital signatures drawn inside the app are processed temporarily to render the signature image onto the generated PDF report. Signatures are not uploaded, nor are they stored or used for biometric identification. You can add or clear your signature at any time.</p>
+        <h2>3. Third-Party Advertising (Google AdMob)</h2>
+        <p>
+            To keep EsyReport free, we use Google AdMob. AdMob may collect certain non-personal identifiers
+            (such as Advertising ID) to provide ads and related analytics, subject to
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s Privacy Policy</a>.
+        </p>
+        <p>
+            Where required by law (for example GDPR / CCPA regions), we show a consent form (UMP)
+            before personalized ads are requested. You can manage ad personalization in your device’s
+            Google settings under Ads, and review privacy options from EsyReport Settings where available.
+        </p>
 
-        <h2>5. Advertising & Analytics (Google AdMob)</h2>
-        <p>To keep EsyReport free for all users, we integrate Google AdMob. Google AdMob may collect and process device-specific data, such as your Advertising ID, to serve personalized or non-personalized advertisements. This data collection is managed by Google Services and is subject to <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
-
-        <h2>6. Permissions Requested</h2>
+        <h2>4. Permissions Usage</h2>
         <ul>
-            <li><strong>CAMERA:</strong> Required to capture report photos and scan documents.</li>
-            <li><strong>ACCESS_FINE_LOCATION & ACCESS_COARSE_LOCATION:</strong> Required for stamping location data on reports.</li>
-            <li><strong>INTERNET & ACCESS_NETWORK_STATE:</strong> Required by Google AdMob to load advertisements.</li>
+            <li><strong>Camera</strong> — Used only when you actively open the camera to capture documents or report photos.</li>
+            <li><strong>Location (fine / coarse)</strong> — Used only while the camera is open, with your permission, to optionally stamp GPS metadata (coordinates, address, accuracy) on photos/reports. No background location access.</li>
+            <li><strong>Gallery / photos</strong> — Selected through the system Photo Picker (or document scanner intents). The app does not request broad storage or media-library access.</li>
+            <li><strong>Internet / network state</strong> — Used for ads, consent messaging, and optional one-time OCR/translation model downloads.</li>
+            <li><strong>Advertising ID (AD_ID)</strong> — Declared for AdMob when targeting modern Android versions.</li>
         </ul>
+        <p>
+            PDF reports and drafts remain in the app’s private storage and are shared only when you use the system share sheet
+            (via Android FileProvider). OCR runs entirely on-device. There is no background access for camera or location.
+        </p>
 
-        <h2>7. Data Deletion Rights</h2>
-        <p>Since all data is stored locally, you have total control. You can permanently erase all files, drafts, settings, and generated reports by selecting "Clear all data" or "Delete Account" in the app's Settings menu, or by clearing the app data in your Android system Settings. Once cleared, this data is unrecoverable.</p>
+        <h2>5. GPS &amp; Location Transparency</h2>
+        <p>
+            Location access is foreground-only and user-initiated. GPS coordinates are stamped on your report only when enabled.
+            If live GPS is weak, you may choose to use your last known cached location.
+            Stamped location data stays inside your local photos/PDFs and is not sent to EsyReport servers
+            (we do not operate such servers for your reports).
+        </p>
 
-        <h2>8. Contact Us</h2>
-        <p>If you have any questions or feedback regarding this Privacy Policy, please contact us at:<br>
-        <strong>Email:</strong> <a href="mailto:Nehadkkumari2@gmail.com">Nehadkkumari2@gmail.com</a></p>
+        <h2>6. Data Deletion Rights</h2>
+        <p>
+            You control your data. Use <strong>Clear all data</strong> or <strong>Delete Account</strong> in EsyReport Settings
+            to permanently wipe locally stored app data (media, drafts, reports, related files).
+            You can also clear app data from Android system Settings.
+            Once deleted, this data cannot be recovered. There is no server-side copy of your reports for us to delete.
+        </p>
+
+        <h2>7. Children’s Privacy</h2>
+        <p>
+            EsyReport is a general productivity tool and is not directed at children under 13
+            (or the equivalent minimum age in your country). We do not knowingly collect personal information from children.
+        </p>
+
+        <h2>8. Changes to This Policy</h2>
+        <p>
+            We may update this Privacy Policy when the app’s features or legal requirements change.
+            The “Last updated” date at the top will be revised accordingly. Continued use of the app after an update
+            means you acknowledge the revised policy.
+        </p>
+
+        <h2>9. Contact Information</h2>
+        <p>
+            For privacy inquiries or technical support, contact:<br>
+            <strong>Email:</strong>
+            <a href="mailto:Nehadkkumari2@gmail.com">Nehadkkumari2@gmail.com</a>
+        </p>
+
+        <p style="margin-top: 24px; color: var(--muted); font-size: 0.95rem;">
+            By using EsyReport, you acknowledge and agree to this localized, device-first privacy approach.
+        </p>
 
         <div class="footer">
-            &copy; 2026 EsyReport. All rights reserved.
+            © 2026 EsyReport. All rights reserved.
         </div>
-    </div>
+    </main>
 </body>
 </html>
