@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Loan Mukti</title>
+    <meta name="description" content="Privacy Policy for Loan Mukti, an EMI calculator and loan tracker. Loan records stay on the phone. Google AdMob may use an advertising ID to show ads. It is not a lender and not a government scheme.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Light Theme (Default) */
+            --bg-primary: #f8fafc;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-light: #eff6ff;
+            --accent: #059669;
+            --accent-light: #ecfdf5;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+            --shadow-lg: 0 12px 24px -4px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.04);
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 24px;
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --bg-primary: #0b0f19;
+            --bg-secondary: #151d2a;
+            --bg-tertiary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6;
+            --primary-hover: #60a5fa;
+            --primary-light: #1e3a8a;
+            --accent: #10b981;
+            --accent-light: #064e3b;
+            --border-color: #334155;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.3);
+            --shadow-lg: 0 12px 24px -4px rgba(0,0,0,0.4), 0 4px 6px -2px rgba(0,0,0,0.3);
+            --glass-bg: rgba(21, 29, 42, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.65;
+            transition: var(--transition);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.025em;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Glassmorphism Header */
+        header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .header-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0.9rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background: linear-gradient(135deg, #2563eb, #059669);
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 1.35rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+        }
+
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--text-primary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .action-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 0.5rem 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--text-secondary);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .action-btn:hover {
+            background-color: var(--bg-tertiary);
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .theme-toggle-btn {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .theme-toggle-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .sun-icon { display: block; }
+        .moon-icon { display: none; }
+
+        [data-theme="dark"] .sun-icon { display: none; }
+        [data-theme="dark"] .moon-icon { display: block; }
+
+        /* Security Banner Bar */
+        .security-banner {
+            background: linear-gradient(90deg, #1e293b, #0f172a);
+            color: #ffffff;
+            padding: 0.65rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .security-badge {
+            background: #059669;
+            color: #ffffff;
+            padding: 0.15rem 0.55rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* Main Section layout */
+        main {
+            flex: 1;
+            max-width: 1150px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 290px 1fr;
+            gap: 2.5rem;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 0.65rem 0.9rem 0.65rem 2.2rem;
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            color: var(--text-muted);
+            pointer-events: none;
+        }
+
+        .nav-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
+            font-weight: 700;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 0.55rem 0.8rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
+        /* Feature Grid (4 Pillars) */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.75rem 0;
+        }
+
+        .feature-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-card p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        /* Content Container */
+        .content-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .policy-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .policy-header h1 {
+            font-size: 2.4rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.15;
+        }
+
+        .meta-info {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        /* Highlights/Alert Boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(5, 150, 105, 0.08) 100%);
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius-sm);
+            padding: 1.4rem;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .highlight-box svg {
+            width: 26px;
+            height: 26px;
+            flex-shrink: 0;
+            color: var(--primary);
+        }
+
+        .highlight-box p {
+            font-weight: 500;
+            font-size: 0.94rem;
+            color: var(--text-primary);
+            line-height: 1.55;
+        }
+
+        /* Policy Sections */
+        .policy-section {
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 100px;
+        }
+
+        .policy-section h2 {
+            font-size: 1.45rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .policy-section h2::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-color);
+            margin-left: 0.75rem;
+        }
+
+        .policy-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.94rem;
+        }
+
+        .policy-section ul {
+            list-style: none;
+            margin-left: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .policy-section li {
+            position: relative;
+            padding-left: 1.75rem;
+            color: var(--text-secondary);
+            font-size: 0.94rem;
+        }
+
+        .policy-section li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        /* Verification Table */
+        .policy-table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+        }
+
+        .policy-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.88rem;
+        }
+
+        .policy-table th {
+            background-color: var(--bg-tertiary);
+            padding: 0.75rem 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .policy-table td {
+            padding: 0.75rem 1rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .policy-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.2rem 0.55rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .status-badge.secure {
+            background-color: var(--accent-light);
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: auto;
+            transition: var(--transition);
+        }
+
+        footer p {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Print and Responsive Styles */
+        @media (max-width: 900px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .content-card {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-container {
+                padding: 0.8rem 1rem;
+            }
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            .content-card {
+                padding: 1.5rem;
+            }
+            .policy-header h1 {
+                font-size: 1.8rem;
+            }
+            .meta-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+        }
+
+        @media print {
+            header, .sidebar, footer, .security-banner, .action-btn {
+                display: none !important;
+            }
+            body {
+                background-color: #ffffff;
+                color: #000000;
+            }
+            .content-card {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            main {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-wrapper">
+    <div class="security-banner">
+        <span>🛡️ PRIVACY GUARANTEE:</span>
+        <span class="security-badge">Loans stay on this phone</span>
+        <span>No loan upload • Ads by Google • Not a lender</span>
+    </div>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo-group">
+                <div class="logo-icon">🪷</div>
+                <span class="logo-text">Loan Mukti</span>
+            </a>
+            <div class="header-actions">
+                <button class="action-btn" onclick="window.print();">
+                    🖨️ Print PDF
+                </button>
+                <button class="action-btn theme-toggle-btn" id="themeToggle" aria-label="Toggle light/dark mode">
+                    <!-- Sun SVG icon -->
+                    <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Moon SVG icon -->
+                    <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <div class="search-box">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search policy..." onkeyup="filterSections()">
+            </div>
+
+            <div class="nav-card">
+                <div class="nav-title">Table of Contents</div>
+                <ul class="nav-list">
+                    <li><a href="#overview" class="nav-link active">1. App Overview</a></li>
+                    <li><a href="#data-collection" class="nav-link">2. Data Collection</a></li>
+                    <li><a href="#storage-security" class="nav-link">3. Storage & Security</a></li>
+                    <li><a href="#financial-disclosure" class="nav-link">4. Financial Services Policy</a></li>
+                    <li><a href="#third-party" class="nav-link">5. Third-Party Services</a></li>
+                    <li><a href="#children-privacy" class="nav-link">6. Children's Privacy</a></li>
+                    <li><a href="#changes" class="nav-link">7. Policy Changes</a></li>
+                    <li><a href="#contact" class="nav-link">8. Contact Us</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="content-card">
+            <div class="policy-header">
+                <h1>Privacy Policy</h1>
+                <div class="meta-info">
+                    <span class="meta-item">
+                        <strong>Application:</strong> Loan Mukti
+                    </span>
+                    <span class="meta-item">
+                        <strong>Effective Date:</strong> June 2026
+                    </span>
+                    <span class="meta-item">
+                        <strong>Compliance:</strong> Google Play Financial Guidelines
+                    </span>
+                </div>
+            </div>
+
+            <!-- Highlights / Key Pillars -->
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% on this phone</h3>
+                    <p>Loan calculations run on your device. Internet is used only to load ads.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚫</div>
+                    <h3>Loans are not uploaded</h3>
+                    <p>We do not collect or sell your loan records. Google may process an advertising ID to serve ads.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Local Storage</h3>
+                    <p>Your saved loans and repayment logs stay strictly inside your phone's encrypted Room database.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Ads by Google</h3>
+                    <p>Loan records stay on this phone. Google AdMob may use an advertising ID to show ads. It does not receive your loans.</p>
+                </div>
+            </div>
+
+            <!-- Zero Network/Internet Access Verification Block -->
+            <div class="highlight-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <div>
+                    <strong>Full Privacy Commitment:</strong>
+                    <p>Loan Mukti keeps loan records on this phone. It is an EMI calculator and tracker, not a lender and not a government scheme. It does not send loan data to a server. Android cloud backup is turned off. A backup file leaves the phone only if you choose where to save it.</p>
+                </div>
+            </div>
+
+            <section id="overview" class="policy-section">
+                <h2>1. Application Overview</h2>
+                <p>
+                    <strong>Loan Mukti</strong> is an EMI calculator and payoff tracker. It does not offer, arrange, or broker loans, and it is not a government loan scheme. Calculations allow 2 to 360 months and an interest rate up to 36%. Internet is used only to load ads.
+                </p>
+                <p>
+                    This Privacy Policy explains how our application functions with respect to user privacy and data security.
+                </p>
+            </section>
+
+            <section id="data-collection" class="policy-section">
+                <h2>2. Data Collection & Transmission</h2>
+                <p>
+                    We believe your financial privacy is paramount.
+                </p>
+                <ul>
+                    <li><strong>Personal Data:</strong> We do NOT collect names, phone numbers, email addresses, identification numbers, or contacts.</li>
+                    <li><strong>Financial Data:</strong> We do NOT collect bank account numbers, credit scores, credit card numbers, or transaction histories.</li>
+                    <li><strong>Device and ads:</strong> Google AdMob may receive an advertising ID, IP address, and coarse device data to show and measure ads. Loan Mukti does not send your loan names, amounts, or payment history to Google.</li>
+                    <li><strong>Permissions:</strong> Notifications are only for EMI reminders you turn on. Internet is used only to load ads. The app does not read SMS, contacts, photos, or location.</li>
+                    <li><strong>Network:</strong> Loan data is not uploaded. A backup file leaves the phone only if you choose where to save it.</li>
+                    <li><strong>Your export:</strong> If you save a backup file, that file is stored only in the place you pick.</li>
+                </ul>
+            </section>
+
+            <section id="storage-security" class="policy-section">
+                <h2>3. Data Storage & Security</h2>
+                <p>
+                    All loan calculations, custom EMI records, and payment logs created within the app are stored exclusively in an internal, local SQLite database on your device.
+                </p>
+                <ul>
+                    <li>Data remains under your physical and logical control at all times.</li>
+                    <li>Android cloud backup is disabled, so the loan database is not uploaded with Google backup.</li>
+                    <li>Uninstalling the app completely removes all locally stored data.</li>
+                    <li>You can clear all app data at any time via Android System Settings.</li>
+                </ul>
+            </section>
+
+            <section id="financial-disclosure" class="policy-section">
+                <h2>4. Google Play Financial Services Policy</h2>
+                <p>
+                    In accordance with Google Play's Financial Services policy:
+                </p>
+                <div class="policy-table-wrapper">
+                    <table class="policy-table">
+                        <thead>
+                            <tr>
+                                <th>Policy Requirement</th>
+                                <th>Loan Mukti status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Is this a Money Lending / NBFC App?</td>
+                                <td><span class="status-badge secure">NO (Utility Only)</span></td>
+                            </tr>
+                            <tr>
+                                <td>Does it facilitate real loan payouts?</td>
+                                <td><span class="status-badge secure">NO</span></td>
+                            </tr>
+                            <tr>
+                                <td>Does it access SMS / Contacts / Location?</td>
+                                <td><span class="status-badge secure">NO (Zero Sensitive Permissions)</span></td>
+                            </tr>
+                            <tr>
+                                <td>Are calculations performed locally?</td>
+                                <td><span class="status-badge secure">YES (100% On-Device)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="third-party" class="policy-section">
+                <h2>5. Third-Party Services & SDKs</h2>
+                <p>
+                    Loan Mukti shows ads through Google AdMob. There is no analytics SDK and no crash-reporting SDK. Ads are not aimed at children. In regions where Google requires a choice, the app shows a consent form before personalized ads. You can also limit ad personalization in your phone's ad settings.
+                </p>
+            </section>
+
+            <section id="children-privacy" class="policy-section">
+                <h2>6. Children's Privacy</h2>
+                <p>
+                    Loan Mukti is a personal finance tool for adults. It is not directed at children under 13, it is not in Google Play's Families program, and ad requests are not tagged as child-directed.
+                </p>
+            </section>
+
+            <section id="changes" class="policy-section">
+                <h2>7. Changes to this Privacy Policy</h2>
+                <p>
+                    We may update this Privacy Policy periodically. Policy updates ship with app updates on Google Play.
+                </p>
+            </section>
+
+            <section id="contact" class="policy-section" style="border-bottom: none; margin-bottom: 0;">
+                <h2>8. Contact Us</h2>
+                <p>
+                    For any privacy questions or feedback regarding Loan Mukti, contact us at:
+                </p>
+                <p style="margin-top: 1rem; font-weight: 600;">
+                    Email: <a href="mailto:nehadkkumari2@gmail.com" style="color: var(--primary); text-decoration: none;">nehadkkumari2@gmail.com</a>
+                </p>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Loan Mukti. All rights reserved.</p>
+        <p>Empowering financial freedom with 100% local privacy.</p>
+        <div class="footer-links">
+            <a href="#" onclick="window.print(); return false;">Print / Save Policy</a>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        let newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
+    // Search Filter Logic
+    function filterSections() {
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const sections = document.querySelectorAll('.policy-section');
+        
+        sections.forEach(section => {
+            const text = section.innerText.toLowerCase();
+            if (text.includes(query)) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    }
+
+    // Scroll Highlight Logic
+    const sections = document.querySelectorAll('.policy-section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= (sectionTop - 120)) {
+                currentSectionId = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
