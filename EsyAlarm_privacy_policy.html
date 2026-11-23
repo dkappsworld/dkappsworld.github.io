@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ESY Alarm – Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --card: #151b24;
+      --text: #f2f5f8;
+      --muted: #a7b0bc;
+      --cyan: #00e5ff;
+      --line: #2a3442;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Segoe UI, system-ui, -apple-system, sans-serif;
+      background: linear-gradient(180deg, #0b0f14 0%, #121820 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      color: var(--cyan);
+    }
+    .meta { color: var(--muted); font-size: 0.95rem; }
+    h2 {
+      margin-top: 28px;
+      font-size: 1.25rem;
+      color: var(--cyan);
+    }
+    h3 { margin-top: 18px; font-size: 1.05rem; }
+    p, li { color: var(--text); }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin: 16px 0;
+    }
+    ul { padding-left: 1.2rem; }
+    a { color: var(--cyan); }
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>ESY Alarm</h1>
+      <p class="meta"><strong>Privacy Policy</strong><br />
+        Effective date: 23 November 2026<br />
+        App package: <code>com.esy.alarm</code><br />
+        Monetization: Ads only (Google AdMob). No subscriptions or in-app purchases.
+      </p>
+    </header>
+
+    <div class="card">
+      <p>
+        This Privacy Policy explains what information <strong>ESY Alarm</strong> (“we”, “the app”)
+        stores on your device, what optional data may be accessed, and how advertising works.
+        Core alarm features work <strong>offline</strong> and do not require an account.
+      </p>
+    </div>
+
+    <h2>1. Who this policy covers</h2>
+    <p>
+      This policy applies to users of the ESY Alarm Android application published on Google Play
+      under package name <code>com.esy.alarm</code>.
+    </p>
+
+    <h2>2. Data we store on your device</h2>
+    <p>The following data is stored <strong>locally on your phone</strong> using Room Database and DataStore:</p>
+    <ul>
+      <li>Wake / interval / event alarm schedules, labels, and settings</li>
+      <li>Dismiss challenge preferences (math, tap, shake) and difficulty</li>
+      <li>Optional wake-up check setting</li>
+      <li>Theme accent / unlocked reward preferences</li>
+      <li>Ad-free day timestamp (24-hour interstitial pause), if unlocked via rewarded ad</li>
+      <li>JSON backup files only if <em>you</em> export them via the system file picker</li>
+    </ul>
+    <p>
+      We do <strong>not</strong> operate our own backend for core alarms. Local alarm data is
+      <strong>not automatically uploaded</strong> to our servers (there are none for core features).
+    </p>
+
+    <h2>3. Optional Contacts access</h2>
+    <p>
+      If you choose <strong>Import from Contacts</strong>, the app requests
+      <code>READ_CONTACTS</code> to read birthday/anniversary dates from
+      <code>ContactsContract</code> so it can create local event alarms.
+    </p>
+    <ul>
+      <li>Used only when you start an import</li>
+      <li>Contact details stay on-device for local reminders</li>
+      <li>Not sold, and not automatically uploaded to an ESY Alarm server</li>
+      <li>You can deny the permission; the rest of the app still works</li>
+    </ul>
+
+    <h2>4. Permissions (why we ask)</h2>
+    <ul>
+      <li><strong>Exact alarms</strong> – ring wake / reminder / event alarms on time</li>
+      <li><strong>Notifications</strong> – show alarm alerts</li>
+      <li><strong>Full-screen intent</strong> – show the alarm screen over the lock screen</li>
+      <li><strong>Foreground service (media playback)</strong> – play alarm sound while ringing</li>
+      <li><strong>Vibrate / sensors</strong> – vibration and optional shake-to-dismiss</li>
+      <li><strong>Internet / network state</strong> – load ads (Google AdMob) and consent messages</li>
+      <li><strong>Advertising ID (AD_ID)</strong> – used by Google’s advertising services when available</li>
+    </ul>
+
+    <h2>5. Advertising (Google AdMob)</h2>
+    <p>
+      ESY Alarm is free and supported by ads. We use <strong>Google AdMob</strong> for:
+    </p>
+    <ul>
+      <li>Banner ads on the main screen</li>
+      <li>Interstitial ads after saving/editing an alarm/event or on post-dismiss summary</li>
+      <li>Rewarded ads for optional extras (extra tones, accents, 24-hour interstitial pause)</li>
+    </ul>
+    <p><strong>Ad placement rules we follow:</strong></p>
+    <ul>
+      <li>Ads are <strong>never</strong> shown while an alarm is ringing</li>
+      <li>Ads are <strong>never</strong> shown during dismiss challenges</li>
+      <li>No paid plans, subscriptions, or in-app purchases</li>
+    </ul>
+    <p>
+      Google may process advertising identifiers and device/ad signals according to
+      <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google’s Privacy Policy</a>
+      and your device ad settings. In the EEA, UK, and Switzerland, a consent message (UMP)
+      may be shown before personalized ads. You can open <strong>Ad privacy options</strong>
+      in the app Settings when required by law/policy.
+    </p>
+
+    <h2>6. Analytics &amp; crash data</h2>
+    <p>
+      The app does not include a separate first-party analytics product for core features.
+      Advertising SDKs may collect technical data needed to serve and measure ads, subject to
+      Google’s policies and your consent choices where applicable.
+    </p>
+
+    <h2>7. Children</h2>
+    <p>
+      ESY Alarm is intended for a general audience and is not directed at children under 13
+      (or the equivalent minimum age in your country). We do not knowingly collect personal
+      information from children. If you believe a child has provided personal data through ads
+      or device settings, use your device/Google account controls or contact us.
+    </p>
+
+    <h2>8. Data sharing</h2>
+    <ul>
+      <li><strong>Not sold</strong> by ESY Alarm</li>
+      <li><strong>Shared with Google</strong> only as needed for AdMob / Play services when ads run</li>
+      <li><strong>Contacts / local alarms</strong> are not uploaded to an ESY Alarm cloud</li>
+    </ul>
+
+    <h2>9. Data retention &amp; deletion</h2>
+    <ul>
+      <li>Local data remains until you delete alarms/events or uninstall the app</li>
+      <li>Uninstalling ESY Alarm removes the app’s local database and preferences</li>
+      <li>Exported JSON backups are controlled by you (wherever you saved the file)</li>
+      <li>Ad identifiers follow Google / device reset or delete controls</li>
+    </ul>
+
+    <h2>10. Your choices</h2>
+    <ul>
+      <li>Deny Contacts permission and still use wake/reminder alarms</li>
+      <li>Change notification, exact-alarm, and full-screen intent settings in system Settings</li>
+      <li>Reset/delete Advertising ID in Android Settings</li>
+      <li>Use in-app Ad privacy options (when shown) and Privacy Policy link</li>
+      <li>Export or delete local alarms anytime</li>
+    </ul>
+
+    <h2>11. Security</h2>
+    <p>
+      Local data is stored in the app’s private storage. Network traffic for ads uses HTTPS.
+      No method of electronic storage is 100% secure; please keep your device locked and updated.
+    </p>
+
+    <h2>12. Changes to this policy</h2>
+    <p>
+      We may update this Privacy Policy when the app or laws/policies change. The “Effective date”
+      at the top will be revised. Continued use after an update means you accept the revised policy.
+    </p>
+
+    <h2>13. Contact</h2>
+    <div class="card">
+      <p>
+        For privacy questions about ESY Alarm, contact:<br />
+        <strong>Email:</strong> <a href="mailto:nehadkkumari2@gmail.com">nehadkkumari2@gmail.com</a>
+      </p>
+    </div>
+
+    <h2>14. Google Play Data Safety summary (for developers / reviewers)</h2>
+    <ul>
+      <li><strong>Collected (via ads):</strong> Device or other IDs (Advertising ID) – for advertising</li>
+      <li><strong>Local / optional:</strong> Contacts (only if user imports events) – not shared to ESY servers</li>
+      <li><strong>App activity / alarms:</strong> Stored on device for app functionality</li>
+      <li><strong>Encrypted in transit:</strong> Yes (HTTPS for ads)</li>
+      <li><strong>Users can request deletion:</strong> Uninstall removes local app data</li>
+      <li><strong>Data sold:</strong> No</li>
+    </ul>
+
+    <footer>
+      © 2026 ESY Alarm.
+    </footer>
+  </div>
+</body>
+</html>
