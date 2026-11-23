@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy — DK Roster</title>
+  <style>
+    :root {
+      --text: #e8eeec;
+      --muted: #9aa8a3;
+      --accent: #0e7c66;
+      --line: #2a3532;
+      --card: #1a2220;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: #0f1412;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 40px 20px 80px; }
+    header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 20px;
+      margin-bottom: 24px;
+    }
+    .brand {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 8px 0 6px; font-size: 1.8rem; line-height: 1.25; }
+    .meta { color: var(--muted); font-size: 0.95rem; }
+    h2 {
+      margin: 28px 0 8px;
+      font-size: 1.12rem;
+      color: #b8e0d4;
+    }
+    p, li { margin: 0 0 10px; }
+    ul { padding-left: 1.2rem; margin: 0 0 12px; }
+    li { margin-bottom: 6px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 14px 0 20px;
+    }
+    a { color: #5ec4a8; }
+    footer {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">DK Roster</div>
+      <h1>Privacy Policy</h1>
+      <div class="meta">
+        App: DK Roster (Android) · Package: com.dkroster.dk_roster<br />
+        Last updated: 23 November 2026
+      </div>
+    </header>
+
+    <p>
+      This Privacy Policy describes how the Android application <strong>DK Roster</strong>
+      (“App”) handles information. DK Roster is a duty-roster calendar that helps you view
+      shifts, manage job profiles, and receive pre-duty reminders.
+    </p>
+
+    <div class="card">
+      <strong>Summary:</strong> DK Roster stores your roster data only on your device.
+      The App does not require an account, does not show ads, and does not send your
+      roster data to our servers.
+    </div>
+
+    <h2>1. Developer contact</h2>
+    <p>
+      For privacy questions about DK Roster, contact:<br />
+      Email: <a href="mailto:nehadkkumari2@gmail.com">nehadkkumari2@gmail.com</a>
+    </p>
+
+    <h2>2. What the App does</h2>
+    <p>DK Roster provides:</p>
+    <ul>
+      <li>A calendar view of duty, night duty, morning duty, rest, and off days</li>
+      <li>A default 13-day duty cycle, and the option to create custom roster cycles</li>
+      <li>Multiple job profiles and an active-profile selection</li>
+      <li>Pre-duty alarms and notifications (for example 30 minutes, 1 hour, or 2 hours before a shift)</li>
+      <li>Full-screen alarm-style reminders with dismiss and snooze</li>
+      <li>English and Hindi language strings in the App interface</li>
+    </ul>
+
+    <h2>3. Data stored on your device</h2>
+    <p>
+      The App saves information locally using Android SharedPreferences
+      (preference file name: <code>dk_roster_v2</code>). This may include:
+    </p>
+    <ul>
+      <li>Job profile names and settings you enter</li>
+      <li>Roster templates (cycle length, anchor date, shift definitions)</li>
+      <li>Generated shift schedule for the year</li>
+      <li>Reminder timing and whether alarms are enabled</li>
+      <li>Which job profile is currently active</li>
+      <li>Simple app state such as whether the welcome message has been shown</li>
+      <li>Optional language preference, if you set one</li>
+    </ul>
+    <p>
+      This information is created by you through normal use of the App.
+      It is used only to show your calendar and schedule reminders on the same device.
+    </p>
+
+    <h2>4. Data we do not collect</h2>
+    <ul>
+      <li>No sign-up, login, or user account</li>
+      <li>No cloud sync of roster data by the App</li>
+      <li>No advertising or ad tracking</li>
+      <li>No analytics or crash-reporting services that send usage data to the developer</li>
+      <li>No access to your contacts, camera, microphone, photos, or precise location</li>
+    </ul>
+
+    <h2>5. Permissions and why they are used</h2>
+    <p>DK Roster may use these Android permissions for reminder features only:</p>
+    <ul>
+      <li><strong>POST_NOTIFICATIONS</strong> — to show duty reminder notifications</li>
+      <li><strong>SCHEDULE_EXACT_ALARM / USE_EXACT_ALARM</strong> — to fire reminders at the chosen time</li>
+      <li><strong>RECEIVE_BOOT_COMPLETED</strong> — to restore scheduled alarms after phone restart or app update</li>
+      <li><strong>VIBRATE</strong> — vibration with alarm alerts</li>
+      <li><strong>WAKE_LOCK</strong> — to help the device wake for an alarm alert</li>
+      <li><strong>USE_FULL_SCREEN_INTENT</strong> — to show a full-screen duty reminder when appropriate</li>
+    </ul>
+    <p>These permissions are not used for advertising, tracking, or sharing data.</p>
+
+    <h2>6. Internet and third parties</h2>
+    <p>
+      Core App features work offline. DK Roster does not require an internet connection
+      to build your roster, show the calendar, or schedule local alarms.
+    </p>
+    <p>
+      If you install the App from Google Play, Google may process download, update,
+      and related Play services data under
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s Privacy Policy</a>.
+      That processing is by Google, not by DK Roster’s on-device roster storage.
+    </p>
+
+    <h2>7. Backup</h2>
+    <p>
+      Android backup is enabled for the App (<code>allowBackup</code>).
+      If your device backs up app data to your Google account (based on your system settings),
+      local App preferences may be included in that device backup.
+      You can control Android backup in your phone’s system settings.
+    </p>
+
+    <h2>8. Children’s privacy</h2>
+    <p>
+      DK Roster is a general productivity / scheduling tool and is not directed at children under 13.
+      The App does not knowingly collect personal information from children.
+    </p>
+
+    <h2>9. How long data stays and how to delete it</h2>
+    <p>Your roster data remains on the device until you:</p>
+    <ul>
+      <li>Delete a job profile or rebuild/clear shifts inside the App, or</li>
+      <li>Clear DK Roster storage in Android Settings, or</li>
+      <li>Uninstall the App</li>
+    </ul>
+    <p>Uninstalling removes the App’s local data, subject to normal Android behaviour and any backups you keep.</p>
+
+    <h2>10. Security</h2>
+    <p>
+      Because data is stored on your device, protection depends mainly on your phone’s lock screen,
+      OS updates, and physical access to the device. The developer does not operate a cloud database
+      for DK Roster roster content.
+    </p>
+
+    <h2>11. Changes to this policy</h2>
+    <p>
+      If the App’s data practices change (for example if online features are added later),
+      this Privacy Policy will be updated and the “Last updated” date will change.
+    </p>
+
+    <h2>12. Contact</h2>
+    <p>
+      Privacy questions about DK Roster:<br />
+      <a href="mailto:nehadkkumari2@gmail.com">nehadkkumari2@gmail.com</a>
+    </p>
+
+    <footer>
+      © 2026 DK Roster · Privacy Policy for Google Play Store
+    </footer>
+  </div>
+</body>
+</html>
