@@ -15,7 +15,7 @@
 <body>
   <h1>Privacy Policy</h1>
   <p class="meta">App: GPS Camera Photo with Location, Map &amp; Timestamp<br />
-  Last updated: November 23, 2026</p>
+  Last updated: November 24, 2026</p>
 
   <p>This Privacy Policy explains how the Android app <strong>GPS Camera Photo with Location, Map &amp; Timestamp</strong> (“the App”) accesses, uses, and shares information when you use it.</p>
 
@@ -30,47 +30,67 @@
     <li><strong>Location (approximate and precise, while in use only):</strong> to stamp GPS coordinates, altitude, address text, compass heading context, map overlays, and optional weather on photos. We do <strong>not</strong> request or use background location.</li>
     <li><strong>Photos you capture in this App:</strong> saved to your device gallery folder <code>Pictures/GPSMapCamera</code>, including optional EXIF GPS tags.</li>
     <li><strong>Device sensors (compass/magnetometer):</strong> for heading text on watermarks.</li>
-    <li><strong>Network access:</strong> only when needed for map tiles, reverse geocoding (device Geocoder), and optional weather.</li>
+    <li><strong>Advertising ID:</strong> used by Google AdMob to serve and measure ads (see section 5).</li>
+    <li><strong>Network access:</strong> for map tiles, reverse geocoding (device Geocoder), optional weather, and ads.</li>
   </ul>
 
   <h2>3. What stays on your device</h2>
-  <p>Captured photos, stamped overlays, and app settings are stored locally on your device. We do not operate an account system, and we do not upload your photos to our servers. We do not show ads and do not use the Advertising ID.</p>
+  <p>Captured photos, stamped overlays, and app settings are stored locally on your device. We do not operate an account system, and we do not upload your photos to our servers.</p>
 
-  <h2>4. Limited network use (third parties)</h2>
+  <h2>4. Limited network use (maps &amp; weather)</h2>
   <p>When features that need the internet are enabled and a network is available, limited technical data may be sent:</p>
   <ul>
     <li><strong>OpenStreetMap tile servers:</strong> map tile requests (based on your location area) and your IP address, to download map imagery for stamps / manual location picker.</li>
     <li><strong>Open-Meteo:</strong> latitude/longitude to fetch current weather when the weather stamp option is enabled.</li>
     <li><strong>Android Geocoder / platform services:</strong> coordinates may be resolved to an address by the device OS / available geocoding providers.</li>
   </ul>
-  <p>We do not sell your personal data. Weather can be turned off in Settings → Stamp Visibility → Show Weather. Map overlays can be turned off via Show Mini Map.</p>
+  <p>Weather can be turned off in Settings → Stamp Visibility → Show Weather. Map overlays can be turned off via Show Mini Map.</p>
 
-  <h2>5. Data sharing</h2>
-  <p>We do not sell or rent your photos or location history. Network requests described above are only to provide the map/weather/address features you use. Your photos are not shared by us with third parties.</p>
+  <h2>5. Advertising (Google AdMob)</h2>
+  <p>The App uses <strong>Google AdMob</strong> to show ads and support development:</p>
+  <ul>
+    <li><strong>Banner ads</strong> on secondary screens (Settings and Photo preview). Ads are <strong>not</strong> shown over the camera viewfinder.</li>
+    <li><strong>Interstitial ads</strong> occasionally after a photo is saved (limited frequency so they do not interrupt every capture).</li>
+  </ul>
+  <p>Google and its partners may collect or receive information such as Advertising ID, IP address, device and app activity related to ads, and approximate diagnostics, to show, measure, and improve ads. How Google uses this data is described in
+    <a href="https://policies.google.com/privacy" rel="noopener noreferrer" target="_blank">Google’s Privacy Policy</a>
+    and
+    <a href="https://support.google.com/admob/answer/6128543" rel="noopener noreferrer" target="_blank">AdMob help</a>.
+  </p>
+  <p>You can reset or limit the Advertising ID in your device settings (Google → Ads / Privacy). On supported devices you may also use system ads personalization controls.</p>
 
-  <h2>6. Retention and deletion</h2>
-  <p>Photos remain on your device until you delete them (in the App or in your system gallery). Clearing the App’s map cache removes offline tiles. Uninstalling the App removes App settings; gallery photos you saved may remain until you delete them.</p>
+  <h2>6. Data sharing</h2>
+  <p>We do not sell or rent your photos or location history. Your photos are not uploaded or shared by us.</p>
+  <ul>
+    <li>Map / weather / geocoding providers receive only what is needed for those features (section 4).</li>
+    <li>Google AdMob receives ad-related signals as described in section 5.</li>
+  </ul>
 
-  <h2>7. Children’s privacy</h2>
-  <p>The App is not directed to children under 13. We do not knowingly collect personal information from children.</p>
+  <h2>7. Retention and deletion</h2>
+  <p>Photos remain on your device until you delete them (in the App or in your system gallery). Clearing the App’s map cache removes offline tiles. Uninstalling the App removes App settings; gallery photos you saved may remain until you delete them. Ad-related data handled by Google follows Google’s retention practices.</p>
 
-  <h2>8. Permissions summary</h2>
+  <h2>8. Children’s privacy</h2>
+  <p>The App is not directed to children under 13. We do not knowingly collect personal information from children. The App is not designed for use by children in a way that would require parental consent under applicable children’s privacy laws.</p>
+
+  <h2>9. Permissions summary</h2>
   <ul>
     <li>Camera – core photo capture</li>
     <li>Fine/Coarse location – foreground only, for GPS watermarks</li>
-    <li>Internet / network state – maps, weather, geocoding</li>
+    <li>Internet / network state – maps, weather, geocoding, ads</li>
+    <li>Advertising ID – AdMob ads</li>
     <li>Write external storage (Android 9 and below only) – saving photos</li>
   </ul>
 
-  <h2>9. Changes</h2>
+  <h2>10. Changes</h2>
   <p>We may update this policy. The “Last updated” date at the top will change when we do. Continued use of the App after updates means you acknowledge the revised policy.</p>
 
-  <h2>10. Google Play Data safety (summary)</h2>
+  <h2>11. Google Play Data safety (summary)</h2>
   <ul>
     <li>Location: collected/processed for app functionality (on device + optional weather/map network calls)</li>
     <li>Photos: created by you; stored on device; not shared by the developer</li>
-    <li>No account data, no advertising ID, no data sold</li>
-    <li>Data encryption in transit: HTTPS for weather and map tile requests</li>
+    <li>Device or other IDs (Advertising ID): shared with Google for advertising</li>
+    <li>No account system; we do not sell your personal data</li>
+    <li>Data encryption in transit: HTTPS for weather, map tiles, and ad requests</li>
   </ul>
 </body>
 </html>
