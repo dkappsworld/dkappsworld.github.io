@@ -66,21 +66,23 @@
       <div class="brand">DK Roster</div>
       <h1>Privacy Policy</h1>
       <div class="meta">
-        App: DK Roster (Android) · Package: com.dkroster.dk_roster<br />
-        Last updated: 23 November 2026
+        App: DK Roster (Android)<br />
+        Last updated: 24 November 2026
       </div>
     </header>
 
     <p>
       This Privacy Policy describes how the Android application <strong>DK Roster</strong>
       (“App”) handles information. DK Roster is a duty-roster calendar that helps you view
-      shifts, manage job profiles, and receive pre-duty reminders.
+      shifts, manage job profiles (including optional details and a job photo), and receive
+      pre-duty reminders.
     </p>
 
     <div class="card">
-      <strong>Summary:</strong> DK Roster stores your roster data on your device.
-      The App does not require an account. The free App is supported by advertisements
-      served through Google AdMob. Roster content is not uploaded to our servers.
+      <strong>Summary:</strong> DK Roster stores your roster data and any job photo you add
+      only on your device. The App does not require an account. The free App is supported by
+      advertisements served through Google AdMob. Roster content and job photos are not
+      uploaded to our servers.
     </div>
 
     <h2>1. Developer contact</h2>
@@ -92,9 +94,9 @@
     <h2>2. What the App does</h2>
     <p>DK Roster provides:</p>
     <ul>
-      <li>A calendar view of duty, night duty, morning duty, rest, and off days</li>
-      <li>A default 13-day duty cycle, and the option to create custom roster cycles</li>
-      <li>Multiple job profiles and an active-profile selection</li>
+      <li>A calendar view of duty types such as day, night, first night, morning, rest, and off</li>
+      <li>A default 13-day duty cycle, plus custom rosters (railway, bank, company, labour, etc.)</li>
+      <li>Multiple job profiles with optional company, designation, ID, phone, notes, and one job photo</li>
       <li>Pre-duty alarms and notifications (for example 30 minutes, 1 hour, or 2 hours before a shift)</li>
       <li>Full-screen alarm-style reminders with dismiss and snooze</li>
       <li>English and Hindi language strings in the App interface</li>
@@ -103,11 +105,12 @@
     <h2>3. Data stored on your device</h2>
     <p>
       The App saves information locally using Android SharedPreferences
-      (preference file name: <code>dk_roster_v2</code>). This may include:
+      (preference file name: <code>dk_roster_v3</code>). This may include:
     </p>
     <ul>
-      <li>Job profile names and settings you enter</li>
-      <li>Roster templates (cycle length, anchor date, shift definitions)</li>
+      <li>Job profile details you enter (name, company, designation, employee ID, phone, notes)</li>
+      <li>Optional job photo: if you choose a picture, a copy is saved in the App’s private storage on your phone</li>
+      <li>Roster templates (cycle length, anchor date, shift definitions including first night where used)</li>
       <li>Generated shift schedule for the year</li>
       <li>Reminder timing and whether alarms are enabled</li>
       <li>Which job profile is currently active</li>
@@ -116,7 +119,8 @@
     </ul>
     <p>
       This information is created by you through normal use of the App.
-      It is used only to show your calendar and schedule reminders on the same device.
+      It is used only to show your calendar, job cards, and schedule reminders on the same device.
+      Job photos are not uploaded to the internet by DK Roster.
     </p>
 
     <h2>4. Advertising (AdMob)</h2>
@@ -140,7 +144,8 @@
       <li>No cloud sync of roster data by the App</li>
       <li>No paid in-app purchases — income is from ads only</li>
       <li>No separate analytics SDK operated by the developer beyond what AdMob/Play may provide</li>
-      <li>No access to your contacts, camera, microphone, or photos</li>
+      <li>No access to your contacts or microphone</li>
+      <li>No continuous access to your full photo gallery — only a photo you choose (via the system picker) may be copied into App storage for that job</li>
     </ul>
 
     <h2>6. Permissions and why they are used</h2>
@@ -189,4 +194,30 @@
       <li>Clear DK Roster storage in Android Settings, or</li>
       <li>Uninstall the App</li>
     </ul>
-    <p>Uninstalling removes the App’s l
+    <p>Uninstalling removes the App’s local data, subject to normal Android behaviour and any backups you keep.</p>
+
+    <h2>11. Security</h2>
+    <p>
+      Because data is stored on your device, protection depends mainly on your phone’s lock screen,
+      OS updates, and physical access to the device. The developer does not operate a cloud database
+      for DK Roster roster content.
+    </p>
+
+    <h2>12. Changes to this policy</h2>
+    <p>
+      If the App’s data practices change (for example if online features are added later),
+      this Privacy Policy will be updated and the “Last updated” date will change.
+    </p>
+
+    <h2>13. Contact</h2>
+    <p>
+      Privacy questions about DK Roster:<br />
+      <a href="mailto:nehadkkumari2@gmail.com">nehadkkumari2@gmail.com</a>
+    </p>
+
+    <footer>
+      © 2026 DK Roster · Privacy Policy for Google Play Store
+    </footer>
+  </div>
+</body>
+</html>
